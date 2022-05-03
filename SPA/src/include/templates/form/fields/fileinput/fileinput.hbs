@@ -1,0 +1,16 @@
+<div class="fileinput">
+  <div class="fileinput-area">
+    <div class="fi-input">
+      {{#getUniqueId}}
+        <input class="fi-file" type="file" name="files[]" id="{{@randomId}}" data-multiple-caption="{count} files selected" multiple />
+        <label for="{{@randomId}}">
+          <i class="fa fa-download"></i>
+          <strong>Choose files</strong>
+          <span class="fi-dragndrop"> or drag them here</span>.
+        </label>
+      {{/getUniqueId}}
+    </div>
+    <div class="files">
+    </div>
+  </div>
+</div>

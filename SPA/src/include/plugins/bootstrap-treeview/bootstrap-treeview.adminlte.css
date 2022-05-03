@@ -1,0 +1,9 @@
+.adminlte .list-group-item:first-child { 
+  border-radius: 0px;
+}
+.adminlte .list-group-item:last-child { 
+  border-radius: 0px;
+}
+.adminlte .treeview.compact .list-group-item {
+  padding: 5px 10px;
+}

@@ -1,0 +1,62 @@
+{
+	"type": "grid",
+	"opts": {
+		"id": "RevisoesOrcamentosGrid",
+		"getUrl": "getRevOrcamentosGrid",
+		"order": [ [ 4, "desc" ] ],
+		"buttons": [
+			{
+				"name": "read",
+				"icon": "fa fa-fw fa-eye",
+				"btnClass": "btn-info",
+				"tooltip": "Visualizar Orçamento",
+				"action": {
+					"type": "tab",
+					"name": "read",
+					"field": "DIARIO_ANO_NUMDOC"
+				}
+			}
+		],
+		"fields": [
+			{
+				"field": "DIARIO_ANO_NUMDOC",
+				"type": "hidden"
+			},
+			{
+				"field": "ID",
+				"type": "number",
+				"i18n": "Id Oport."
+			},
+			{
+				"field": "NOME",
+				"type": "string",
+				"i18n": "Nome"
+			},
+			{
+				"field": "ENTI_DESSOCIAL",
+				"type": "string",
+				"i18n": "Entidade"
+			},
+			{
+				"field": "NUM_DOC",
+				"type": "number",
+				"i18n": "Nº Orçamento"
+			},
+			{
+				"field": "DATA_DOC",
+				"type": "date",
+				"i18n": "Data"
+			},
+			{
+				"field": "DESCRICAO",
+				"type": "string",
+				"i18n": "Estado"
+			},
+			{
+				"field": "TOTAL_LIQUIDO",
+				"type": "number",
+				"i18n": "Total"
+			}
+		]
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "type": "form",
+  "opts": {
+    "id": "LancamentoForm",
+    "postUrl": "createLancamento",
+    "setsTitle": false,
+    "fields": {
+      "name": {
+        "id": "name",
+        "type": "Text",
+        "label-i18n": "Nome"
+      },
+      "description": {
+        "id": "description",
+        "type": "Text",
+        "label-i18n": "Descrição"
+      }
+    },
+    "tabs": [
+      {
+        "title-i18n": "Novo Perfil",
+        "layout": [ "name", "description" ]
+      }
+    ]
+  }
+}

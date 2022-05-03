@@ -1,0 +1,41 @@
+{{#*inline "base"}}
+  <div class="nav-tabs-custom">
+    <ul id="{{id}}" class="nav nav-tabs">
+        {{! Labels here }}
+    </ul>
+    <div class="tab-content">
+        {{! Tabs here }}
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "label"}}
+  <li class="">
+    <a aria-expanded="false" class="tab-title" id="tab-{{timestamp}}-label-{{name}}{{#if tid}}-{{escape tid}}{{/if}}" href="#tab-{{timestamp}}-{{name}}{{#if tid}}-{{escape tid}}{{/if}}" data-toggle="tab">
+      <i class="fa fa-fw fa-exclamation-triangle error"></i>
+      <i class="fa fa-fw fa-spin fa-circle-o-notch"></i>
+      <span class="title" {{#if title-i18n}}data-i18n="{{title-i18n}}"{{/if}}>
+        &nbsp;
+        {{title}}
+        &nbsp;
+      </span>
+      {{#unless cantClose}}
+        <i class="fa fa-fw  close-icon">
+        </i>
+      {{/unless}}
+    </a>
+  </li>
+{{/inline}}
+
+{{#*inline "tab"}}
+  <div class="tab-pane" id="tab-{{timestamp}}-{{name}}{{#if tid}}-{{escape tid}}{{/if}}">
+  </div>
+{{/inline}}
+
+{{#if @label}}
+  {{> label}}
+{{else if @tab}}
+  {{> tab}}
+{{else}}
+  {{> base}}
+{{/if}}

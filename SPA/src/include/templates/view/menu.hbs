@@ -1,0 +1,33 @@
+{{#*inline "base"}}
+  <ul class="sidebar-menu">
+    {{#items}}
+      {{>item}}
+    {{/items}}
+  </ul>
+  {{/inline}}
+
+  {{#*inline "item"}}
+    <li id="menuItem_{{id}}" {{#if children}}class="treeview" {{/if}}>
+      <a href="#{{getUrl id}}/" data-id="{{id}}" data-view="{{getUrl id}}">
+
+        {{#if icon}}
+          <i class="{{icon}}"></i>
+        {{/if}}
+
+        <span data-i18n="{{i18n}}"></span>
+
+        {{#if children}}
+          <i class="fa fa-angle-left pull-right"></i>
+        {{/if}}
+      </a>
+      {{#if children}}
+        <ul class="treeview-menu">
+          {{#children}}
+            {{> item}}
+          {{/children}}
+        </ul>
+      {{/if}}
+    </li>
+    {{/inline}}
+
+    {{> base}}

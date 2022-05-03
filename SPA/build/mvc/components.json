@@ -1,0 +1,2012 @@
+{
+  "ModuleFormExpedition": {
+    "type": "form",
+    "opts": {
+      "id": "ModuleFormExpedition",
+      "getUrl": "getModuleForm",
+      "postUrl": "postModuleForm",
+      "setsTitle": true,
+      "fields": {
+        "moduleId": {
+          "id": "moduleId",
+          "type": "Hidden"
+        },
+        "docsListagem": {
+          "id": "docsListagem",
+          "type": "Select",
+          "searchUrl": "getGiaTfactSelect",
+          "label-i18n": "views.ModulesView.components.ModuleForm.docsListagem",
+          "fields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "valueField": "CODIGO",
+          "searchFields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "resultsTemplate": "<div><div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div></div>",
+          "selectedTemplate": "<div>{{CODIGO}}</div>",
+          "allowNull": true,
+          "maxItems": 1,
+          "saveObject": true,
+          "loadObject": true
+        },
+        "docPicagem": {
+          "id": "docPicagem",
+          "type": "Select",
+          "searchUrl": "getDiarioMrecapSelect",
+          "label-i18n": "views.ModulesView.components.ModuleForm.docPicagemSaida",
+          "fields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "valueField": "CODIGO",
+          "searchFields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "resultsTemplate": "<div><div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div></div>",
+          "selectedTemplate": "<div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div>",
+          "allowNull": true,
+          "saveObject": true,
+          "loadObject": true
+        },
+        "filterNdocMandatory": {
+          "id": "filterNdocMandatory",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.filterNdocMandatory"
+        },
+        "showOrders": {
+          "id": "showOrders",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.showOrders"
+        },
+        "selectLineOrPickOldOne": {
+          "id": "selectLineOrPickOldOne",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.selectLineOrPickOldOne"
+        },
+        "verifyExpirationDate": {
+          "id": "verifyExpirationDate",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.verifyExpirationDate"
+        },
+        "linkApi": {
+          "id": "linkApi",
+          "type": "Text",
+          "label-i18n": "Link API ERP (certificar documentos)",
+          "placeholder-i18n": "views.ModulesView.components.ModuleForm.linkApi"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "views.ModulesView.components.ModuleForm.configurations",
+          "layout": [
+            "moduleId",
+            [
+              "docsListagem"
+            ],
+            [
+              "docPicagem"
+            ],
+            [
+              "filterNdocMandatory",
+              "showOrders"
+            ],
+            [
+              "selectLineOrPickOldOne",
+              "verifyExpirationDate"
+            ],
+            [
+              "linkApi"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "ModuleFormReception": {
+    "type": "form",
+    "opts": {
+      "id": "ModuleFormReception",
+      "getUrl": "getModuleForm",
+      "postUrl": "postModuleForm",
+      "setsTitle": true,
+      "fields": {
+        "moduleId": {
+          "id": "moduleId",
+          "type": "Hidden"
+        },
+        "docsListagem": {
+          "id": "docsListagem",
+          "type": "Select",
+          "searchUrl": "getGiaTfactSelect",
+          "label-i18n": "views.ModulesView.components.ModuleForm.docsListagem",
+          "fields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "valueField": "CODIGO",
+          "searchFields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "resultsTemplate": "<div><div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div></div>",
+          "selectedTemplate": "<div>{{CODIGO}}</div>",
+          "allowNull": true,
+          "maxItems": 1,
+          "saveObject": true,
+          "loadObject": true
+        },
+        "docPicagem": {
+          "id": "docPicagem",
+          "type": "Select",
+          "searchUrl": "getDiarioMrecapSelect",
+          "label-i18n": "views.ModulesView.components.ModuleForm.docPicagem",
+          "fields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "valueField": "CODIGO",
+          "searchFields": [
+            "CODIGO",
+            "DESCRICAO"
+          ],
+          "resultsTemplate": "<div><div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div></div>",
+          "selectedTemplate": "<div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div>",
+          "allowNull": true,
+          "saveObject": true,
+          "loadObject": true
+        },
+        "filterNdocMandatory": {
+          "id": "filterNdocMandatory",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.filterNdocMandatory"
+        },
+        "showOrders": {
+          "id": "showOrders",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.showOrders"
+        },
+        "selectLineOrPickOldOne": {
+          "id": "selectLineOrPickOldOne",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.selectLineOrPickOldOne"
+        },
+        "verifyExpirationDate": {
+          "id": "verifyExpirationDate",
+          "type": "Switch",
+          "label-i18n": "views.ModulesView.components.ModuleForm.verifyExpirationDate"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "views.ModulesView.components.ModuleForm.configurations",
+          "layout": [
+            "moduleId",
+            [
+              "docsListagem"
+            ],
+            [
+              "docPicagem"
+            ],
+            [
+              "filterNdocMandatory",
+              "showOrders"
+            ],
+            [
+              "selectLineOrPickOldOne",
+              "verifyExpirationDate"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "ModuleGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "ModuleGrid",
+      "getUrl": "getModuleGrid",
+      "buttons": [
+        {
+          "name": "editModule",
+          "icon": "fa fa-fw fa-pencil",
+          "btnClass": "btn-warning",
+          "tooltip": "views.ModulesView.components.ModuleGrid.edit",
+          "type": "link",
+          "internal": true,
+          "url": "#modules/edit{{ID}}/{{ID}}"
+        }
+      ],
+      "order": [
+        [
+          4,
+          "desc"
+        ]
+      ],
+      "fields": [
+        {
+          "field": "CODIGO_ARM",
+          "type": "number",
+          "i18n": "Arm."
+        },
+        {
+          "field": "REFERENCIA",
+          "type": "string",
+          "i18n": "Referência"
+        },
+        {
+          "field": "DESCRICAO",
+          "type": "string",
+          "i18n": "Descrição"
+        },
+        {
+          "field": "COD_LOCALIZACAO",
+          "type": "string",
+          "i18n": "Cód. Localização"
+        },
+        {
+          "field": "COR",
+          "type": "string",
+          "i18n": "Cor"
+        },
+        {
+          "field": "TAMANHO",
+          "type": "string",
+          "i18n": "Cód. Tamanho"
+        },
+        {
+          "field": "STOCK_ATUAL",
+          "type": "number",
+          "i18n": "Stock Atual"
+        },
+        {
+          "field": "STOCK_CONTAGEM",
+          "type": "number",
+          "i18n": "Contagem Stock"
+        },
+        {
+          "field": "ULTIMO_CUSTO",
+          "type": "number",
+          "i18n": "Último Custo"
+        },
+        {
+          "field": "CUSTO_MEDIO",
+          "type": "number",
+          "i18n": "Custo médio"
+        },
+        {
+          "field": "COD_UNIDADE",
+          "type": "string",
+          "i18n": "Cód. Unidade"
+        },
+        {
+          "field": "ALTERADO",
+          "type": "string",
+          "i18n": "Alterado"
+        }
+      ]
+    }
+  },
+  "ImportExcelForm": {
+    "type": "form",
+    "opts": {
+      "id": "ImportExcelForm",
+      "fields": {
+        "ctrlV": {
+          "id": "ctrlV",
+          "label-i18n": "Dados Excel",
+          "type": "TextArea"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "",
+          "layout": [
+            "ctrlV"
+          ]
+        }
+      ]
+    }
+  },
+  "OrcamentoCreateForm": {
+    "type": "form",
+    "opts": {
+      "id": "OrcamentoCreateForm",
+      "postUrl": "saveOrcamentoForm",
+      "setsTitle": true,
+      "fields": {
+        "data_stock": {
+          "id": "data_stock",
+          "type": "DatePicker",
+          "label-i18n": "Stock à data",
+          "searchUrl": "getClientesSelect",
+          "resultsTemplate": "<div><i>{{POCA_ENOME}}</i></div>",
+          "selectedTemplate": "<div>{{POCA_ENOME}}</div>",
+          "searchFields": [
+            "POCA_ENTI",
+            "POCA_ENOME",
+            "ENTI_NCONT",
+            "ENTI_TELM1",
+            "ENTI_TEL1",
+            "ENTI_MAIL"
+          ],
+          "valueField": "ID",
+          "onChange": "ChangedCliente",
+          "validation": {
+            "required": true
+          }
+        },
+        "poca_conta": {
+          "id": "poca_conta",
+          "type": "Hidden"
+        },
+        "poca_enti": {
+          "id": "poca_enti",
+          "type": "Hidden"
+        },
+        "do_arm": {
+          "id": "do_arm",
+          "type": "Select",
+          "label-i18n": "Do Armazém"
+        },
+        "ao_arm": {
+          "id": "ao_arm",
+          "type": "Select",
+          "label-i18n": "ao Armazém"
+        },
+        "da_marca": {
+          "id": "da_marca",
+          "type": "Select",
+          "label-i18n": "Da Marca"
+        },
+        "a_marca": {
+          "id": "a_marca",
+          "type": "Select",
+          "label-i18n": "à Marca"
+        },
+        "da_referencia": {
+          "id": "da_referencia",
+          "type": "Select",
+          "label-i18n": "De Referência"
+        },
+        "a_referencia": {
+          "id": "a_referencia",
+          "type": "Select",
+          "label-i18n": "à Referência"
+        },
+        "da_gama": {
+          "id": "da_gama",
+          "type": "Select",
+          "label-i18n": "Da Gama"
+        },
+        "a_gama": {
+          "id": "a_gama",
+          "type": "Select",
+          "label-i18n": "à Gama"
+        },
+        "do_depart": {
+          "id": "do_depart",
+          "type": "Select",
+          "label-i18n": "De Departamento"
+        },
+        "ao_depart": {
+          "id": "ao_depart",
+          "type": "Select",
+          "label-i18n": "ao Departamento"
+        },
+        "da_versao": {
+          "id": "da_versao",
+          "type": "Select",
+          "label-i18n": "Da Versão"
+        },
+        "a_versao": {
+          "id": "a_versao",
+          "type": "Select",
+          "label-i18n": "à Versão"
+        },
+        "da_familia": {
+          "id": "da_familia",
+          "type": "Select",
+          "label-i18n": "Da Família"
+        },
+        "a_familia": {
+          "id": "a_familia",
+          "type": "Select",
+          "label-i18n": "à Família"
+        },
+        "do_modelo": {
+          "id": "do_modelo",
+          "type": "Select",
+          "label-i18n": "Do Modelo"
+        },
+        "ao_modelo": {
+          "id": "ao_modelo",
+          "type": "Select",
+          "label-i18n": "ao Modelo"
+        },
+        "do_grupo": {
+          "id": "do_grupo",
+          "type": "Select",
+          "label-i18n": "Do Grupo"
+        },
+        "ao_grupo": {
+          "id": "ao_grupo",
+          "type": "Select",
+          "label-i18n": "ao Grupo"
+        },
+        "da_serie": {
+          "id": "da_serie",
+          "type": "Select",
+          "label-i18n": "Da Série"
+        },
+        "a_serie": {
+          "id": "a_serie",
+          "type": "Select",
+          "label-i18n": "à Série"
+        },
+        "da_localizacao": {
+          "id": "da_localizacao",
+          "type": "Select",
+          "label-i18n": "Da Localização"
+        },
+        "a_localizacao": {
+          "id": "a_localizacao",
+          "type": "Select",
+          "label-i18n": "à Localização"
+        },
+        "da_composicao": {
+          "id": "da_composicao",
+          "type": "Select",
+          "label-i18n": "Da Composição"
+        },
+        "a_composicao": {
+          "id": "a_composicao",
+          "type": "Select",
+          "label-i18n": "à Composição"
+        },
+        "do_tipo": {
+          "id": "do_tipo",
+          "type": "Select",
+          "label-i18n": "Do Tipo"
+        },
+        "ao_tipo": {
+          "id": "ao_tipo",
+          "type": "Select",
+          "label-i18n": "ao Tipo"
+        },
+        "do_arm23": {
+          "id": "do_arm",
+          "type": "Switch",
+          "label-i18n": "Contar obsoletos, monos e suspensos"
+        },
+        "do_arm24": {
+          "id": "do_arm",
+          "type": "Switch",
+          "label-i18n": "Controlo de stock nas localizações"
+        },
+        "do_arm25": {
+          "id": "do_arm",
+          "type": "Switch",
+          "label-i18n": "Acertar as duas unidades dos produtos multidimensionais"
+        },
+        "do_arm26": {
+          "id": "do_arm",
+          "type": "Switch",
+          "label-i18n": "Controlo de artigos (lotes, cores, tamanhos e localizações) sem movimento"
+        },
+        "do_arm27": {
+          "id": "do_arm",
+          "type": "Switch",
+          "label-i18n": "Excluir artigos que nunca foram movimentas e com stock negativo"
+        },
+        "do_arm28": {
+          "id": "do_arm",
+          "type": "Switch",
+          "label-i18n": "Somente artigos com stock diferente de zero"
+        },
+
+        "linhas": {
+          "id": "linhas",
+          "type": "EditGrid",
+          "label-i18n": "Linhas",
+          "allowNew": false,
+          "allowDelete": true,
+          "fields": [
+            "Armazém",
+            "Referência",
+            "Designação",
+            "Cod_Familia",
+            "Família",
+            "Quantidade",
+            "Comprimento",
+            "Largura",
+            "Altura",
+            "Preço Unit.",
+            "Peso Unit.",
+            "Total Linha",
+            "Peso Total"
+          ],
+          "fieldTypes": [
+            "string",
+            "string",
+            "string",
+            "string",
+            "string",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number"
+          ],
+          "hiddenFields": [
+            "Armazém",
+            "Cod_Familia"
+          ],
+          "editableFields": {
+            "Armazém": {
+              "type": "text"
+            },
+            "Referência": {
+              "type": "text"
+            },
+            "Designação": {
+              "type": "text"
+            },
+            "Quantidade": {
+              "type": "number"
+            },
+            "Comprimento": {
+              "type": "number"
+            },
+            "Largura": {
+              "type": "number"
+            },
+            "Altura": {
+              "type": "number"
+            },
+            "Preço Unit.": {
+              "type": "number"
+            },
+            "Peso Unit.": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "",
+          "layout": [
+            [
+              "data_stock",
+              "do_tipo",
+              "ao_tipo"
+            ],
+            [
+              "poca_conta",
+              "poca_enti"
+            ],
+            [
+              "do_arm",
+              "ao_arm",
+              "da_marca",
+              "a_marca",
+              "do_arm23"
+            ],
+            [
+              "da_referencia",
+              "a_referencia",
+              "da_gama",
+              "a_gama",
+              "do_arm24"
+            ],
+            [
+              "do_depart",
+              "ao_depart",
+              "da_versao",
+              "a_versao",
+              "do_arm25"
+            ],
+            [
+              "da_familia",
+              "a_familia",
+              "do_modelo",
+              "ao_modelo",
+              "do_arm26"
+            ],
+            [
+              "do_grupo",
+              "ao_grupo",
+              "da_serie",
+              "a_serie",
+              "do_arm27"
+            ],
+            [
+              "da_localizacao",
+              "a_localizacao",
+              "da_composicao",
+              "a_composicao",
+              "do_arm28"
+            ],
+            [
+              "btnPesquisaArtigo"
+            ],
+            [
+              "linhas"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "OrcamentoEstadosWidget": {
+    "type": "widgets.HTMLContainer",
+    "opts": {
+      "id": "OrcamentoEstadosWidget",
+      "templates": [
+        "<div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n      <section class=\"content\" style=\"overflow: hidden;padding: 20px 0;\">\r\n        <ul class=\"timeline\">\r\n          <li class=\"time-label\">\r\n            <span class=\"bg-success\">\r\n              02/02/2022\r\n            </span>\r\n          </li>\r\n          <li>\r\n            <i class=\"fa fa-check bg-success\"></i>\r\n            <div class=\"timeline-item\">\r\n              <span class=\"time\">\r\n                <i class=\"fa fa-clock-o\"></i>\r\n                10:20\r\n              </span>\r\n              <h3 class=\"timeline-header\">\r\n                <a href=\"#\">\r\n                  Ambrósio\r\n                </a>\r\n              </h3>\r\n              <div class=\"timeline-body\">\r\n                Por Aprovar\r\n              </div>\r\n            </div>\r\n          </li>\r\n          <li class=\"time-label\">\r\n            <span class=\"bg-green\">\r\n              03/02/2022\r\n            </span>\r\n          </li>\r\n          <li>\r\n            <i class=\"fa fa-check bg-green\"></i>\r\n            <div class=\"timeline-item\">\r\n              <span class=\"time\">\r\n                <i class=\"fa fa-clock-o\"></i>\r\n                11:25\r\n              </span>\r\n              <h3 class=\"timeline-header\">\r\n                <a href=\"#\">\r\n                  Beto\r\n                </a>\r\n              </h3>\r\n              <div class=\"timeline-body\">\r\n                Aprovado\r\n              </div>\r\n            </div>\r\n          </li>\r\n          <li>\r\n            <i class=\"fa fa-circle bg-gray\"></i>\r\n          </li>\r\n        </ul>\r\n      </section>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <button class=\"btn btn-xs btn-warning\">\r\n      Retroceder Para \"Aprovado\"\r\n    </button>\r\n\r\n    <button class=\"btn btn-xs btn-primary\">\r\n      Avançar Para \"Adjudicado\"\r\n    </button>\r\n  </div>\r\n</div>"
+      ],
+      "title-i18n": "Planeado",
+      "noBox": true
+    }
+  },
+  "OrcamentoForm": {
+    "type": "form",
+    "opts": {
+      "id": "OrcamentoForm",
+      "getUrl": "getOrcamentoForm",
+      "postUrl": "saveOrcamentoForm",
+      "setsTitle": true,
+      "fields": {
+        "estado": {
+          "id": "estado",
+          "label-i18n": "Estado",
+          "type": "TextAction",
+          "readOnly": true,
+          "action": "AbrirModalEstados",
+          "btn-icon": "fa-pencil",
+          "placeholder": "Aprovado"
+        },
+        "diario_ano_numdoc": {
+          "id": "diario_ano_numdoc",
+          "type": "Hidden"
+        },
+        "cod_cliente": {
+          "id": "cod_cliente",
+          "type": "Select",
+          "label-i18n": "Cliente",
+          "searchUrl": "getClientesSelect",
+          "resultsTemplate": "<div><i>{{POCA_ENOME}}</i></div>",
+          "selectedTemplate": "<div>{{POCA_ENOME}}</div>",
+          "searchFields": [
+            "POCA_ENTI",
+            "POCA_ENOME",
+            "ENTI_NCONT",
+            "ENTI_TELM1",
+            "ENTI_TEL1",
+            "ENTI_MAIL"
+          ],
+          "valueField": "ID",
+          "onChange": "ChangedCliente",
+          "readOnly": true,
+          "validation": {
+            "required": true
+          }
+        },
+        "poca_conta": {
+          "id": "poca_conta",
+          "type": "Hidden"
+        },
+        "poca_enti": {
+          "id": "poca_enti",
+          "type": "Hidden"
+        },
+        "id_oportunidade": {
+          "id": "id_oportunidade",
+          "type": "Select",
+          "searchUrl": "getOportunidadesSelect",
+          "resultsTemplate": "<div><i>{{REFERENCIA}} - {{NOME}}</i></div>",
+          "selectedTemplate": "<div>{{REFERENCIA}} - {{NOME}}</div>",
+          "searchFields": [
+            "ID",
+            "NOME",
+            "REFERENCIA",
+            "COD_CLIENTE",
+            "ENTIDADE"
+          ],
+          "valueField": "ID",
+          "label-i18n": "Oportunidade",
+          "onChange": "ChangedOportunidade",
+          "extraFields": [
+            "cod_cliente"
+          ],
+          "readOnly": true,
+          "validation": {
+            "required": true
+          }
+        },
+        "enti_ncont": {
+          "id": "enti_ncont",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Contribuinte"
+        },
+        "enti_tel1": {
+          "id": "enti_tel1",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Telefone"
+        },
+        "enti_telm1": {
+          "id": "enti_telm1",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Telemóvel"
+        },
+        "enti_mail": {
+          "id": "enti_mail",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Email"
+        },
+        "btnPesquisaArtigo": {
+          "id": "btnPesquisaArtigo",
+          "text-i18n": "Artigos",
+          "type": "Button",
+          "btn-class": "primary",
+          "btn-icon": "fa fa-fw fa-plus",
+          "action": "AbrirModalPesquisaArtigo"
+        },
+        "btnModalImport": {
+          "id": "btnModalImport",
+          "text-i18n": "Importar dados Excel",
+          "type": "Button",
+          "btn-class": "primary",
+          "btn-icon": "fa fa-fw fa-plus",
+          "action": "ImportModal"
+        },
+        "linhas": {
+          "id": "linhas",
+          "type": "EditGrid",
+          "allowNew": true,
+          "allowDelete": true,
+          "rowChangedCallback": "ArtigosRowCallback",
+          "fields": [
+            "Armazém",
+            "Referência",
+            "Designação",
+            "Cod_Familia",
+            "Família",
+            "Quantidade",
+            "Comprimento",
+            "Largura",
+            "Altura",
+            "Preço Unit.",
+            "Peso Unit.",
+            "Total Linha",
+            "Peso Total"
+          ],
+          "fieldTypes": [
+            "string",
+            "string",
+            "string",
+            "string",
+            "string",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number"
+          ],
+          "hiddenFields": [
+            "Armazém",
+            "Cod_Familia"
+          ],
+          "editableFields": {
+            "Armazém": {
+              "type": "text"
+            },
+            "Referência": {
+              "type": "text"
+            },
+            "Designação": {
+              "type": "text"
+            },
+            "Quantidade": {
+              "type": "number"
+            },
+            "Comprimento": {
+              "type": "number"
+            },
+            "Largura": {
+              "type": "number"
+            },
+            "Altura": {
+              "type": "number"
+            },
+            "Preço Unit.": {
+              "type": "number"
+            },
+            "Peso Unit.": {
+              "type": "number"
+            }
+          }
+        },
+        "totais": {
+          "id": "totais",
+          "type": "Component",
+          "autoInit": true,
+          "label-i18n": "",
+          "content-fixed": [
+            "--hr:Totais",
+            [
+              "OrcamentoTotaisWidget"
+            ]
+          ]
+        },
+        "estados": {
+          "id": "estados",
+          "type": "Component",
+          "autoInit": true,
+          "label-i18n": "",
+          "content-fixed": [
+            "--hr:Estados",
+            [
+              "OrcamentoEstadosWidget"
+            ]
+          ]
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "",
+          "layout": [
+            [
+              "diario_ano_numdoc"
+            ],
+            [
+              "cod_cliente",
+              "id_oportunidade",
+              "estado"
+            ],
+            [
+              "poca_conta",
+              "poca_enti"
+            ],
+            [
+              "enti_ncont",
+              "enti_tel1",
+              "enti_telm1",
+              "enti_mail"
+            ],
+            [
+              "--hr:Linhas"
+            ],
+            [
+              "btnPesquisaArtigo",
+              "btnModalImport",
+              false,
+              false
+            ],
+            [
+              "linhas"
+            ],
+            [
+              false,
+              "totais"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "OrcamentoReadForm": {
+    "type": "form",
+    "opts": {
+      "id": "OrcamentoReadForm",
+      "getUrl": "getOrcamentoForm",
+      "setsTitle": true,
+      "fields": {
+        "diario_ano_numdoc": {
+          "id": "diario_ano_numdoc",
+          "type": "Hidden"
+        },
+        "cod_cliente": {
+          "id": "cod_cliente",
+          "type": "Select",
+          "label-i18n": "Cliente",
+          "searchUrl": "getClientesSelect",
+          "resultsTemplate": "<div><i>{{POCA_ENOME}}</i></div>",
+          "selectedTemplate": "<div>{{POCA_ENOME}}</div>",
+          "searchFields": [
+            "POCA_ENTI",
+            "POCA_ENOME",
+            "ENTI_NCONT",
+            "ENTI_TELM1",
+            "ENTI_TEL1",
+            "ENTI_MAIL"
+          ],
+          "valueField": "ID",
+          "onChange": "ChangedCliente",
+          "readOnly": true,
+          "validation": {
+            "required": true
+          }
+        },
+        "poca_conta": {
+          "id": "poca_conta",
+          "type": "Hidden"
+        },
+        "poca_enti": {
+          "id": "poca_enti",
+          "type": "Hidden"
+        },
+        "id_oportunidade": {
+          "id": "id_oportunidade",
+          "type": "Select",
+          "searchUrl": "getOportunidadesSelect",
+          "resultsTemplate": "<div><i>{{REFERENCIA}} - {{NOME}}</i></div>",
+          "selectedTemplate": "<div>{{REFERENCIA}} - {{NOME}}</div>",
+          "searchFields": [
+            "ID",
+            "NOME",
+            "REFERENCIA",
+            "COD_CLIENTE",
+            "ENTIDADE"
+          ],
+          "valueField": "ID",
+          "label-i18n": "Oportunidade",
+          "onChange": "ChangedOportunidade",
+          "extraFields": [
+            "cod_cliente"
+          ],
+          "readOnly": true,
+          "validation": {
+            "required": true
+          }
+        },
+        "enti_ncont": {
+          "id": "enti_ncont",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Contribuinte"
+        },
+        "enti_tel1": {
+          "id": "enti_tel1",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Telefone"
+        },
+        "enti_telm1": {
+          "id": "enti_telm1",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Telemóvel"
+        },
+        "enti_mail": {
+          "id": "enti_mail",
+          "type": "Text",
+          "readOnly": true,
+          "label-i18n": "Email"
+        },
+        "linhas": {
+          "id": "linhas",
+          "type": "EditGrid",
+          "label-i18n": "Linhas",
+          "allowNew": false,
+          "allowDelete": true,
+          "readOnly": true,
+          "fields": [
+            "Armazém",
+            "Referência",
+            "Designação",
+            "Cod_Familia",
+            "Família",
+            "Quantidade",
+            "Comprimento",
+            "Largura",
+            "Altura",
+            "Preço Unit.",
+            "Peso Unit.",
+            "Total Linha",
+            "Peso Total"
+          ],
+          "fieldTypes": [
+            "string",
+            "string",
+            "string",
+            "string",
+            "string",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number",
+            "number"
+          ]
+        }
+      },
+      "hiddenFields": [
+        "Armazém",
+        "Cod_Familia"
+      ],
+      "tabs": [
+        {
+          "title-i18n": "",
+          "layout": [
+            [
+              "diario_ano_numdoc"
+            ],
+            [
+              "cod_cliente",
+              "id_oportunidade"
+            ],
+            [
+              "poca_conta",
+              "poca_enti"
+            ],
+            [
+              "enti_ncont",
+              "enti_tel1",
+              "enti_telm1",
+              "enti_mail"
+            ],
+            [
+              "linhas"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "OrcamentosGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "OrcamentosGrid",
+      "getUrl": "getOrcamentosGrid",
+      "order": [
+        [
+          4,
+          "desc"
+        ]
+      ],
+      "fields": [
+        {
+          "field": "CODIGO_ARM",
+          "type": "number",
+          "i18n": "Arm."
+        },
+        {
+          "field": "REFERENCIA",
+          "type": "string",
+          "i18n": "Referência"
+        },
+        {
+          "field": "DESCRICAO",
+          "type": "string",
+          "i18n": "Descrição"
+        },
+        {
+          "field": "COD_LOCALIZACAO",
+          "type": "string",
+          "i18n": "Cód. Localização"
+        },
+        {
+          "field": "COR",
+          "type": "string",
+          "i18n": "Cor"
+        },
+        {
+          "field": "TAMANHO",
+          "type": "string",
+          "i18n": "Cód. Tamanho"
+        },
+        {
+          "field": "STOCK_ATUAL",
+          "type": "number",
+          "i18n": "Stock Atual"
+        },
+        {
+          "field": "STOCK_CONTAGEM",
+          "type": "number",
+          "i18n": "Contagem Stock"
+        },
+        {
+          "field": "ULTIMO_CUSTO",
+          "type": "number",
+          "i18n": "Último Custo"
+        },
+        {
+          "field": "CUSTO_MEDIO",
+          "type": "number",
+          "i18n": "Custo médio"
+        },
+        {
+          "field": "COD_UNIDADE",
+          "type": "string",
+          "i18n": "Cód. Unidade"
+        },
+        {
+          "field": "ALTERADO",
+          "type": "string",
+          "i18n": "Alterado"
+        }
+      ]
+    }
+  },
+  "OrcamentoTotaisWidget": {
+    "type": "widgets.HTMLContainer",
+    "opts": {
+      "id": "OrcamentoTotaisWidget",
+      "templates": [
+        "<div>\r\n  <table class=\"table table-striped\">\r\n    <tr>\r\n      <td>\r\n        Total liquido\r\n      </td>\r\n      <td style=\"text-align:end;\">\r\n        {{mathjs \"1 + 138.4\"}} €\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        Total IVA\r\n      </td>\r\n      <td style=\"text-align:end;\">\r\n        {{mathjs \"1 + 27.5\"}} €\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        Total documento\r\n      </td>\r\n      <td style=\"text-align:end;\">\r\n        {{mathjs \"139.4 + 28.5\"}} €\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</div>"
+      ],
+      "title-i18n": "Planeado",
+      "noBox": true
+    }
+  },
+  "PesquisaArtigosGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "PesquisaArtigosGrid",
+      "getUrl": "getArtigosGrid",
+      "buttons": [],
+      "fields": [
+        {
+          "field": "CODIGO_ARM",
+          "type": "hidden"
+        },
+        {
+          "field": "CODIGO_ARM",
+          "type": "string",
+          "i18n": "Armazém"
+        },
+        {
+          "field": "REFERENCIA",
+          "type": "string",
+          "i18n": "Referência"
+        },
+        {
+          "field": "DESIGNACAO1",
+          "type": "string",
+          "i18n": "Descrição"
+        },
+        {
+          "field": "COD_FAMILIA",
+          "type": "hidden"
+        },
+        {
+          "field": "FAMILIA",
+          "type": "string",
+          "i18n": "Família"
+        },
+        {
+          "field": "PRECO1",
+          "type": "number",
+          "i18n": "Preço"
+        },
+        {
+          "field": "COMPRIMENTO",
+          "type": "hidden"
+        },
+        {
+          "field": "LARGURA",
+          "type": "hidden"
+        },
+        {
+          "field": "ALTURA",
+          "type": "hidden"
+        },
+        {
+          "field": "PESO_BRUTO",
+          "type": "hidden"
+        }
+      ]
+    }
+  },
+  "RevisoesOrcamentosGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "RevisoesOrcamentosGrid",
+      "getUrl": "getRevOrcamentosGrid",
+      "order": [
+        [
+          4,
+          "desc"
+        ]
+      ],
+      "buttons": [
+        {
+          "name": "read",
+          "icon": "fa fa-fw fa-eye",
+          "btnClass": "btn-info",
+          "tooltip": "Visualizar Orçamento",
+          "action": {
+            "type": "tab",
+            "name": "read",
+            "field": "DIARIO_ANO_NUMDOC"
+          }
+        }
+      ],
+      "fields": [
+        {
+          "field": "DIARIO_ANO_NUMDOC",
+          "type": "hidden"
+        },
+        {
+          "field": "ID",
+          "type": "number",
+          "i18n": "Id Oport."
+        },
+        {
+          "field": "NOME",
+          "type": "string",
+          "i18n": "Nome"
+        },
+        {
+          "field": "ENTI_DESSOCIAL",
+          "type": "string",
+          "i18n": "Entidade"
+        },
+        {
+          "field": "NUM_DOC",
+          "type": "number",
+          "i18n": "Nº Orçamento"
+        },
+        {
+          "field": "DATA_DOC",
+          "type": "date",
+          "i18n": "Data"
+        },
+        {
+          "field": "DESCRICAO",
+          "type": "string",
+          "i18n": "Estado"
+        },
+        {
+          "field": "TOTAL_LIQUIDO",
+          "type": "number",
+          "i18n": "Total"
+        }
+      ]
+    }
+  },
+  "PermissionCreateForm": {
+    "type": "form",
+    "opts": {
+      "id": "PermissionCreateForm",
+      "postUrl": "createPermission",
+      "setsTitle": false,
+      "fields": {
+        "name": {
+          "id": "name",
+          "type": "Text",
+          "label-i18n": "Nome"
+        },
+        "description": {
+          "id": "description",
+          "type": "Text",
+          "label-i18n": "Descrição"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "Nova Permissão",
+          "layout": [
+            "name",
+            "description"
+          ]
+        }
+      ]
+    }
+  },
+  "PermissionForm": {
+    "type": "form",
+    "opts": {
+      "id": "PermissionForm",
+      "getUrl": "getPermissionForm",
+      "postUrl": "savePermissionForm",
+      "setsTitle": true,
+      "fields": {
+        "permissionId": {
+          "id": "permissionId",
+          "type": "Hidden"
+        },
+        "name": {
+          "id": "name",
+          "type": "Text",
+          "label-i18n": "Nome",
+          "validation": {
+            "required": true
+          }
+        },
+        "description": {
+          "id": "description",
+          "type": "Text",
+          "label-i18n": "Descrição"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "",
+          "layout": [
+            "permissionId",
+            [
+              "name"
+            ],
+            [
+              "description"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "PermissionGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "PermissionGrid",
+      "getUrl": "getPermissionGrid",
+      "buttons": [
+        {
+          "name": "deletePermission",
+          "icon": "fa fa-fw fa-trash-o",
+          "btnClass": "btn-danger",
+          "tooltip": "Apagar Perfil",
+          "action": {
+            "type": "api",
+            "url": "deletePermissions",
+            "field": "ID",
+            "text": "delete",
+            "after": "refresh"
+          }
+        },
+        {
+          "name": "editPermission",
+          "icon": "fa fa-fw fa-pencil",
+          "btnClass": "btn-warning",
+          "tooltip": "Editar Perfil",
+          "action": {
+            "type": "tab",
+            "name": "edit",
+            "field": "ID"
+          }
+        }
+      ],
+      "order": [
+        [
+          0,
+          "asc"
+        ]
+      ],
+      "fields": [
+        {
+          "field": "ID",
+          "type": "hidden"
+        },
+        {
+          "field": "NAME",
+          "type": "string",
+          "i18n": "Nome"
+        },
+        {
+          "field": "DESCRICAO",
+          "type": "string",
+          "i18n": "Descrição"
+        }
+      ]
+    }
+  },
+  "RoleCreateForm": {
+    "type": "form",
+    "opts": {
+      "id": "RoleCreateForm",
+      "postUrl": "createRole",
+      "setsTitle": false,
+      "fields": {
+        "do_arm": {
+          "id": "do_arm",
+          "type": "Select",
+          "label-i18n": "Do Armazém"
+        },
+        "ao_arm": {
+          "id": "ao_arm",
+          "type": "Select",
+          "label-i18n": "ao Armazém"
+        },
+        "da_referencia": {
+          "id": "da_referencia",
+          "type": "Select",
+          "label-i18n": "De Referência"
+        },
+        "a_referencia": {
+          "id": "a_referencia",
+          "type": "Select",
+          "label-i18n": "à Referência"
+        },
+        "do_depart": {
+          "id": "do_depart",
+          "type": "Select",
+          "label-i18n": "De Departamento"
+        },
+        "ao_depart": {
+          "id": "ao_depart",
+          "type": "Select",
+          "label-i18n": "ao Departamento"
+        },
+        "da_familia": {
+          "id": "da_familia",
+          "type": "Select",
+          "label-i18n": "Da Família"
+        },
+        "a_familia": {
+          "id": "a_familia",
+          "type": "Select",
+          "label-i18n": "à Família"
+        },
+        "do_grupo": {
+          "id": "do_grupo",
+          "type": "Select",
+          "label-i18n": "Do Grupo"
+        },
+        "ao_grupo": {
+          "id": "ao_grupo",
+          "type": "Select",
+          "label-i18n": "ao Grupo"
+        },
+        "da_localizacao": {
+          "id": "da_localizacao",
+          "type": "Select",
+          "label-i18n": "Da Localização"
+        },
+        "a_localizacao": {
+          "id": "a_localizacao",
+          "type": "Select",
+          "label-i18n": "à Localização"
+        },
+        "do_tipo": {
+          "id": "do_tipo",
+          "type": "Select",
+          "label-i18n": "Do Tipo"
+        },
+        "ao_tipo": {
+          "id": "ao_tipo",
+          "type": "Select",
+          "label-i18n": "ao Tipo"
+        },
+        "limpar": {
+          "id": "limpar",
+          "type": "Button",
+          "label-i18n": "Limpar"
+        },
+        "pesquisar": {
+          "id": "pesquisar",
+          "type": "Button",
+          "label-i18n": "Pesquisar"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "Novo Perfil",
+          "layout": [
+            [
+              "do_arm",
+              "ao_arm",
+              "da_referencia",
+              "a_referencia"
+            ],
+            [
+              "do_depart",
+              "ao_depart",
+              "da_familia",
+              "a_familia"
+            ],
+            [
+              "do_grupo",
+              "ao_grupo",
+              "da_localizacao",
+              "a_localizacao"
+            ],
+            [
+              "do_tipo",
+              "ao_tipo",
+              "limpar",
+              "pesquisar"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+
+  "LancamentoForm": {
+    "type": "form",
+    "opts": {
+      "id": "LancamentoForm",
+      "postUrl": "createLancamento",
+      "setsTitle": false,
+      "fields": {
+        "do_arm": {
+          "id": "do_arm",
+          "type": "Select",
+          "label-i18n": "Do Armazém"
+        },
+        "ao_arm": {
+          "id": "ao_arm",
+          "type": "Select",
+          "label-i18n": "ao Armazém"
+        },
+        "da_referencia": {
+          "id": "da_referencia",
+          "type": "Select",
+          "label-i18n": "De Referência"
+        },
+        "a_referencia": {
+          "id": "a_referencia",
+          "type": "Select",
+          "label-i18n": "à Referência"
+        },
+        "do_depart": {
+          "id": "do_depart",
+          "type": "Select",
+          "label-i18n": "De Departamento"
+        },
+        "ao_depart": {
+          "id": "ao_depart",
+          "type": "Select",
+          "label-i18n": "ao Departamento"
+        },
+        "da_familia": {
+          "id": "da_familia",
+          "type": "Select",
+          "label-i18n": "Da Família"
+        },
+        "a_familia": {
+          "id": "a_familia",
+          "type": "Select",
+          "label-i18n": "à Família"
+        },
+        "do_grupo": {
+          "id": "do_grupo",
+          "type": "Select",
+          "label-i18n": "Do Grupo"
+        },
+        "ao_grupo": {
+          "id": "ao_grupo",
+          "type": "Select",
+          "label-i18n": "ao Grupo"
+        },
+        "da_localizacao": {
+          "id": "da_localizacao",
+          "type": "Select",
+          "label-i18n": "Da Localização"
+        },
+        "a_localizacao": {
+          "id": "a_localizacao",
+          "type": "Select",
+          "label-i18n": "à Localização"
+        },
+        "do_tipo": {
+          "id": "do_tipo",
+          "type": "Select",
+          "label-i18n": "Do Tipo"
+        },
+        "ao_tipo": {
+          "id": "ao_tipo",
+          "type": "Select",
+          "label-i18n": "ao Tipo"
+        },
+        "limpar": {
+          "id": "limpar",
+          "type": "Button",
+          "label-i18n": "Limpar"
+        },
+        "pesquisar": {
+          "id": "pesquisar",
+          "type": "Button",
+          "label-i18n": "Pesquisar"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "Novo Perfil",
+          "layout": [
+            [
+              "do_arm",
+              "ao_arm",
+              "da_referencia",
+              "a_referencia"
+            ],
+            [
+              "do_depart",
+              "ao_depart",
+              "da_familia",
+              "a_familia"
+            ],
+            [
+              "do_grupo",
+              "ao_grupo",
+              "da_localizacao",
+              "a_localizacao"
+            ],
+            [
+              "do_tipo",
+              "ao_tipo",
+              "limpar",
+              "pesquisar"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+
+  "RoleForm": {
+    "type": "form",
+    "opts": {
+      "id": "RoleForm",
+      "getUrl": "getRoleForm",
+      "postUrl": "saveRoleForm",
+      "setsTitle": true,
+      "fields": {
+        "roleId": {
+          "id": "roleId",
+          "type": "Hidden"
+        },
+        "name": {
+          "id": "name",
+          "type": "Text",
+          "label-i18n": "Nome",
+          "validation": {
+            "required": true
+          }
+        },
+        "description": {
+          "id": "description",
+          "type": "Text",
+          "label-i18n": "Descrição"
+        },
+        "permissionSelect": {
+          "id": "permissionSelect",
+          "type": "Select",
+          "searchUrl": "getRolePermissionSelect",
+          "label-i18n": "Permissões",
+          "fields": [
+            "ID",
+            "NAME",
+            "DESCRICAO"
+          ],
+          "valueField": "ID",
+          "searchFields": [
+            "NAME",
+            "DESCRICAO"
+          ],
+          "resultsTemplate": "<div><div><b>{{NAME}}</b></div><div>{{DESCRICAO}}</div></div>",
+          "selectedTemplate": "<div>{{NAME}}</div>",
+          "allowNull": true,
+          "ignoreChange": true
+        },
+        "addPermission": {
+          "id": "addPermission",
+          "type": "Button",
+          "lower": true,
+          "text-i18n": "Adicionar Permissão",
+          "action": "addPermission",
+          "binds": [
+            {
+              "to": "permissionSelect",
+              "value": null,
+              "do": "disable"
+            }
+          ]
+        },
+        "permissions": {
+          "id": "permissions",
+          "type": "Sortable",
+          "render": "<div><b>{{NAME}}</b></div><div>{{DESCRICAO}}</div>"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "views.RolesView.components.UserForm.details",
+          "layout": [
+            "roleId",
+            [
+              "name"
+            ],
+            [
+              "description"
+            ],
+            [
+              "permissionSelect",
+              "addPermission"
+            ],
+            [
+              "permissions",
+              false
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "RoleGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "RoleGrid",
+      "getUrl": "getRoleGrid",
+      "buttons": [
+        {
+          "name": "deleteRole",
+          "icon": "fa fa-fw fa-trash-o",
+          "btnClass": "btn-danger",
+          "tooltip": "Apagar Perfil",
+          "action": {
+            "type": "api",
+            "url": "deleteRoles",
+            "field": "ID",
+            "text": "delete",
+            "after": "refresh"
+          }
+        },
+        {
+          "name": "editRole",
+          "icon": "fa fa-fw fa-pencil",
+          "btnClass": "btn-warning",
+          "tooltip": "Editar Perfil",
+          "action": {
+            "type": "tab",
+            "name": "edit",
+            "field": "ID"
+          }
+        }
+      ],
+      "order": [ [ 4, "desc" ] ],
+      "fields": [
+        {
+          "field": "CODIGO_ARM",
+          "type": "number",
+          "i18n": "Arm."
+        },
+        {
+          "field": "REFERENCIA",
+          "type": "string",
+          "i18n": "Referência"
+        },
+        {
+          "field": "DESCRICAO",
+          "type": "string",
+          "i18n": "Descrição"
+        },
+        {
+          "field": "COD_LOCALIZACAO",
+          "type": "string",
+          "i18n": "Cód. Localização"
+        },
+        {
+          "field": "COR",
+          "type": "string",
+          "i18n": "Cor"
+        },
+        {
+          "field": "TAMANHO",
+          "type": "string",
+          "i18n": "Cód. Tamanho"
+        },
+        {
+          "field": "STOCK_ATUAL",
+          "type": "number",
+          "i18n": "Stock Atual"
+        },
+        {
+          "field": "STOCK_CONTAGEM",
+          "type": "number",
+          "i18n": "Contagem Stock"
+        },
+        {
+          "field": "ULTIMO_CUSTO",
+          "type": "number",
+          "i18n": "Último Custo"
+        },
+        {
+          "field": "CUSTO_MEDIO",
+          "type": "number",
+          "i18n": "Custo médio"
+        },
+        {
+          "field": "COD_UNIDADE",
+          "type": "string",
+          "i18n": "Cód. Unidade"
+        },
+        {
+          "field": "ALTERADO",
+          "type": "string",
+          "i18n": "Alterado"
+        }
+      ]
+    }
+  },
+  "UserForm": {
+    "type": "form",
+    "opts": {
+      "id": "UserForm",
+      "getUrl": "getUserForm",
+      "postUrl": "postUserForm",
+      "setsTitle": true,
+      "fields": {
+        "userId": {
+          "id": "userId",
+          "type": "Hidden"
+        },
+        "roleSelect": {
+          "id": "roleSelect",
+          "type": "Select",
+          "searchUrl": "getUserRoleSelect",
+          "label-i18n": "views.UsersView.components.UserForm.roles",
+          "fields": [
+            "ID",
+            "NAME",
+            "DESCRICAO"
+          ],
+          "valueField": "ID",
+          "searchFields": [
+            "NAME",
+            "DESCRICAO"
+          ],
+          "resultsTemplate": "<div><div><b>{{NAME}}</b></div><div>{{DESCRICAO}}</div></div>",
+          "selectedTemplate": "<div>{{NAME}}</div>",
+          "allowNull": true,
+          "ignoreChange": true
+        },
+        "addRole": {
+          "id": "addRole",
+          "type": "Button",
+          "lower": true,
+          "text-i18n": "views.UsersView.components.UserForm.addRole",
+          "action": "addRole",
+          "onChange": "bananana"
+        },
+        "roles": {
+          "id": "roles",
+          "type": "Sortable",
+          "render": "<div><b>{{NAME}}</b> - {{DESCRICAO}}</div>"
+        },
+        "rissol": {
+          "id": "rissol",
+          "type": "Text",
+          "text-i18n": "views.UsersView.components.UserForm.addRole",
+          "binds": [
+            {
+              "to": "rissol2",
+              "value": "papa",
+              "do": "hide"
+            }
+          ]
+        },
+        "rissol2": {
+          "id": "rissol2",
+          "type": "Text",
+          "text-i18n": "views.UsersView.components.UserForm.addRole"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "views.UsersView.components.UserForm.details",
+          "layout": [
+            "userId",
+            [
+              "rissol"
+            ],
+            [
+              "rissol2"
+            ],
+            [
+              "roleSelect",
+              "addRole"
+            ],
+            "roles"
+          ]
+        }
+      ]
+    }
+  },
+  "UserGrid": {
+    "type": "grid",
+    "opts": {
+      "id": "UserGrid",
+      "getUrl": "getUserGrid",
+      "buttons": [
+        {
+          "name": "editUser",
+          "icon": "fa fa-fw fa-pencil",
+          "btnClass": "btn-warning",
+          "tooltip": "views.UsersView.components.UserGrid.edit",
+          "action": {
+            "type": "tab",
+            "name": "edit",
+            "field": "CODIGO_ARM"
+          }
+        }
+      ],
+      "order": [
+        [
+          4,
+          "desc"
+        ]
+      ],
+      "fields": [
+        {
+          "field": "CODIGO_ARM",
+          "type": "number",
+          "i18n": "Arm."
+        },
+        {
+          "field": "REFERENCIA",
+          "type": "string",
+          "i18n": "Referência"
+        },
+        {
+          "field": "DESCRICAO",
+          "type": "string",
+          "i18n": "Descrição"
+        },
+        {
+          "field": "COD_LOCALIZACAO",
+          "type": "string",
+          "i18n": "Cód. Localização"
+        },
+        {
+          "field": "COR",
+          "type": "string",
+          "i18n": "Cor"
+        },
+        {
+          "field": "TAMANHO",
+          "type": "string",
+          "i18n": "Cód. Tamanho"
+        },
+        {
+          "field": "STOCK_ATUAL",
+          "type": "number",
+          "i18n": "Stock Atual"
+        },
+        {
+          "field": "STOCK_CONTAGEM",
+          "type": "number",
+          "i18n": "Contagem Stock"
+        },
+        {
+          "field": "ULTIMO_CUSTO",
+          "type": "number",
+          "i18n": "Último Custo"
+        },
+        {
+          "field": "CUSTO_MEDIO",
+          "type": "number",
+          "i18n": "Custo médio"
+        },
+        {
+          "field": "COD_UNIDADE",
+          "type": "string",
+          "i18n": "Cód. Unidade"
+        },
+        {
+          "field": "ALTERADO",
+          "type": "string",
+          "i18n": "Alterado"
+        }
+      ]
+    }
+  }
+}

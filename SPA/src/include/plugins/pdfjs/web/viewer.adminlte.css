@@ -1,0 +1,303 @@
+.adminlte .splitToolbarButton > button,
+.adminlte .toolbarButton,
+.adminlte .toolbarField,
+.adminlte .dropdownToolbarButton,
+.adminlte .dropdownToolbarButton > select {
+  border-radius: 0 !important;
+}
+
+.adminlte #toolbarContainer, 
+.adminlte #toolbarSidebar, 
+.adminlte .findbar, 
+.adminlte .secondaryToolbar {
+  background-image: none;
+  background-color: rgb(233, 233, 233);
+}
+
+.adminlte .dropdownToolbarButton > select > option {
+  background-color: transparent;
+}
+
+/* Fullscreen fa-bars */
+html[dir="ltr"] .adminlte #sidebarToggle.toolbarButton::before {
+  content: '\f0c9';
+  font-family: 'FontAwesome';
+  font-size: 18px;
+  width: 16px;
+  text-align: center;
+}
+
+/* Fullscreen fa-refresh */
+.adminlte .toolbarButton.reloadPDF::before,
+.adminlte .secondaryToolbarButton.reloadPDF::before {
+  content: '\f021';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* Fullscreen fa-search */
+.adminlte #viewFind.toolbarButton::before {
+  content: '\f002';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+}
+
+/* Fullscreen fa-arrows-alt */
+.adminlte .toolbarButton.presentationMode::before,
+.adminlte .secondaryToolbarButton.presentationMode::before {
+  content: '\f0b2';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* Print  fa-print */
+.adminlte .toolbarButton.print::before, 
+.adminlte .secondaryToolbarButton.print::before {
+  content: '\f02f';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* Page up  fa-level-up fa-flip-horizontal */
+html[dir="ltr"] .adminlte .toolbarButton.pageUp::before {
+  content: '\f148';
+  font-family: 'FontAwesome';
+  font-size: 18px;
+  transform: scale(-1, 1);
+  width: 16px;
+  text-align: center;
+}
+
+/* Page down  fa-level-down */
+html[dir="ltr"] .adminlte .toolbarButton.pageDown::before {
+  content: '\f149';
+  font-family: 'FontAwesome';
+  font-size: 18px;
+  width: 16px;
+  text-align: center;
+}
+
+/* Zoom out  fa-minus */
+.adminlte .toolbarButton.zoomOut::before {
+  content: '\f068';
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* Zoom in  fa-plus */
+.adminlte .toolbarButton.zoomIn::before {
+  content: '\f067';
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/*  fa-download */
+.adminlte .toolbarButton.download::before, 
+.adminlte .secondaryToolbarButton.download::before {
+  content: '\f019';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/*  fa-bookmark */
+.adminlte .toolbarButton.bookmark::before, 
+.adminlte .secondaryToolbarButton.bookmark::before {
+  content: '\f02e';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+/*   fa-angle-double-right */
+html[dir="ltr"] .adminlte #secondaryToolbarToggle.toolbarButton::before {
+  content: '\f101';
+  font-family: 'FontAwesome';
+  font-size: 18px;
+  width: 16px;
+  text-align: center;
+}
+
+.adminlte .dropdownToolbarButton {    
+  background: none;
+}
+
+.adminlte .dropdownToolbarButton::before {    
+  right: 3px;
+  top: 6px;
+  content: '\f0dc';
+  font-family: 'FontAwesome';
+  font-size: 10px;
+  width: 16px;
+  text-align: center;
+  position: absolute;
+  pointer-events: none;
+}
+
+.adminlte .secondaryToolbarButton.firstPage::before {
+  content: '\f048';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  transform: rotate(90deg);
+  line-height: 16px;
+}
+.adminlte .secondaryToolbarButton.lastPage::before {
+  content: '\f051';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  transform: rotate(90deg);
+  line-height: 16px;
+}
+.adminlte .secondaryToolbarButton.rotateCw::before {
+  content: '\f01e';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+.adminlte .secondaryToolbarButton.rotateCcw::before {
+  content: '\f0e2';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+.adminlte .secondaryToolbarButton.handTool::before {
+  content: '\f256';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+.adminlte #viewThumbnail.toolbarButton::before {
+  content: '\f009';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+html[dir="ltr"] .adminlte #viewOutline.toolbarButton::before {
+  content: '\f03a';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+.adminlte #viewAttachments.toolbarButton::before {
+  content: '\f0c6';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+html[dir="ltr"] .adminlte .toolbarButton.findPrevious::before {
+  content: '\f053';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+html[dir="ltr"] .adminlte .toolbarButton.findNext::before {
+  content: '\f054';
+  font-family: 'FontAwesome';
+  font-size: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+}
+
+.adminlte .toolbarField {
+  color: rgb(51, 51, 51);
+}
+
+.adminlte .outlineItem > a, 
+.adminlte .attachmentsItem > button {
+  color: rgb(51, 51, 51);
+}
+
+.adminlte .dropdownToolbarButton > select {
+  color: rgb(51, 51, 51);
+}
+
+.adminlte .toolbarLabel {
+  color: black;
+}
+.adminlte .doorHanger, 
+.adminlte .doorHangerRight {
+  border-radius: 0;
+}
+.adminlte .thumbnailSelectionRing {
+  border-radius: 0;
+}
+
+.adminlte .toolbarButton, 
+.adminlte .dropdownToolbarButton, 
+.adminlte .secondaryToolbarButton, 
+.adminlte .overlayButton {
+  color: rgb(51, 51, 51);
+}
+
+body.adminlte {
+  background-color: rgb(240, 240, 240);
+  background-image: none;
+}
+
+.adminlte .pdfViewer .page {
+  border: none;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75);
+  margin: 1px auto 10px auto;
+}
+ 
+.adminlte .outlineItemToggler:hover, 
+.adminlte .outlineItemToggler:hover + a, 
+.adminlte .outlineItemToggler:hover ~ .outlineItems, 
+.adminlte .outlineItem > a:hover, 
+.adminlte .attachmentsItem > button:hover {
+  border-radius: 0;
+}
+
+.adminlte .toolbarButton:hover, 
+.adminlte .toolbarButton:focus, 
+.adminlte .dropdownToolbarButton, 
+.adminlte .overlayButton, 
+.adminlte .secondaryToolbarButton:hover, 
+.adminlte .secondaryToolbarButton:focus {
+  border-radius: 0;
+}
+
+

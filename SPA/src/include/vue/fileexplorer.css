@@ -1,0 +1,236 @@
+
+.fe-file-explorer {
+  color: #555;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.fe-main-window {
+  background-color: rgba(245,245,245,1);
+  box-shadow: 1px 1px 4px 0px rgba(220,220,220,1);
+  border: 1px solid rgba(220,220,220,1);
+  padding: 5px;
+}
+.fe-action-bar {
+  margin: 5px;
+}
+.fe-nav-bar {
+  margin: 5px;
+  padding: 5px 0;
+}
+.fe-nav-bar > input {
+  font-size: 12px;
+  line-height: 1.5;
+  height: 22px;
+  border: 1px solid rgba(220,220,220,1);
+  box-sizing: border-box;
+  padding: 1px 5px 3px 5px;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: inline-block;
+  width: calc( 100% - 160px );
+}
+.fe-path-edit {
+  margin-left: 5px;
+}
+.fe-breadcrumb {
+  display: inline-block;
+}
+.fe-crumb {
+  cursor: pointer;
+}
+.fe-crumb:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.fe-folder {
+  background-color:white;
+  overflow: auto;
+  border: 1px solid rgba(220,220,220,1);
+ /* padding: 5px;*/
+  margin: 5px;
+  position: relative;
+  height: 400px;/*calc( 100% - 80px );*/
+}
+.fe-files {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.fe-pages {
+  text-align: center;
+  width: 100%;
+  margin: 5px 0;
+}
+.fe-pages > li {
+  display: inline-block;
+}
+.fe-select-controls {
+  background-color: white;
+  padding: 5px;
+  box-shadow: 1px 1px 4px 0px rgba(220,220,220,1);
+}
+.fe-list-files {
+  width: 100%;
+}
+.fe-list-files > tr > th {
+  white-space: nowrap;
+}
+.fe-list-files > tr > th > span {
+  vertical-align: middle;
+}
+.fe-list-files th.sortable {
+  cursor: pointer;
+}
+.fe-order {
+  color: #DDD;
+}
+.asc > .fe-order > .fa-sort-up {
+  color: #000;
+}
+.desc > .fe-order > .fa-sort-down {
+  color: #000;
+}
+.fe-list-files td {
+  white-space: nowrap;
+}
+.fe-list-icon.min-width {
+  width: 1px;
+  white-space: nowrap;
+}
+.fe-list-item {
+  cursor: pointer;
+  user-select: none;
+}
+.fe-list-item.selected {
+  background-color: rgba(220,220,220,1);
+}
+.fe-list-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.fe-tiles-item {
+  margin: 5px;
+  padding: .5em;
+  border: 1px solid transparent;
+  width: 138px;
+  height: 4em;
+  float: left;
+  cursor: pointer;
+  user-select: none;
+}
+.fe-tiles-item:hover {
+  box-shadow: 1px 1px 4px 0px rgba(240,240,240,1);
+}
+.fe-tiles-item:hover > .fe-tiles-icon {
+  color: #888;
+}
+.fe-tiles-item.selected {
+  position: relative;
+  border: 1px solid rgba(220,220,220,1);
+  box-shadow:  1px 1px 4px 0px rgba(220,220,220,1);
+}
+.fe-tiles-item.selected:before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent #777 #777 transparent;
+  bottom: 0;
+  right: 0;
+}
+.fe-tiles-item.selected:after {
+  position: absolute;
+  content: "\f00c";
+  color: #fff;
+  font-size: 16px;
+  font-family: FontAwesome;
+  bottom: 0;
+  right: 5px;
+}
+.fe-tiles-item > .fe-tiles-icon {
+  float: left;
+  font-size: 2em;
+  height: 40px;
+  width: 40px;
+}
+.fe-tiles-item > .fe-desc {
+  height: 40px;
+  width: 82px;
+  float: right;
+}
+.fe-desc-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.fe-desc-detail {
+  color: #777;
+}
+
+.fe-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(230,230,230,.4);
+}
+
+.fe-sig {
+  border: 5px solid #333;
+  border-radius: 30px;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+}
+
+.fe-dropdown {
+  position: relative;
+}
+.fe-dropdown > .fe-dropper.open {
+  z-index: 6;
+  position: relative;
+  border-bottom-width: 0px;
+}
+.fe-dropdown > .fe-dropped {
+  position: absolute;
+  margin-top: -1px;
+  right: 0;
+  z-index: 5;
+  padding: 5px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  white-space: nowrap;
+  display: none;
+}
+.fe-dropdown > .fe-dropper.open + .fe-dropped {
+  display: block;
+}
+
+
+@keyframes pulsate {
+  0% {
+    transform: scale(.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}

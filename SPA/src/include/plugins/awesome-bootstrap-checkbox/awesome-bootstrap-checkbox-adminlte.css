@@ -1,0 +1,16 @@
+.adminlte .checkboxb label::before {
+  border-radius: 0px;
+}
+.adminlte .checkboxb > *:hover {
+  cursor: pointer;
+}
+.adminlte .radio label, .checkboxb label {
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.adminlte .checkboxb input[type="checkbox"], 
+.adminlte .checkboxb input[type="radio"] {
+  margin: 0px 0 0;
+}

@@ -1,0 +1,317 @@
+.rsel-field {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.rsel-fields-list {
+  margin: 10px 0;
+}
+
+.rsel-display-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.rsel-display-container > img {
+  width: 100%;
+}
+.rsel-display-container > img.fg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rsel-display-col {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+.rsel-field:hover {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+
+.rsel-field-rect {
+  position: relative;
+  padding: 5px 30px 5px 30px;
+}
+
+.rsel-field-rect:hover {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+
+.rsel-field-rect.selected {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+  background-color: #4685f7;
+  color: white;
+}
+.rsel-field-rect.selected * {
+  color: white;
+}
+
+.rsel-field > .rsel-field-inputs {
+  display:inline-flex;
+  width: 100%;
+}
+
+.rsel-field > .rsel-field-inputs > input[type="text"] ,
+.rsel-field > .rsel-field-inputs > select ,
+.rsel-field-rect-input[type="text"] {
+  margin-right: 3px;
+  background-color: transparent;
+  border-style: solid;
+  border-color:  #aaa;
+  border-width: 0 0 2px 0;
+  padding: 0 5px 0 5px;
+  transition: border-color .2s ease;
+}
+.rsel-field > .rsel-field-inputs > input[type="text"]:focus ,
+.rsel-field-rect-input[type="text"]:focus {
+  outline: none;
+  border-color:  #0d47a1;
+}
+.rsel-field-rect-input {
+  width: 100%;
+}
+textarea.rsel-field-rect-input {
+  resize: vertical;
+}
+
+.rsel-bin {
+  cursor: pointer;
+  color: #ccc;
+  margin: 4px;
+}
+.rsel-bin:hover {
+  color: #ff4444;
+}
+
+.rsel-field-rect > .rsel-remove ,
+.rsel-field-rect > .rsel-edit {
+  cursor: pointer;
+  color: #ccc;
+  margin: 4px;
+  z-index: 1;
+  position: absolute;
+}
+.rsel-field-rect > .rsel-edit {
+  left: 5px;
+}
+.rsel-field-rect > .rsel-remove {
+  right: 5px;
+}
+
+.rsel-field-rect > .rsel-remove:hover {
+  color: #ff4444;
+}
+.rsel-field-rect > .rsel-edit:hover {
+  color: #0d47a1;
+}
+
+.rsel-hue-picker {
+  display: inline-block;
+}
+
+.rsel-hue-picker .sp-replacer{
+  border-width: 0;
+  padding: 1px;
+}
+.rsel-hue-picker .sp-preview{
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+.rsel-hue-picker .sp-dd{
+  display: none;
+}
+
+.rsel-area { 
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2); 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 100%;
+  right: 100%;
+}
+
+.sp-container {
+  border: 1px solid #ddd;
+  background-color: white;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+.sp-replacer {
+  border: 1px solid #ddd;
+  background-color: transparent;
+}
+.sp-replacer:hover {
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+.sp-replacer.sp-active {
+  border-color: #ddd;
+  border-bottom-color: transparent;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn-soft {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+  color: #777;
+}
+.btn-soft:hover {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+
+.rsel-adding-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(200,200,200,.3);
+  z-index: 5;
+}
+
+.rsel-adding-overlay-cancel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+.rsel-adding-overlay-cancel::before {
+  position: absolute;
+  z-index: 4;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 50px;
+  border-style: solid;
+  border-color: rgba(150,150,150,.4) transparent transparent rgba(150,150,150,.4) ;
+}
+.rsel-adding-overlay-cancel > i {
+  font-size: 28px;
+  margin: 12px 15px;
+  z-index: 5;
+  position: absolute;
+  cursor: pointer;
+}
+.rsel-adding-overlay-cancel > i:hover {
+  color: #ff4444;
+}
+.rsel-rect.active {
+  cursor: pointer;
+}
+.rsel-rect:not(.active) {
+  pointer-events: none;
+}
+.rsel-rect.selected {
+  border-color: #084ac1!important;
+}
+.rsel-rect.selected > .rsel-rect-handle{
+  display: block;
+  z-index: 5;
+}
+.rsel-rect-handle {
+  position: absolute;
+  display: none;
+}
+.rsel-rect-handle.rsel-rect-resize-handle {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #084ac1;
+  background-color: #4685f7;
+}
+.rsel-rect-handle.s {
+  bottom: -5px;
+  left: calc( 50% - 4px );
+  cursor: ns-resize;
+}
+.rsel-rect-handle.se {
+  right: -5px;
+  bottom: -5px;
+  cursor: nwse-resize;
+}
+.rsel-rect-handle.e {
+  top: calc( 50% - 4px );
+  right: -5px;
+  cursor: ew-resize;
+}
+.rsel-rect-handle.ne {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+.rsel-rect-handle.n {
+  top: -5px;
+  left: calc( 50% - 4px );
+  cursor: ns-resize;
+}
+.rsel-rect-handle.nw {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+.rsel-rect-handle.w {
+  top: calc( 50% - 4px );
+  left: -5px;
+  cursor: ew-resize;
+}
+.rsel-rect-handle.sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+.rsel-rect-handle.move {
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: move;
+}
+
+.rsel-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(230,230,230,.4);
+}
+
+.rsel-sig {
+  border: 5px solid #333;
+  border-radius: 30px;
+  font-size: 30px;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+
+  animation: rsel-pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes rsel-pulsate {
+  0% {
+    transform: scale(.5);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

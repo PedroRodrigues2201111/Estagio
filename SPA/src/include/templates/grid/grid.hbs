@@ -1,0 +1,401 @@
+{{#*inline "base"}}
+  {{#if controls}}
+    <div class="grid-status-bar">
+      {{#if search}}
+        <div class="grid-search pull-left">
+          <input class="form-text form-control" type="text" data-i18n="[placeholder]app.grid.search"
+            placeholder="search" style="height:22px" />
+        </div>
+      {{/if}}
+      {{#if controls.copyPrompt}}
+        <div class="grid-copy-prompt pull-left hidden-xs">
+          <i class="fa fa-copy"></i>
+          <small data-i18n="app.grid.copy-prompt"></small>
+        </div>
+      {{/if}}
+
+      <div class="grid-status-buttons">
+
+        {{#if controls.select}}
+          <small class="grid-selects">
+            <span data-i18n="app.grid.select" data-i18n=""></span>
+            <span class="grid-select-options">
+              <span data-i18n="app.grid.select-all" class="grid-select grid-select-all"></span> /
+              <span data-i18n="app.grid.select-none" class="grid-select grid-select-none"></span> /
+              <span data-i18n="app.grid.select-inverse" class="grid-select grid-select-inverse"></span>
+            </span>
+          </small>
+        {{/if}}
+        <div class="grid-control-buttons">
+          <div class="dropdown grid-misc-settings messages-menu" style="display: inline-block">
+            <a aria-expanded="false" href="#" data-toggle="dropdown">
+              <i class="grid-status-button fa fa-gears"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" style="width: auto;">
+              <li>
+                <div style="position: relative; overflow: hidden; width: auto;" class="slimScrollDiv">
+                  <ul class="menu">
+
+                    {{#if controls.textOptions}}
+                      <li data-id="font-size">
+                        <small class="grid-text-options hidden-xs" style="margin-right: 1em;">
+                          <span data-i18n="app.grid.text-options"></span>
+                          <span class="grid-text-options-options">
+                            <i class="fa fa-minus grid-text-mode" data-mode="minus"></i>
+                            /
+                            <i class="fa fa-plus grid-text-mode" data-mode="plus"></i>
+                          </span>
+                        </small>
+                      </li>
+                    {{/if}}
+
+
+                    {{#if controls.selectionModes}}
+                      <li data-id="selection-mode">
+                        <small class="grid-select-modes hidden-xs">
+                          <span data-i18n="app.grid.selection-mode"></span>
+                          <span class="grid-select-mode-options">
+                            {{#if controls.selectionModes.rows }}
+                              <i class="fa fa-th-list grid-select-mode" data-mode="rows"></i> /
+                            {{/if}}
+                            {{#if controls.selectionModes.cells }}
+                              <i class="fa fa-th grid-select-mode" data-mode="cells"></i> /
+                            {{/if}}
+                            {{#if controls.selectionModes.text }}
+                              <i class="fa fa-font grid-select-mode" data-mode="text"></i>
+                            {{/if}}
+                          </span>
+                        </small>
+                      </li>
+                    {{/if}}
+
+                    {{#if rowGroups}}
+                      <li data-id="row-group">
+                        <small class="grid-row-grouping hidden-xs">
+                          <span data-i18n="app.grid.group-by">T:GroupBy</span>
+                          <select>
+                            <option value="none" data-i18n="app.grid.group-none">T:None</option>
+                            {{#each rowGroups}}
+                              <option value="{{.}}" data-i18n="{{getFieldTitle .}}">T:{{.}}</option>
+                            {{/each}}
+                          </select>
+                        </small>
+                      </li>
+                    {{/if}}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          {{#if controls.export}}
+            <div class="dropdown grid-export messages-menu" style="display: inline-block">
+              <a aria-expanded="false" href="#" data-toggle="dropdown">
+                <i class="grid-status-button fa fa-download"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" style="width: auto;">
+                <li>
+                  <div style="position: relative; overflow: hidden; width: auto;" class="slimScrollDiv">
+                    <ul class="menu">
+                      {{!-- 
+                      <li data-id="mhtml"> <i class="fa fa-fw fa-file-code-o"></i><span data-i18n="app.grid.export-mhtml"></span></li> 
+                    
+                      <li data-id="json"> <i class="fa fa-fw fa-file-code-o"></i><span data-i18n="app.grid.export-json"></span></li>  
+                      --}}
+                      <li data-id="xlsx">
+                        <i class="fa fa-fw fa-file-excel-o"></i>
+                        <small data-i18n="app.grid.export-xlsx"></small>
+                      </li>
+                      <li data-id="csv">
+                        <i class="fa fa-fw fa-file-text-o"></i>
+                        <small data-i18n="app.grid.export-csv"></small>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          {{/if}}
+
+          {{#if controls.visibility}}
+            <div class="dropdown grid-vis messages-menu" style="display: inline-block">
+              <a aria-expanded="false" href="#" data-toggle="dropdown">
+                <i class="grid-status-button fa fa-eye"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" style="width: auto;">
+                <li>
+                  <div style="position: relative; overflow: hidden; width: auto;" class="slimScrollDiv">
+                    <ul class="menu">
+
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          {{/if}}
+          {{#if controls.save}}
+            <i class="grid-status-button fa fa-save"></i>
+          {{/if}}
+          {{#if controls.refresh}}
+            <i class="grid-status-button fa fa-refresh"></i>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  <!-- <div class="select-everything hidden" style=";"></div>-->
+  <table
+    class="Grid {{#if no-wrap}}grid-no-wrap {{/if}} {{#if no-checks}}no-checks {{/if}}table table-bordered row-border table-hover table-striped table-condensed">
+  </table>
+  {{/inline}}
+
+  {{#*inline "row"}}
+    <tr>
+      {{#fields}}
+        <td>
+          {{value}}
+        </td>
+      {{/fields}}
+    </tr>
+    {{/inline}}
+
+    {{#*inline "buttons"}}
+      <div class="btn-group" role="group" style="color:white;" aria-label="...">
+        {{~#buttons~}}
+        {{#eq type "link"}}
+          <a {{#unless internal}}target="_blank" {{/unless}} data-btn-name="{{name}}" {{#if tooltip}}
+            data-i18n="[data-balloon]{{tooltip}}" data-balloon-pos="right" {{/if}} href="{{hbs url @row}}"
+            {{#if filename}}download="{{hbs filename @row}}" {{/if}}
+            class="grid-btn btn-flat btn btn-xs{{#each states}}{{#contains values (prop @row field) exclude}} {{class}}{{/contains}}{{/each ~}}
+          {{#each permissions}}{{#eq (prop @permissions @key) false}} {{this}}{{/eq}}{{/each ~}} {{#if btnClass}} {{btnClass}}{{/if}}" style="
+          {{~#if color}}color:{{color}};{{/if~}}
+          {{~#if border}}border-color:{{border}};{{/if~}}
+          {{~#if bgcolor}}background-color:{{bgcolor}};{{/if~}}
+          ">
+            <i class="{{icon}}"></i>
+          </a>
+          {{else}}
+            <button type="button" data-btn-name="{{name}}" {{#if tooltip}} data-i18n="[data-balloon]{{tooltip}}"
+              data-balloon-pos="right" {{/if}} class="grid-btn btn-flat btn btn-xs
+              {{#each states}}
+                {{#contains values (prop @row field) exclude}} 
+                  {{class}}
+                {{/contains}}
+              {{/each ~}}
+              {{~" "~}}
+              {{~permissionClasses permissions @permissions @key ~}}
+              {{#if btnClass}} {{btnClass}}{{/if}}" style="
+              {{~#if color}}color:{{color}};{{/if~}}
+              {{~#if border}}border-color:{{border}};{{/if~}}
+              {{~#if bgcolor}}background-color:{{bgcolor}};{{/if~}}
+            ">
+              <i class="{{icon}}"></i>
+            </button>
+        {{/eq}}
+        {{~/buttons~}}
+      </div>
+      {{/inline}}
+
+      {{#*inline "single_button"}}
+            <button type="button" data-btn-name="{{name}}" {{#if tooltip}} data-i18n="[data-balloon]{{tooltip}}"
+              data-balloon-pos="right" {{/if}} class="grid-btn grid-col-btn btn-flat btn btn-xs
+              {{#each states}}
+                {{#contains values (prop @row field) exclude}} 
+                  {{class}}
+                {{/contains}}
+              {{/each ~}}
+              {{~" "~}}
+              {{~permissionClasses permissions @permissions @key ~}}
+              {{#if btnClass}} {{btnClass}}{{/if}}" style="
+              {{~#if color}}color:{{color}};{{/if~}}
+              {{~#if border}}border-color:{{border}};{{/if~}}
+              {{~#if bgcolor}}background-color:{{bgcolor}};{{/if~}}
+            ">
+             {{content}}
+            </button>
+      {{/inline}}
+      {{#*inline "xlsx_rels"}}
+        {{! /_rels/.rels }}
+        <?xml version="1.0" encoding="UTF-8"?>
+        <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+          <Relationship Id="rId1"
+            Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument"
+            Target="xl/workbook.xml" />
+        </Relationships>
+        {{/inline}}
+
+        {{#*inline "xlsx_workbook_rels"}}
+          {{! /xl/_rels/workbook.xml.rels }}
+          <?xml version="1.0" encoding="UTF-8"?>
+          <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+            <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles"
+              Target="styles.xml" />
+            <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet"
+              Target="worksheets/sheet.xml" />
+          </Relationships>
+          {{/inline}}
+
+          {{#*inline "xlsx_content_types"}}
+            {{! /[Content_Types].xml }}
+            <?xml version="1.0" encoding="UTF-8"?>
+            <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+              <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />
+              <Default Extension="xml" ContentType="application/xml" />
+              <Override PartName="/xl/styles.xml"
+                ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml" />
+              <Override PartName="/xl/workbook.xml"
+                ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml" />
+              <Override PartName="/xl/worksheets/sheet.xml"
+                ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml" />
+            </Types>
+            {{/inline}}
+
+            {{#*inline "xlsx_workbook"}}
+              {{! /xl/workbook.xml }}
+              <?xml version="1.0" encoding="UTF-8"?>
+              <workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+                xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+                <bookViews>
+                  <workbookView activeTab="0" windowWidth="10240" windowHeight="3920" />
+                </bookViews>
+                <sheets>
+                  <sheet name="Sheet" sheetId="1" r:id="rId1" />
+                </sheets>
+              </workbook>
+              {{/inline}}
+
+              {{#*inline "xlsx_styles"}}
+                {{! /xl/styles.xml }}
+                <?xml version="1.0" encoding="UTF-8"?>
+                <styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+                  <numFmts count="1">
+                    <numFmt formatCode="yyyy-mmm-dd h:mm" numFmtId="100" />
+                  </numFmts>
+                  <fonts count="2">
+                    <font>
+                      <b val="0" />
+                      <i val="0" />
+                      <u val="none" />
+                      <color rgb="FF000000" />
+                      <name val="Sans" />
+                      <vertAlign val="baseline" />
+                      <sz val="10" />
+                      <strike val="0" />
+                    </font>
+                    <font>
+                      <b val="1" />
+                      <i val="0" />
+                      <u val="none" />
+                      <color rgb="FF000000" />
+                      <name val="Sans" />
+                      <vertAlign val="baseline" />
+                      <sz val="10" />
+                      <strike val="0" />
+                    </font>
+                  </fonts>
+                  <fills count="2">
+                    <fill>
+                      <patternFill patternType="none" />
+                    </fill>
+                    <fill>
+                      <patternFill patternType="gray125" />
+                    </fill>
+                  </fills>
+                  <borders count="1">
+                    <border diagonalUp="0" diagonalDown="0">
+                      <left style="none">
+                        <color rgb="FFC7C7C7" />
+                      </left>
+                      <right style="none">
+                        <color rgb="FFC7C7C7" />
+                      </right>
+                      <top style="none">
+                        <color rgb="FFC7C7C7" />
+                      </top>
+                      <bottom style="none">
+                        <color rgb="FFC7C7C7" />
+                      </bottom>
+                    </border>
+                  </borders>
+                  <cellStyleXfs count="1">
+                    <xf fontId="0" fillId="0" borderId="0" numFmtId="0">
+                      <alignment horizontal="general" vertical="bottom" wrapText="0" shrinkToFit="0" textRotation="0"
+                        indent="0" />
+                    </xf>
+                  </cellStyleXfs>
+                  <cellXfs count="3">
+                    <xf applyAlignment="1" applyBorder="1" applyFont="1" applyFill="1" applyNumberFormat="1" fontId="0"
+                      fillId="0" borderId="0" numFmtId="0" xfId="0">
+                      <alignment horizontal="general" vertical="bottom" wrapText="0" shrinkToFit="0" textRotation="0"
+                        indent="0" />
+                    </xf>
+                    <xf applyAlignment="1" applyBorder="1" applyFont="1" applyFill="1" applyNumberFormat="1" fontId="0"
+                      fillId="0" borderId="0" numFmtId="100" xfId="0">
+                      <alignment horizontal="general" vertical="bottom" wrapText="0" shrinkToFit="0" textRotation="0"
+                        indent="0" />
+                    </xf>
+                    <xf applyAlignment="1" applyBorder="1" applyFont="1" applyFill="1" applyNumberFormat="1" fontId="1"
+                      fillId="0" borderId="0" numFmtId="0" xfId="0">
+                      <alignment horizontal="general" vertical="bottom" wrapText="0" shrinkToFit="0" textRotation="0"
+                        indent="0" />
+                    </xf>
+                  </cellXfs>
+                </styleSheet>
+                {{/inline}}
+
+                {{#*inline "xlsx_sheet"}}
+                  {{! /xl/worksheets/sheet.xml }}
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+                    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+                    <sheetViews>
+                      <sheetView workbookViewId="0" tabSelected="1">
+                        <pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen" />
+                        <selection pane="bottomLeft" activeCell="A2" sqref="A2" />
+                      </sheetView>
+                    </sheetViews>
+                    <sheetData>
+                      {{#each list as |row index|}}
+                        <row r="{{index}}">
+                          {{#each row as |cell letter| ~}}
+                            {{#eq cell.type "inlineStr"}}
+                              <c r="{{letter}}{{index}}" t="{{cell.type}}">
+                                <is>
+                                  <t>{{cell.value}}</t>
+                                </is>
+                              </c>
+                          {{else eq cell.type "d"}}
+                            <c r="{{letter}}{{index}}" s="1">
+                              <v>{{cell.value}}</v>
+                            </c>
+                          {{else}}
+                            <c r="{{letter}}{{index}}" t="{{cell.type}}" {{#if cell.s}}s="{{cell.s}}" {{/if}}>
+                              <v>{{cell.value}}</v>
+                            </c>
+                            {{/eq}}
+                          {{/each}}
+                        </row>
+                      {{/each}}
+                    </sheetData>
+                  </worksheet>
+                  {{/inline}}
+
+                  {{#if @buttons}}
+                    {{> buttons}}
+                  {{else if @single_button}}
+                    {{> single_button}}
+                  {{else if @xlsx_rels}}
+                    {{> xlsx_rels}}
+                  {{else if @xlsx_workbook_rels}}
+                    {{> xlsx_workbook_rels}}
+                  {{else if @xlsx_content_types}}
+                    {{> xlsx_content_types}}
+                  {{else if @xlsx_styles}}
+                    {{> xlsx_styles}}
+                  {{else if @xlsx_workbook}}
+                    {{> xlsx_workbook}}
+                  {{else if @xlsx_sheet}}
+                    {{> xlsx_sheet}}
+
+                  {{else}}
+                    {{> base}}
+                  {{/if}}

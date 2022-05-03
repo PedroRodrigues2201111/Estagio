@@ -1,0 +1,555 @@
+.Grid .btn-group .btn + .btn,
+.Grid .btn-group .btn + .btn-group,
+.Grid .btn-group .btn-group + .btn,
+.Grid .btn-group .btn-group + .btn-group {
+	margin-left: 0px;
+}
+
+div.table-responsive {
+	max-height: 70vh;
+}
+div.table-responsive > table.Grid > thead,
+div.table-responsive > table.Grid > thead > tr,
+div.table-responsive > table.Grid > thead > tr > th {
+	position: sticky;
+	top: 0;
+	background: white;
+	z-index: 5;
+}
+
+button.grid-btn[data-balloon]:hover,
+a.grid-btn[data-balloon]:hover {
+	z-index: 100 !important;
+}
+button.grid-btn[data-balloon]::after,
+a.grid-btn[data-balloon]::after {
+	margin-bottom: 0px !important;
+	pointer-events: none;
+}
+button.grid-btn[data-balloon]::before,
+a.grid-btn[data-balloon]::before {
+	pointer-events: none;
+}
+
+.grid-no-wrap > tbody {
+	white-space: nowrap;
+}
+
+table.Grid.no-checks tr > *:first-child {
+	display: none;
+}
+
+div.no-pages > div > div > .footwheel {
+	display: none;
+}
+.footwheel {
+	width: 100%;
+}
+.footwheel.sticky {
+	border-top: 1px solid rgb(210, 214, 222);
+}
+.table tr.selected:not(.odd) {
+	background-color: rgba(209, 220, 255, 0.5) !important;
+}
+.table tr.selected:not(.odd) > td:not(.td-selected) {
+	border-color: rgba(203, 211, 239, 0.5) !important;
+}
+.table tr.selected.odd {
+	background-color: rgba(191, 212, 255, 0.5) !important;
+}
+.table tr.selected.odd > td {
+	border-color: rgba(212, 213, 216, 0.5) !important;
+}
+.table tr.selected:not(.odd):hover {
+	background-color: rgba(200, 210, 245, 0.5) !important;
+}
+.table tr.selected:not(.odd):hover > td:not(.td-selected) {
+	border-color: rgba(195, 201, 229, 0.5) !important;
+}
+.table tr.selected.odd:hover {
+	background-color: rgba(181, 202, 245, 0.5) !important;
+}
+.table tr.selected.odd:hover > td:not(.td-selected) {
+	border-color: rgba(202, 203, 206, 0.5) !important;
+}
+.Grid .table * {
+	white-space: nowrap;
+}
+.table th:hover *:not(.grid-filter):not(span) {
+	color: black;
+}
+.table th .grid-filter {
+	height: 100%;
+	color: rgb(170, 170, 170);
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color: rgb(245, 245, 245);
+	padding-top: 9px;
+	padding-bottom: 9px;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	width: 27px;
+	text-align: center;
+}
+.table th::after {
+	color: rgba(170, 170, 170, 1) !important;
+	opacity: 0 !important;
+	transition: opacity 0.2s ease;
+	transition: right 0.2s ease;
+}
+.table th:hover .grid-filter {
+	opacity: 1;
+}
+.table th:hover::after {
+	opacity: 1 !important;
+}
+
+.table tbody.cell-select {
+	cursor: cell;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	border-collapse: collapse;
+}
+
+.table tbody.row-select {
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	border-collapse: collapse;
+}
+
+.panel.filter-container {
+	margin-bottom: 0px;
+}
+
+.grid-status-buttons > * {
+	white-space: nowrap;
+	display: inline-block;
+}
+@media (max-width: 767px) {
+	.grid-status-buttons > * {
+		white-space: nowrap;
+		display: block;
+		margin: 0 !important;
+	}
+	.grid-status-buttons {
+		font-size: 1.2em;
+		position: relative;
+		text-align: left;
+	}
+	.grid-status-buttons > .grid-control-buttons {
+		position: absolute;
+		right: 0;
+		bottom: -4px;
+	}
+}
+.grid-status-bar {
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.grid-status-buttons > .grid-selects {
+	font-weight: bold;
+	color: rgb(128, 128, 128);
+}
+.grid-status-buttons > .grid-selects > .grid-select-options {
+	cursor: default;
+}
+.grid-status-buttons > .grid-selects > .grid-select-options > .grid-select {
+	cursor: pointer;
+}
+.grid-status-buttons
+	> .grid-selects
+	> .grid-select-options
+	> .grid-select:hover {
+	color: black;
+}
+
+.grid-status-button {
+	padding: 0 5px;
+	color: rgb(128, 128, 128);
+	cursor: pointer;
+}
+.grid-status-button:hover {
+	color: black;
+}
+
+.grid-status-bar .dropdown-menu ul li > div {
+	margin-left: 10px;
+}
+
+.adminlte .table .td-selected {
+	background-color: rgba(150, 237, 197, 0.13) !important;
+	border: none !important;
+	border-collapse: none;
+}
+
+.adminlte .table .td-selected.top {
+	border-top: 1px dashed rgb(34, 117, 47) !important;
+}
+.adminlte .table .td-selected.left {
+	border-left: 1px dashed rgb(34, 117, 47) !important;
+}
+.adminlte .table .td-selected.right {
+	border-right: 1px dashed rgb(34, 117, 47) !important;
+}
+.adminlte .table .td-selected.bottom {
+	border-bottom: 1px dashed rgb(34, 117, 47) !important;
+}
+.adminlte .table .td-selected.first-selected-cell {
+	background-color: transparent !important;
+}
+
+.grid-btn {
+	margin-right: 2px !important;
+	margin-left: 2px !important;
+	width: 28px !important;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+		0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+	border: none;
+}
+
+.grid-btn.grid-col-btn {
+	width: calc(100% - 4px) !important;
+}
+
+.grid-status-bar .dropdown-menu {
+	border-radius: 1px;
+	z-index: 30001;
+}
+.grid-status-bar .dropdown-backdrop {
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 30000;
+}
+
+.grid-copy-prompt {
+	padding-left: 10px;
+	color: black;
+}
+
+.grid-copy-prompt > * {
+	display: none;
+}
+
+.adminlte table.dataTable {
+	margin-top: 0px !important;
+}
+
+.select-everything {
+	background-color: rgb(240, 240, 240);
+	font-size: 0.85em;
+	padding: 3px;
+	text-align: center;
+}
+.select-everything.active {
+	background-color: rgb(230, 235, 255);
+}
+
+.select-everything > a {
+	color: black;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.grid-copy-prompt.active > * {
+	display: inline-block;
+	animation-name: copyPrompt;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+@keyframes copyPrompt {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.grid-status-buttons .dropdown.open > a {
+	z-index: 30009;
+	position: relative;
+	background-color: white;
+	border: 1px solid rgb(238, 238, 238);
+	border-bottom: 0px;
+}
+.grid-status-buttons .dropdown.open > a > i {
+	padding: 0 4px;
+}
+.grid-status-buttons .dropdown.open > a:focus {
+	background-color: white;
+}
+.grid-status-buttons .dropdown > ul {
+	margin-top: -2px;
+}
+.grid-status-buttons .dropdown-menu {
+	min-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	border-radius: 2px 0 2px 2px;
+}
+.grid-status-buttons .checkbox {
+	height: 10px;
+}
+.grid-status-buttons .checkbox > label {
+	padding-left: 10px;
+}
+.grid-status-buttons .checkbox > label > span {
+	padding-left: 20px;
+}
+.grid-status-buttons .dropdown-menu .menu {
+	margin: 0px;
+	padding: 0px;
+	list-style: outside none none;
+}
+.grid-status-buttons .dropdown-menu .menu label {
+	margin-right: 10px;
+}
+.grid-status-buttons .dropdown-menu .menu label > span {
+	white-space: nowrap;
+}
+
+.grid-status-buttons .menu {
+	white-space: nowrap;
+}
+.grid-status-buttons .menu > li {
+	font-weight: bold;
+	color: rgb(128, 128, 128);
+	padding: 3px 5px;
+	transition: background-color 0.2s ease;
+}
+.grid-status-buttons .grid-export .menu > li {
+	cursor: pointer;
+}
+.grid-status-buttons .grid-export .menu > li:hover {
+	background-color: rgb(240, 240, 240);
+}
+.grid-status-buttons .menu > li:not(:last-child) {
+	border-bottom: 1px solid rgb(240, 240, 240);
+}
+.grid-status-buttons > .grid-text-options {
+	font-weight: bold;
+	color: rgb(128, 128, 128);
+	margin-right: 1em;
+}
+.grid-status-buttons .grid-select-modes {
+	font-weight: bold;
+	color: rgb(128, 128, 128);
+	margin-right: 1em;
+}
+.grid-text-options-options,
+.grid-status-buttons .grid-select-modes > .grid-select-mode-options {
+	cursor: default;
+}
+.grid-text-mode,
+.grid-status-buttons .grid-select-modes > .grid-select-mode-options > i {
+	/* font-size: 14px;*/
+	cursor: pointer;
+}
+
+.grid-text-mode:hover,
+.grid-status-buttons .grid-select-modes > .grid-select-mode-options > i:hover {
+	color: black;
+}
+.grid-status-buttons
+	.grid-select-modes
+	> .grid-select-mode-options
+	> i.selected {
+	color: rgb(61, 153, 112);
+}
+
+.table th.sorting_asc::after,
+.table th.sorting_desc::after {
+	right: 6px;
+	opacity: 1 !important;
+}
+
+.table th.refresh {
+	text-align: center;
+}
+
+.table th.refresh > i {
+	color: rgba(170, 170, 170, 1);
+	cursor: pointer;
+}
+.table th.refresh > i:hover {
+	color: black;
+}
+
+.table th .grid-filter:hover {
+	color: black;
+}
+.Grid td,
+.Grid th {
+	box-sizing: border-box !important;
+	vertical-align: middle !important;
+}
+
+.filter-boolean .input-group > div {
+	margin: 5px;
+}
+.filter-container > .panel-body > .container {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+table.dataTable td.dt-right {
+	text-align: right;
+}
+table.dataTable td.dt-left {
+	text-align: left;
+}
+table.dataTable td.dt-center {
+	text-align: center;
+}
+.table th > .checkboxb > label,
+.table td > .checkboxb > label {
+	/*margin-bottom: 20px;*/
+	padding-left: 0px;
+}
+
+table.dataTable.table-condensed thead .has-filter.sorting:hover::after,
+table.dataTable.table-condensed thead .has-filter.sorting_asc:hover::after,
+table.dataTable.table-condensed thead .has-filter.sorting_desc:hover::after {
+	top: 0px;
+	right: 27px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	line-height: 1;
+	text-align: center;
+	border-left: 1px solid rgb(239, 239, 239);
+	background: rgba(245, 245, 245, 0.85);
+	width: 27px;
+	height: 100%;
+}
+.hiddenCopyField {
+	pointer-events: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	opacity: 0;
+}
+
+.table.table-hover tbody tr:hover {
+	background-color: rgb(214, 217, 230) !important;
+}
+aside .table tbody tr:hover {
+	background-color: rgba(214, 217, 230, 0.2) !important;
+}
+aside .table tbody tr:hover > td {
+	border-color: inherit;
+}
+.table tbody tr:hover > td {
+	border-color: rgb(205, 210, 220) !important;
+}
+.filter {
+	max-width: 800px;
+	transition: background-color 0.2s ease;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.filter .form-group {
+	margin: 0px;
+}
+.filter:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.fa-btn {
+	font-family: FontAwesome;
+	width: 40px;
+}
+.filter .input-group-addon.pound {
+	width: 43px;
+}
+
+.filter::before {
+	/*content: "";
+	width: 67%;
+	height: 5px;
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgb(223, 223, 223);*/
+}
+.filter .fa-btn {
+	transition: all 0.2s ease;
+	background-color: transparent;
+	border: none;
+	height: 34px;
+}
+.filter > .row {
+	margin-left: 51px;
+}
+.filter .select2 {
+	width: 100% !important;
+}
+.filter .fa-btn:hover {
+	background-color: rgba(255, 0, 0, 0.8);
+	color: white;
+}
+/*
+.filter-container > .panel-body {
+  transition: height 0.2s ease, padding 0.2s ease;
+}
+*/
+.filter-container.collapsed > .panel-body {
+	overflow: hidden;
+	/* padding-top: 0px;
+  padding-bottom: 0px;
+  height: 0px;*/
+}
+
+.filter-container > .panel-heading {
+	cursor: pointer;
+}
+.filter-container > .panel-heading > h3 > .panel-collapse-icon {
+	color: rgb(126, 126, 126);
+}
+
+.filter-container > .panel-heading > h3 > .panel-collapse-icon::after {
+	font-family: FontAwesome;
+	content: "\f068";
+}
+.filter-container.collapsed
+	> .panel-heading
+	> h3
+	> .panel-collapse-icon::after {
+	font-family: FontAwesome;
+	content: "\f067";
+}
+
+.confirm-dialog-btn-confirm,
+.confirm-dialog-btn-abort {
+	min-height: 22px;
+}
+.popover-content {
+	padding: 0px 10px !important;
+}
+.table-condensed {
+	font-size: 14px !important;
+}
+
+.grid-vis ul.menu {
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.grid-vis li > .checkbox {
+	margin: 5px;
+}

@@ -1,0 +1,26 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "PermissionCreateForm",
+		"postUrl": "createPermission",
+		"setsTitle": false,
+		"fields": {
+			"name": {
+				"id": "name",
+				"type": "Text",
+				"label-i18n": "Nome"
+			},
+			"description": {
+				"id": "description",
+				"type": "Text",
+				"label-i18n": "Descrição"
+			}
+		},
+		"tabs": [
+			{
+				"title-i18n": "Nova Permissão",
+				"layout": ["name", "description"]
+			}
+		]
+	}
+}

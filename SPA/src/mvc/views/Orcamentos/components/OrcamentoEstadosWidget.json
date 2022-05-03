@@ -1,0 +1,9 @@
+{
+	"type": "widgets.HTMLContainer",
+	"opts": {
+		"id": "OrcamentoEstadosWidget",
+		"templates": ["<%include:OrcamentoEstadosWidget2.hbs%>"],
+		"title-i18n": "Planeado",
+		"noBox": true
+	}
+}

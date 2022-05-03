@@ -1,0 +1,117 @@
+{
+	"id": "OrcamentosView",
+	"menuIcon": "fa fa-fw fa-files-o",
+	"url": "orcamentos",
+	"default": "list",
+	"urls": {
+		"getOrcamentosGrid": "/api/orcamentos/getOrcamentosGrid",
+		"getOrcamentoForm": "/api/orcamentos/getOrcamentoForm",
+		"getClientesSelect": "/api/orcamentos/getClientesSelect",
+		"getOportunidadesSelect": "/api/orcamentos/getOportunidadesSelect",
+		"getRevOrcamentosGrid": "/api/orcamentos/getRevOrcamentosGrid/{{id}}",
+		"getArtigosGrid": "/api/orcamentos/getArtigosGrid",
+		"saveOrcamentoForm": "/api/orcamentos/saveOrcamentoForm"
+	},
+	"headers": {
+		"list": {
+			"title-i18n": "Orçamentos",
+			"icon": "fa fa-fw fa-files-o",
+			"buttons": [
+				{
+					"id": "CriarOrcamento",
+					"title-i18n": "Novo Orçamento",
+					"icon": "fa fa-fw fa-plus",
+					"action": {
+						"type": "tab",
+						"name": "create"
+					}
+				}
+			]
+		},
+		"create": {
+			"title-i18n": "Novo Orçamento",
+			"icon": "fa fa-fw fa-file-text-o",
+			"buttons": [
+				{
+					"id": "saveNewOrcamento",
+					"title-i18n": "Gravar",
+					"icon": "fa fa-fw fa-floppy-o",
+					"action": {
+						"type": "component",
+						"action": "OrcamentoCreateForm.post",
+						"after": "close"
+					}
+				}
+			]
+		},
+		"edit": {
+			"title-i18n": "Editar Orçamento",
+			"icon": "fa fa-fw fa-file-text-o",
+			"buttons": [
+				{
+					"id": "anulaRevisao",
+					"title-i18n": "Anular Revisão",
+					"icon": "fa fa-fw fa-remove"
+				},
+				{
+					"id": "anulaOrcamento",
+					"title-i18n": "Anular Orçamento",
+					"icon": "fa fa-fw fa-remove"
+				},
+				{
+					"id": "saveEditOrcamento",
+					"title-i18n": "Gravar",
+					"icon": "fa fa-fw fa-floppy-o",
+					"action": {
+						"type": "component",
+						"action": "OrcamentoForm.post",
+						"after": "close"
+					}
+				}
+			]
+		},
+		"revisions": {
+			"title-i18n": "Revisões",
+			"icon": "fa fa-fw fa-list-ol"
+		},
+		"read": {
+			"title-i18n": "Visualizar Orçamento",
+			"icon": "fa fa-fw fa-file-text-o"
+		}
+	},
+	"tabs": [
+		{
+			"title-i18n": "Orçamentos",
+			"id": "list",
+			"cantClose": true,
+			"content-fixed": [[["OrcamentosGrid"]]]
+		},
+		{
+			"title-i18n": "Novo",
+			"defer": true,
+			"id": "create",
+			"content-fixed": [[["OrcamentoCreateForm"]]]
+		},
+		{
+			"title-i18n": "Editar {{DESCRICAO_OPORTUNIDADE}}",
+			"defer": true,
+			"id": "edit",
+			"content-fixed": [[["OrcamentoForm"]]]
+		},
+		{
+			"title-i18n": "Revisões",
+			"defer": true,
+			"id": "revisions",
+			"content-fixed": [[["RevisoesOrcamentosGrid"]]]
+		},
+		{
+			"title-i18n": "Visualizar {{DESCRICAO_OPORTUNIDADE}}",
+			"defer": true,
+			"id": "read",
+			"content-fixed": [[["OrcamentoReadForm"]]]
+		}
+	],
+	"i18n": {
+		"title": "Orçamentos"
+	}
+}

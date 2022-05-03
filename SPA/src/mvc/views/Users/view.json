@@ -1,0 +1,82 @@
+{
+	"id": "UsersView",
+	"menuIcon": "fa fa-fw fa-user",
+	"url": "users",
+	"default": "list",
+	"urls": {
+		"getUserGrid": "/api/users/getUserGrid",
+		"getUserForm": "/api/users/getUserForm",
+		"getUserRoleSelect": "/api/users/getUserRoleSelect",
+		"postUserForm": "/api/users/postUserForm"
+	},
+	"headers": {
+		"list": {
+			"title-i18n": "<%view%>.headers.users",
+			"icon": "fa fa-fw fa-user"
+		},
+		"edit": {
+			"title-i18n": "<%view%>.headers.users",
+			"icon": "fa fa-fw fa-user",
+			"buttons": [
+				{
+					"id": "saveEditUser",
+					"title-i18n": "<%view%>.headers.save",
+					"icon": "fa fa-fw fa-floppy-o",
+					"action": {
+						"type": "component",
+						"action": "UserForm.post",
+						"after": "close"
+					}
+				}
+			]
+		}
+	},
+	"tabs": [
+		{
+			"title-i18n": "<%view%>.tabs.labels.user-list",
+			"id": "list",
+			"cantClose": true,
+			"content-fixed": [[["UserGrid"]]]
+		},
+		{
+			"title-i18n": "<%view%>.tabs.labels.user-edit",
+			"defer": true,
+			"id": "edit",
+			"content-fixed": [[["UserForm"]]]
+		}
+	],
+	"i18n": {
+		"title": "Users",
+		"headers": {
+			"users": "Users",
+			"save": "Save",
+			"remove-user": "Delete User"
+		},
+		"tabs": {
+			"labels": {
+				"user-list": "List",
+				"user-edit": "{{firstName}} {{lastName}}"
+			}
+		},
+		"components": {
+			"UserGrid": {
+				"delete": "Delete User(s)",
+				"edit": "Edit User"
+			},
+			"UserForm": {
+				"firstName": "First Name",
+				"lastName": "Last Name",
+				"findRole": "Find Role",
+				"addRole": "Add Role",
+				"roles": "Roles"
+			}
+		},
+		"common": {
+			"username": "Username",
+			"firstname": "First Name",
+			"lastname": "Last Name",
+			"e-mail": "E-Mail",
+			"creation-date": "Creation Date"
+		}
+	}
+}

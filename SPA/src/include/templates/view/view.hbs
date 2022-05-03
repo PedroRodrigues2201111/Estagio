@@ -1,0 +1,101 @@
+{{#*inline "base"}}
+  <div class="header-wrapper">
+  </div>
+  <div class="view-content{{#if noTabs}} no-tabs{{/if}}">
+  </div>
+{{/inline}}
+
+{{#*inline "content-responsive"}}
+  <div class="box-body" {{#maxWidth}}style="max-width:{{maxWidth}}"{{/maxWidth}}>
+    {{#content-responsive}}
+      <div class="row">
+        {{> content-inner}}
+      </div>
+    {{/content-responsive}}
+  </div>
+{{/inline}}
+
+{{#*inline "content-inner"}}
+  {{#.}}
+    <div class="
+      {{~#xs}}col-xs-{{.}} {{/xs~}}
+      {{~#sm}}col-sm-{{.}} {{/sm~}}
+      {{~#md}}col-md-{{.}} {{/md~}}
+      {{~#lg}}col-lg-{{.}} {{/lg~}}
+      ">
+
+      {{#components}}
+        <div data-component="{{.}}" class=" component"></div>
+      {{/components}}
+    </div>
+  {{/.}}
+{{/inline}}
+
+{{#*inline "content"}}
+  {{#if content-tabs}}
+    {{#getUniqueId}}
+      <div class="nav-tabs-custom content-tabs">
+        <ul id="tablist_{{id}}" class="nav nav-tabs">
+          {{#each content-tabs}}
+            <li class="innerTab{{#eq @index 0}} active{{/eq}}">
+              <a aria-expanded="false"
+                {{#if title-i18n}}data-i18n="{{title-i18n}}"{{/if}}
+                href="#{{@randomId}}_{{escape ../id}}_{{@index}}"
+                data-toggle="tab">{{title}}
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+        <div class="tab-content">
+          {{#each content-tabs}}
+            <div class="tab-pane{{#eq @index 0}} active{{/eq}}" id="{{@randomId}}_{{escape ../id}}_{{@index}}">
+              <div class="box-body">
+                {{> content}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/getUniqueId}}
+  {{else if content-responsive}}
+    {{> content-responsive}}
+  {{else if content-fixed}}
+    {{#content-fixed}}
+      <div class="row">
+        {{#rowFixed}}
+          {{> content-inner}}
+        {{/rowFixed}}
+      </div>
+    {{/content-fixed}}
+  {{/if}}
+  
+{{/inline}}
+
+{{#*inline "row"}}
+  <div class="row">
+    {{#cols}}
+      {{> col}}
+    {{/cols}}
+  </div>
+{{/inline}}
+
+{{#*inline "col"}}
+  <div class="{{#xs}}col-xs-{{xs}} {{/xs}}{{#md}}col-md-{{md}} {{/md}}">
+    {{#component}}
+      <div data-component="{{.}}" class=" component"></div>
+    {{/component}}
+    {{#row}}
+      {{> contentRow}}
+    {{/row}}
+  </div>
+{{/inline}}
+
+{{#if @label}}
+  {{> label}}
+{{else if @tab}}
+  {{> tab}}
+{{else if @content}}
+  {{> content}}
+{{else}}
+  {{> base}}
+{{/if}}

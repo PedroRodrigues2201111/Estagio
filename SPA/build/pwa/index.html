@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ControlServer</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+		<meta
+			http-equiv="cache-control"
+			content="no-cache, must-revalidate, post-check=0, pre-check=0"
+		/>
+
+    <meta name="theme-color" content="#0078b4" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="36x36"
+			href="/assets/icon-36x36.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="48x48"
+			href="/assets/icon-48x48.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="72x72"
+			href="/assets/icon-72x72.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="/assets/icon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="128x128"
+			href="/assets/icon-128x128.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="144x144"
+			href="/assets/icon-144x144.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="194x194"
+			href="/assets/icon-194x194.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="258x258"
+			href="/assets/icon-258x258.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="512x512"
+			href="/assets/icon-512x512.png"
+		/>
+
+    <script>
+      (function() {
+        if ("serviceWorker" in navigator && location.protocol === "https:") {
+          window.addEventListener("load", function() {
+            navigator.serviceWorker.register("./sw.js").then(
+              function(registration) {
+                // Registration was successful
+                console.log(
+                  "ServiceWorker registration successful with scope: ",
+                  registration.scope
+                );
+              },
+              function(err) {
+                // registration failed :(
+                console.log("ServiceWorker registration failed: ", err);
+              }
+            );
+          });
+        }
+      })();
+    </script>
+    <script>
+      window.BUILD_VERSION = "0.0.1 - dev";
+    </script>
+
+    <link rel="icon" sizes="192x192" href="./logos/logo192.png" />
+    <link rel="shortcut icon" sizes="192x192" href="./logos/logo192.png" />
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ControlServer" />
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="ControlServer" />
+    <link rel="apple-touch-icon" href="./logos/logo192.png" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="include/bundle_1646909414670.css" />
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini adminlte">
+    <div class="login">
+      <div class="login-box">
+        <div class="login-logo">
+					<img
+						style="filter: drop-shadow(5px 5px 3px #0000002d)"
+						src="assets/logo.svg"
+						height="180"
+						alt="Logo"
+					/>
+        </div>
+        <div class="login-box-body box running">
+          <div class="login-placeholder">
+            <div>
+              <i class="fa fa-spin fa-refresh"></i
+              ><span data-i18n="app.common.retryConnection">Retry</span>
+            </div>
+          </div>
+
+          <div class="alert alert-danger login-server-error" role="alert">
+            <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+            <span class="msg">Can't connect to server.</span>
+          </div>
+
+					<div class="login-container" style="display: none">
+            <div class="login-form"></div>
+            <div class="alert alert-danger hidden" role="alert">
+              <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+              <span class="msg"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+			<img
+				style="
+					position: absolute;
+					bottom: 20px;
+					right: 20px;
+					filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+					width: 150px;
+				"
+				alt="Logo Alidata"
+				src="./assets/alidata_logo.svg"
+			/>
+    </div>
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="#" class="logo" style="padding: 0">
+                <!-- small logo, 50x50 px, sidebar collapsed
+            <div class="logo-mini">
+                <div
+                    style="height: 50px;display: flex;align-content: center;justify-content: space-around;flex-direction: column;"
+                >
+                    <img
+                        style="filter:drop-shadow(5px 5px 3px #0000002d)"
+                        src="assets/logo.svg"
+                        height="24"
+                        alt="CSLogo"
+                    />
+                </div>
+            </div>-->
+                <!-- regular logo, ~200x50 px, sidebar expanded -->
+                <div class="logo-lg" style="display: block">
+                    <div style="
+								height: 50px;
+								display: flex;
+								align-content: center;
+								justify-content: space-around;
+								flex-direction: column;
+							">
+                        <img style="filter: drop-shadow(5px 5px 3px #0000002d)"
+                             src="assets/logo.svg"
+                             height="24"
+                             alt="CSLogo" />
+                    </div>
+                </div>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#"
+                   class="sidebar-toggle"
+                   data-toggle="offcanvas"
+                   role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <!-- Control Sidebar Toggle Button -->
+                        <li class="dropdown notifications-menu">
+                            <a aria-expanded="false"
+                               href="#"
+                               class="unsaved-toggle hidden"
+                               data-toggle="dropdown">
+                                <i class="fa fa-inbox"></i>
+                                <span class="label label-warning unsaved-count"></span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right unsaved">
+                                <li class="header"></li>
+                                <li>
+                                    <div style="position: relative; overflow: hidden; width: auto">
+                                        <ul style="overflow: hidden; width: 100%"
+                                            class="items"></ul>
+                                    </div>
+                                </li>
+                                <li class="footer hidden"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <li style="display: none">
+                            <a href="#" data-toggle="control-sidebar">
+                                <i class="fa fa-question"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- defer to main -->
+            </nav>
+        </header>
+        <header class="main-header-placeholder"></header>
+
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+            <section id="main-menu" class="sidebar"></section>
+        </aside>
+
+        <div class="views-wrapper"></div>
+
+        <footer class="main-footer">
+            <input type="checkbox"> Visualizar Totais &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <b>Todas as Preparações</b> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <b>Preparação Atual</b><br>
+            <label>Total Valor Stock Atual: &ensp;&ensp;&ensp;&ensp;<input type="text" id="User" name="Name" />&nbsp;<input type="text" id="User" name="Name" /> </label><br>
+            <label>Total Valor Diferença Stock: <input type="text" id="User" name="Name" /> &nbsp;<input type="text" id="User" name="Name" /> </label>
+            &ensp;
+            <label for="cars">Valorizado a:</label>
+            <select name="valorizado" id="valorizado">
+                <option value="bd">Dados base de dados</option>
+            </select>
+
+            <div class="pull-right hidden-xs"><b>Version3</b> 0.0.0</div>
+            <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+            <strong>Alidata Lda.</strong> Todos os direitos reservados.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark" style="display: none">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li>
+                    <a href="#control-sidebar-help-tab" data-toggle="tab">
+                        <i class="fa fa-question"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#control-sidebar-theme-demo-options-tab" data-toggle="tab">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#control-sidebar-info-tab" data-toggle="tab">
+                        <i class="fa fa-info"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-theme-demo-options-tab">
+                    <h3 data-i18n="app.core.title.settings"
+                        style="text-align: center"></h3>
+                    <hr />
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="control-sidebar-help-tab">
+                    <div>
+                        <h3 data-i18n="app.core.title.help"
+                            style="text-align: center"></h3>
+                        <hr />
+                        <div class="help-section"></div>
+                    </div>
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="control-sidebar-info-tab">
+                    <div>
+                        <h3 data-i18n="app.core.title.aboutUs"
+                            style="text-align: center"></h3>
+                        <hr />
+                        <h4>ControlServer</h4>
+                        <br />
+                        <p id="AboutContentData">
+                            Version : <span class="version-label"></span>
+                        </p>
+                        <p><b data-i18n="app.core.msg.versionuptodate"></b></p>
+                        <p data-i18n="[html]app.core.msg.moreInformation"></p>
+                    </div>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+
+    <button class="btn btn-flat btn-primary back-to-top"></button>
+
+    <script src="include/vendor_bundle_1646909414370.js"></script>
+    <script src="include/js_bundle_1646909414370.js"></script>
+
+    <script>
+      try {
+        eval("``");
+      } catch (e) {
+        alert(
+          "Error loading application. You might be using an older or unsupported browser."
+        );
+      }
+    </script>
+  </body>
+</html>

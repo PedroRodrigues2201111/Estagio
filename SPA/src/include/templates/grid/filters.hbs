@@ -1,0 +1,267 @@
+{{#*inline "base"}}
+  <div class="filter-container collapsed panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <span data-i18n="app.grid.advanced-search"></span>
+        <i class="fa pull-right panel-collapse-icon"></i>
+        <span style="margin-right: 5px;" class="badge label-success pull-right"><i class="fa fa-filter"></i>: <span
+            data-id="filter-count"></span></span>
+      </h3>
+    </div>
+    <div class="panel-body" style="display:none;">
+      <div class="container">
+      </div>
+      <button type="button" class="clear-filters btn btn-warning btn-flat fa-btn">
+        &#xf014;
+      </button>
+      <button type="button" class="new-filter btn btn-success btn-flat fa-btn">
+        &#xf00e;
+      </button>
+      <!--
+        <span style="padding-left:15px">AND</span>
+        <div style="display: inline-block" class="checkbox checkbox-slider--c checkbox-slider-success">
+          <label>
+            <input type="checkbox" data-id="operation">
+            <span style="padding-left:22px;"></span>
+          </label>
+        </div>
+        <span>OR</span>
+      -->
+      <button type="button" class="apply-filter pull-right btn btn-primary btn-flat fa-btn">
+        &#xf021;
+      </button>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "filter"}}
+  <div class="filter filter-text clearfix">
+    <div class="form-group pull-left" style="width:auto;">
+      <button type="button" class="btn btn-default btn-flat rm-fltr fa-btn">
+        &#xf010;
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-xs-6">
+        <div class="form-group">
+          <select class="field-select form-control filter-val">
+            {{#.}}
+              {{#if field}}
+                {{#neq type "hidden"}}
+                  {{#unless no-filter}}
+                    <option value="{{field}}" data-type="{{type}}" data-i18n="{{i18n}}" {{#eq field @selected}}
+                      selected="" {{/eq}}>.
+                    </option>
+                  {{/unless}}
+                {{/neq}}
+              {{/if}}
+            {{/.}}
+          </select>
+        </div>
+      </div>
+      <div class="constraint-container"></div>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "constraint"}}
+  {{#eq @fieldType "string"}}
+    {{> string-constraint}}
+  {{else eq @fieldType "date"}}
+    {{> date-constraint}}
+  {{else eq @fieldType "number"}}
+    {{> number-constraint}}
+  {{else eq @fieldType "boolean"}}
+    {{> boolean-constraint}}
+  {{/eq}}
+{{/inline}}
+
+{{#*inline "string-constraint"}}
+  <div class="constraint string-constraint">
+    <div class="col-sm-3 col-xs-6">
+      <div class="form-group">
+        <select class="constraint-select form-control filter-val">
+          <option value="contains" data-i18n="app.grid.filters.contains"></option>
+          <option value="excludes" data-i18n="app.grid.filters.excludes"></option>
+          <option value="equals" data-i18n="app.grid.filters.equals"></option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-value col-sm-6 col-xs-12">
+      {{> string}}
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "date-constraint"}}
+  <div class="constraint date-constraint">
+    <div class="col-sm-3 col-xs-6">
+      <div class="form-group">
+        <select class="constraint-select form-control filter-val">
+          <option value="greaterThan" data-i18n="app.grid.filters.after"></option>
+          <option value="lessThan" data-i18n="app.grid.filters.before"></option>
+          <option value="between" data-i18n="app.grid.filters.between"></option>
+          <option value="during" data-i18n="app.grid.filters.during"></option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-value col-sm-6 col-xs-12">
+      {{> date}}
+      {{> date-day}}
+      {{> date-dual}}
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "number-constraint"}}
+  <div class="constraint number-constraint">
+    <div class="col-sm-3 col-xs-6">
+      <div class="form-group">
+        <select class="constraint-select form-control filter-val">
+          <option value="greaterThan" data-i18n="app.grid.filters.greater"></option>
+          <option value="lessThan" data-i18n="app.grid.filters.lower"></option>
+          <option value="equals" data-i18n="app.grid.filters.equals" selected></option>
+          <option value="between" data-i18n="app.grid.filters.between"></option>
+          <option value="notEqual" data-i18n="app.grid.filters.different"></option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-value col-sm-6 col-xs-12">
+      {{> number}}
+      {{> number-dual}}
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "boolean-constraint"}}
+  <div class="constraint boolean-constraint">
+    <div class="col-sm-3 col-xs-6">
+      <div class="form-group">
+        <select class="constraint-select form-control filter-val">
+          <option value="equals" data-i18n="app.grid.filters.equals"></option>
+          <option value="notEqual" data-i18n="app.grid.filters.different"></option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-value col-sm-6 col-xs-12">
+      {{> boolean}}
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "string"}}
+  <div class="hidden form-group filter-string">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-fw fa-font"></i>
+      </div>
+      <input type="text" class="form-control filter-val"></input>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "date"}}
+  <div class="hidden form-group filter-date">
+    <div class="input-group date">
+      <div class="input-group-addon">
+        <i class="fa fa-fw fa-calendar"></i>
+      </div>
+      <input type="text" name="daterange" class="form-control filter-val datetimesinglepicker">
+      </input>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "date-day"}}
+  <div class="hidden form-group filter-date-day">
+    <div class="input-group date">
+      <div class="input-group-addon">
+        <i class="fa fa-fw fa-calendar"></i>
+      </div>
+      <input type="text" name="daterange" class="form-control filter-val datesinglepicker">
+      </input>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "date-dual"}}
+  <div class="hidden form-group filter-date-dual">
+    <div class="input-group date">
+      <div class="input-group-addon">
+        <i class="fa fa-fw fa-calendar"></i>
+      </div>
+      <input type="text" name="daterange" class="form-control filter-val datetimerangepicker">
+      </input>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "number"}}
+  <div class="hidden form-group filter-number">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-fw ion-pound"></i>
+      </div>
+      <input type="number" step="any" class="form-control filter-val number-filter"></input>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "number-dual"}}
+  <div class="hidden row filter-number-dual">
+    <div class="col-sm-6 col-xs-6">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-fw ion-pound"></i>
+          </div>
+          <input type="number" step="any" class="form-control filter-val number-filter"></input>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-6">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-fw ion-pound"></i>
+          </div>
+          <input type="number" step="any" class="form-control filter-val number-filter"></input>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "boolean"}}
+  <div class="hidden form-group filter-boolean">
+    <div class="input-group">
+      <div class="checkboxb">
+        {{#getUniqueId}}
+          <input type="checkbox" class="filter-val" id="checkbox-{{@randomId}}">
+          <label for="checkbox-{{@randomId}}">
+          </label>
+        {{/getUniqueId}}
+      </div>
+    </div>
+  </div>
+{{/inline}}
+
+{{#if @filter}}
+  {{> filter}}
+{{else if @constraint}}
+  {{> constraint}}
+{{else if @string}}
+  {{> string}}
+{{else if @date}}
+  {{> date}}
+{{else if @date-day}}
+  {{> date-day}}
+{{else if @date-dual}}
+  {{> date-dual}}
+{{else if @number}}
+  {{> number}}
+{{else if @number-dual}}
+  {{> number-dual}}
+{{else}}
+  {{> base}}
+{{/if}}

@@ -1,0 +1,237 @@
+{{#*inline "base"}}
+  {{#unless noBox}}
+    <div class="box" style="padding:5px;">
+  {{/unless}}
+
+  {{#getUniqueId}}
+    <form id="Form_{{@randomId}}" data-id="{{id}}" class="Form">
+      <div class="nav-tabs-custom">
+        <ul id="tablist_{{@randomId}}" class="nav nav-tabs">
+          {{#each tabs}}
+            {{#if ( canAccess . ) }}
+              <li class="">
+                <a aria-expanded="false" data-i18n="{{title-i18n}}" href="#{{@randomId}}_{{@index}}" {{#if id}}
+                  data-tab-id="{{id}}" {{/if}} {{#eq visibility "hidden"}} class="hidden" {{/eq}} data-toggle="tab"></a>
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+        <div class="tab-content">
+          {{#each tabs}}
+            {{#if ( canAccess . ) }}
+              <div class="tab-pane {{#eq @index 0}}active{{/eq}}" id="{{@randomId}}_{{@index}}" {{#if id}}
+                data-tab-id="{{id}}" {{/if}}>
+                <div class="box-body" {{#maxWidth}} style="max-width:{{maxWidth}}" {{/maxWidth}}>
+                  {{#layout}}
+                    {{> field}}
+                  {{/layout}}
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </form>
+  {{/getUniqueId}}
+
+  {{#unless noBox}}
+    </div>
+  {{/unless}}
+  {{/inline}}
+
+  {{#*inline "field"}}
+    {{#eq this "--hr"}}
+      <hr />
+      {{else match this "\-\-hr\:(.+)"}}
+        <div style="width:100%;overflow:hidden;white-space: nowrap;padding:0 0 10px 0">
+          <span style="display: inline-block;color:#888;font-size:1.3em;font-style: italic;padding-right: 5px;"
+            data-i18n="{{@captures.[0]}}">{{i18n_t @captures.[0]}}</span>
+          <span style="width:100%;background-color:#eee;display: inline-block;line-height: .1em;">&nbsp;</span>
+        </div>
+        {{else isarray .}}
+          <div class="row">
+            {{#rowFixed}}
+              {{#each this}}
+                <div class="
+            {{~#xs}}col-xs-{{.}} {{/xs~}}
+            {{~#sm}}col-sm-{{.}} {{/sm~}}
+            {{~#md}}col-md-{{.}} {{/md~}}
+            {{~#lg}}col-lg-{{.}} {{/lg~}}
+            ">
+                  {{#components}}
+
+                    {{#eq this "--hr"}}
+                      <hr />
+              {{else match this "\-\-hr\:(.+)"}}
+                <div style="width:100%;overflow:hidden;white-space: nowrap;padding:0 0 10px 0">
+                  <span style="display: inline-block;color:#888;font-size:1.3em;font-style: italic;padding-right: 5px;"
+                    data-i18n="{{@captures.[0]}}">{{i18n_t @captures.[0]}}</span>
+                  <span style="width:100%;background-color:#eee;display: inline-block;line-height: .1em;">&nbsp;</span>
+                </div>
+              {{else isarray .}}
+                {{> field}}
+              {{else}}
+                <div class="form-group">
+                  {{> placeholder}}
+
+                  <p class="help-block for-error"></p>
+                </div>
+                    {{/eq}}
+                  {{/components}}
+                </div>
+              {{/each}}
+            {{/rowFixed}}
+          </div>
+          {{else}}
+            <div class="form-group">
+              {{> placeholder}}
+
+              <p class="help-block for-error"></p>
+            </div>
+    {{/eq}}
+    {{/inline}}
+
+    {{#*inline "placeholder"}}
+      <div data-placeholder="{{.}}"></div>
+      {{/inline}}
+
+      {{#*inline "input"}}
+        {{#if label-i18n}}
+          {{#unless inline-label}}
+            {{#neq type "Link"}}
+              <label class="form-label" data-i18n="{{label-i18n}}">
+              </label>
+              {{#if validation}}
+                {{#if validation.required}}
+                  <b>(*)</b>
+                {{/if}}
+              {{/if}}
+            {{/neq}}
+          {{/unless}}
+        {{/if}}
+        {{#if label}}
+          {{#unless inline-label}}
+            {{#neq type "Link"}}
+              <label>
+                {{label}}
+              </label>
+              {{#if validation}}
+                {{#if validation.required}}
+                  <b>(*)</b>
+                {{/if}}
+              {{/if}}
+            {{/neq}}
+          {{/unless}}
+        {{/if}}
+
+
+        {{#if icon}}
+          <div class="input-group">
+            <span class="input-group-addon">
+              {{> icon}}
+            </span>
+        {{/if}}
+
+        {{> inputTypes}}
+
+        {{#if icon}}
+          </div>
+        {{/if}}
+        <p class="help-block for-error"></p>
+        {{/inline}}
+
+        {{#*inline "icon"}}
+          <i class="{{icon}}"></i>
+          {{/inline}}
+
+          {{#*inline "inputTypes"}}
+            {{#eq type "Text"}}
+              {{> form/fields/text/text}}
+              {{else eq type "Number"}}
+                {{> form/fields/number/number}}
+                {{else eq type "Slider"}}
+                  {{> form/fields/slider/slider}}
+                  {{else eq type "File"}}
+                    {{> form/fields/file/file}}
+                    {{else eq type "StaticHTML"}}
+                      {{> form/fields/statichtml/statichtml}}
+                      {{else eq type "Sortable"}}
+                        {{> form/fields/sortable/sortable}}
+                        {{else eq type "SortaForm"}}
+                          {{> form/fields/sortaform/sortaform}}
+                        {{else eq type "ListForm"}}
+                          {{> form/fields/listform/listform}}
+                          {{else eq type "Component"}}
+                            {{> form/fields/component/component}}
+                            {{else eq type "Password"}}
+                              {{> form/fields/password/password}}
+                              {{else eq type "Select"}}
+                                {{> form/fields/select/select}}
+                                {{else eq type "Static"}}
+                                  {{> form/fields/static/static}}
+                                  {{else eq type "Link"}}
+                                    {{> form/fields/link/link}}
+                                    {{else eq type "Image"}}
+                                      {{> form/fields/image/image}}
+                                      {{else eq type "TextAction"}}
+                                        {{> form/fields/textaction/textaction}}
+                                        {{else eq type "CodeInput"}}
+                                          {{> form/fields/codeinput/codeinput}}
+                                          {{else eq type "FileExplorer"}}
+                                            {{> form/fields/fileexplorer/fileexplorer}}
+                                            {{else eq type "SimpleGrid"}}
+                                              {{> form/fields/simplegrid/simplegrid}}
+                                              {{else eq type "EditGrid"}}
+                                                {{> form/fields/editgrid/editgrid}}
+                                                {{else eq type "TextArea"}}
+                                                  {{> form/fields/textarea/textarea}}
+                                                  {{else eq type "FileInput"}}
+                                                    {{> form/fields/fileinput/fileinput}}
+                                                    {{else eq type "Calendar"}}
+                                                      {{> form/fields/component/content}}
+                                                      {{else eq type "Permissions"}}
+                                                        {{> form/fields/permissions/permissions}}
+                                                        {{else eq type "PDFViewer"}}
+                                                          {{> form/fields/pdfviewer/pdfviewer}}
+                                                          {{else eq type "WYSIWYG"}}
+                                                            {{> form/fields/wysiwyg/wysiwyg}}
+                                                            {{else eq type "Button"}}
+                                                              {{> form/fields/button/button}}
+                                                              {{else eq type "DatePicker"}}
+                                                                {{> form/fields/datepicker/datepicker}}
+                                                              {{else eq type "DatePicker2"}}
+                                                                {{> form/fields/datepicker2/datepicker2}}
+                                                                {{else eq type "DateTimePicker"}}
+                                                                  {{> form/fields/datetimepicker/datetimepicker}}
+                                                                  {{else eq type "TimePicker"}}
+                                                                    {{> form/fields/timepicker/timepicker}}
+                                                                    {{else eq type "TimeInterval"}}
+                                                                      {{> form/fields/timeinterval/timeinterval}}
+                                                                      {{else eq type "PageLimit"}}
+                                                                        {{> form/fields/pagelimit/pagelimit}}
+                                                                        {{else eq type "AreaPicker"}}
+                                                                          {{> form/fields/areapicker/areapicker}}
+                                                                          {{else eq type "Switch"}}
+                                                                            {{> form/fields/switch/switch}}
+                                                                            {{else eq type "MultiSwitch"}}
+                                                                              {{> form/fields/multiswitch/multiswitch}}
+                                                                              {{else eq type "MultiCheckbox"}}
+                                                                                {{> form/fields/multicheckbox/multicheckbox}}
+                                                                                {{else eq type "Recurrence"}}
+                                                                                  {{> form/fields/recurrence/recurrence}}
+                                                                                  {{else eq type "CheckboxTree"}}
+                                                                                    {{> form/fields/checkboxtree/checkboxtree}}
+            {{/eq}}
+            {{/inline}}
+
+            {{#if @input}}
+              {{> input}}
+            {{else eq type "Sortable-item"}}
+              {{> form/fields/sortable/sortable-item}}
+            {{else eq type "Sortaform-item"}}
+              {{> form/fields/sortaform/sortaform-item}}
+            {{else eq type "Listform-item"}}
+              {{> form/fields/listform/listform-item}}
+            {{else}}
+              {{> base}}
+            {{/if}}

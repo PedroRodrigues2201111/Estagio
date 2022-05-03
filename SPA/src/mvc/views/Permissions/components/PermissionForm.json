@@ -1,0 +1,34 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "PermissionForm",
+		"getUrl": "getPermissionForm",
+		"postUrl": "savePermissionForm",
+		"setsTitle": true,
+		"fields": {
+			"permissionId": {
+				"id": "permissionId",
+				"type": "Hidden"
+			},
+			"name": {
+				"id": "name",
+				"type": "Text",
+				"label-i18n": "Nome",
+				"validation": {
+					"required": true
+				}
+			},
+			"description": {
+				"id": "description",
+				"type": "Text",
+				"label-i18n": "Descrição"
+			}
+		},
+		"tabs": [{
+			"title-i18n": "",
+			"layout": ["permissionId", ["name"],
+				["description"]
+			]
+		}]
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "UserForm",
+		"getUrl": "getUserForm",
+		"postUrl": "postUserForm",
+		"setsTitle": true,
+		"fields": {
+			"userId": {
+				"id": "userId",
+				"type": "Hidden"
+			},
+			"roleSelect": {
+				"id": "roleSelect",
+				"type": "Select",
+				"searchUrl": "getUserRoleSelect",
+				"label-i18n": "<%view%>.components.UserForm.roles",
+				"fields": ["ID", "NAME", "DESCRICAO"],
+				"valueField": "ID",
+				"searchFields": ["NAME", "DESCRICAO"],
+				"resultsTemplate": "<div><div><b>{{NAME}}</b></div><div>{{DESCRICAO}}</div></div>",
+				"selectedTemplate": "<div>{{NAME}}</div>",
+				"allowNull": true,
+				"ignoreChange": true
+			},
+			"addRole": {
+				"id": "addRole",
+				"type": "Button",
+				"lower": true,
+				"text-i18n": "<%view%>.components.UserForm.addRole",
+				"action": "addRole",
+				"onChange": "bananana"
+			},
+			"roles": {
+				"id": "roles",
+				"type": "Sortable",
+				"render": "<div><b>{{NAME}}</b> - {{DESCRICAO}}</div>"
+			},
+			"rissol": {
+				"id": "rissol",
+				"type": "Text",
+				"text-i18n": "<%view%>.components.UserForm.addRole",
+				"binds": [
+					{
+						"to": "rissol2",
+						"value": "papa",
+						"do": "hide"
+					}
+				]
+			},
+			"rissol2": {
+				"id": "rissol2",
+				"type": "Text",
+				"text-i18n": "<%view%>.components.UserForm.addRole"
+			}
+		},
+		"tabs": [
+			{
+				"title-i18n": "<%view%>.components.UserForm.details",
+				"layout": [
+					"userId",
+					["rissol"],
+					["rissol2"],
+					["roleSelect", "addRole"],
+					"roles"
+				]
+			}
+		]
+	}
+}

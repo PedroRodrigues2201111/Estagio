@@ -1,0 +1,137 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "OrcamentoReadForm",
+		"getUrl": "getOrcamentoForm",
+		"setsTitle": true,
+		"fields": {
+			"diario_ano_numdoc": {
+				"id": "diario_ano_numdoc",
+				"type": "Hidden"
+			},
+			"cod_cliente": {
+				"id": "cod_cliente",
+				"type": "Select",
+				"label-i18n": "Cliente",
+				"searchUrl": "getClientesSelect",
+				"resultsTemplate": "<div><i>{{POCA_ENOME}}</i></div>",
+				"selectedTemplate": "<div>{{POCA_ENOME}}</div>",
+				"searchFields": [
+					"POCA_ENTI",
+					"POCA_ENOME",
+					"ENTI_NCONT",
+					"ENTI_TELM1",
+					"ENTI_TEL1",
+					"ENTI_MAIL"
+				],
+				"valueField": "ID",
+				"onChange": "ChangedCliente",
+				"readOnly": true,
+				"validation": {
+					"required": true
+				}
+			},
+			"poca_conta": {
+				"id": "poca_conta",
+				"type": "Hidden"
+			},
+			"poca_enti": {
+				"id": "poca_enti",
+				"type": "Hidden"
+			},
+			"id_oportunidade": {
+				"id": "id_oportunidade",
+				"type": "Select",
+				"searchUrl": "getOportunidadesSelect",
+				"resultsTemplate": "<div><i>{{REFERENCIA}} - {{NOME}}</i></div>",
+				"selectedTemplate": "<div>{{REFERENCIA}} - {{NOME}}</div>",
+				"searchFields": [ "ID", "NOME", "REFERENCIA", "COD_CLIENTE", "ENTIDADE" ],
+				"valueField": "ID",
+				"label-i18n": "Oportunidade",
+				"onChange": "ChangedOportunidade",
+				"extraFields": [
+					"cod_cliente"
+				],
+				"readOnly": true,
+				"validation": {
+					"required": true
+				}
+			},
+			"enti_ncont": {
+				"id": "enti_ncont",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Contribuinte"
+			},
+			"enti_tel1": {
+				"id": "enti_tel1",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Telefone"
+			},
+			"enti_telm1": {
+				"id": "enti_telm1",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Telemóvel"
+			},
+			"enti_mail": {
+				"id": "enti_mail",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Email"
+			},
+			"linhas": {
+				"id": "linhas",
+				"type": "EditGrid",
+				"label-i18n": "Linhas",
+				"allowNew": false,
+				"allowDelete": true,
+				"readOnly": true,
+				"fields": [
+					"Armazém",
+					"Referência",
+					"Designação",
+					"Cod_Familia",
+					"Família",
+					"Quantidade",
+					"Comprimento",
+					"Largura",
+					"Altura",
+					"Preço Unit.",
+					"Peso Unit.",
+					"Total Linha",
+					"Peso Total"
+				],
+				"fieldTypes": [
+					"string",
+					"string",
+					"string",
+					"string",
+					"string",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number"
+				]
+			}
+		},
+		"hiddenFields": [ "Armazém", "Cod_Familia" ],
+		"tabs": [
+			{
+				"title-i18n": "",
+				"layout": [
+					[ "diario_ano_numdoc" ],
+					[ "cod_cliente", "id_oportunidade" ],
+					[ "poca_conta", "poca_enti" ],
+					[ "enti_ncont", "enti_tel1", "enti_telm1", "enti_mail" ],
+					[ "linhas" ]
+				]
+			}
+		]
+	}
+}

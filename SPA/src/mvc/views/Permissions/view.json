@@ -1,0 +1,117 @@
+{
+  "id": "PermissionsView",
+  "menuIcon": "fa fa-fw fa-user",
+  "url": "permissions",
+  "default": "list",
+  "urls": {
+    "getPermissionGrid": "/api/permissions/getPermissionsGrid",
+    "getPermissionForm": "/api/permissions/getPermissionForm",
+    "savePermissionForm": "/api/permissions/savePermissionForm",
+    "createPermission": "/api/permissions/createPermission",
+    "deletePermissions": "/api/permissions/deletePermissions"
+  },
+  "headers": {
+    "list": {
+      "title-i18n": "Permissões",
+      "icon": "fa fa-fw fa-user",
+      "buttons": [
+        {
+          "id": "PermissionDeleteGrid",
+          "title-i18n": "Apagar Permissões Selecionadas",
+          "icon": "fa fa-fw fa-trash-o",
+          "states": [
+            {
+              "class": "disabled",
+              "field": "PermissionGrid.selected.length",
+              "condition": "==",
+              "value": 0
+            }
+          ],
+          "action": {
+            "type": "api",
+            "url": "deletePermissions",
+            "field": "PermissionGrid.selected.permissionId",
+            "text": "delete",
+            "after": "refresh"
+          }
+        },
+        {
+          "id": "PermissionCreateGrid",
+          "title-i18n": "Nova Permissão",
+          "icon": "fa fa-fw fa-plus",
+          "action": {
+            "type": "tab",
+            "name": "create"
+          }
+        }
+      ]
+    },
+    "edit": {
+      "title-i18n": "Editar Permissão",
+      "icon": "fa fa-fw fa-user",
+      "buttons": [
+        {
+          "id": "save",
+          "title-i18n": "Guardar",
+          "icon": "fa fa-fw fa-floppy-o",
+          "action": {
+            "type": "component",
+            "action": "PermissionForm.post",
+            "after": "close"
+          }
+        }
+      ]
+    },
+    "create": {
+      "title-i18n": "Nova Permissão",
+      "icon": "fa fa-fw fa-user",
+      "buttons": [
+        {
+          "id": "save",
+          "title-i18n": "Guardar",
+          "icon": "fa fa-fw fa-floppy-o",
+          "action": {
+            "type": "component",
+            "action": "PermissionCreateForm.post",
+            "after": "close"
+          }
+        }
+      ]
+    }
+  },
+  "tabs": [
+    {
+      "title-i18n": "Permissões",
+      "id": "list",
+      "cantClose": true,
+      "content-fixed": [
+        [
+          [ "PermissionGrid" ]
+        ]
+      ]
+    },
+    {
+      "title-i18n": "Editar {{name}}",
+      "defer": true,
+      "id": "edit",
+      "content-fixed": [
+        [
+          [ "PermissionForm" ]
+        ]
+      ]
+    },
+    {
+      "title-i18n": "Nova Permissão",
+      "defer": true,
+      "id": "create",
+      "content-fixed": [
+        [
+          [ "PermissionCreateForm" ]
+        ]
+      ]
+    }
+  ],
+  "i18n": {
+    "title": "Permissões"
+  }
+}

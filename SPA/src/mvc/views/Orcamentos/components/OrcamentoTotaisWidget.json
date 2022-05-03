@@ -1,0 +1,9 @@
+{
+	"type": "widgets.HTMLContainer",
+	"opts": {
+		"id": "OrcamentoTotaisWidget",
+		"templates": ["<%include:OrcamentoTotaisWidget.hbs%>"],
+		"title-i18n": "Planeado",
+		"noBox": true
+	}
+}

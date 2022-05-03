@@ -1,0 +1,11 @@
+{{#neq @type "handlebars"}}
+  <div data-id="{{id}}" name="{{id}}" {{#if text-i18n}} data-i18n="[html]{{text-i18n}}" {{/if}}
+    class="form-control-static">
+    {{{text}}}
+  </div>
+  {{else}}
+    <div data-id="{{id}}" name="{{id}}" class="form-control-static"
+      {{#if no-padding}}style="padding-top:0;padding-bottom:0" {{/if}}>
+      {{{@content}}}
+    </div>
+{{/neq}}

@@ -1,0 +1,25 @@
+{{#cmp @data.length ">" 20}}
+  <div class="input-group checkbox-filter" style="padding-bottom: 10px;">
+    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+    <input type="text" class="form-control">
+  </div>
+{{/cmp}}
+<div class="checkbox-container">
+  {{#each @data}}
+  <div class="multicheckbox">
+    {{#eq label-position "before"}}
+      <span{{#if label-i18n}} data-i18n="{{label-i18n}}"{{/if}}>{{label}}</span>
+    {{/eq}}
+    <div style="display: inline-block" data-id="{{id}}" class="checkboxb{{#if ../radio}} rad{{/if}}">
+      {{#getUniqueId}}
+        <input id="{{@randomId}}" type="checkbox"  {{#if ../disabled}} disabled{{/if}} {{#if value}}checked{{/if}}></input>
+        <label for="{{@randomId}}">
+          {{#neq label-position "before"}}
+            <span{{#if label-i18n}} data-i18n="{{label-i18n}}"{{/if}}>{{label}}</span>
+          {{/neq}}
+        </label>
+      {{/getUniqueId}}
+    </div>
+  </div>
+  {{/each}}
+</div>

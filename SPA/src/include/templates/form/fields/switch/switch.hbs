@@ -1,0 +1,47 @@
+
+{{#unless both-labels}}
+  {{#if inline-label}}
+    {{#eq label-position "before"}}
+      {{#if label-i18n}}
+        <span data-i18n="{{label-i18n}}"></span>
+      {{else if label}}
+        <span>{{label}}</span>
+      {{/if}}
+    {{/eq}}
+  {{/if}}
+{{/unless}}
+{{#if both-labels}}
+  <div>
+    <span style="padding-right:15px;" {{#if label-left-i18n}} data-i18n="{{label-left-i18n}}" {{/if}} >
+        {{#if label-left}}{{label-left}}{{/if}}
+    </span>
+{{/if}}
+<div {{#if inline-label}} style="display: inline-block" {{/if}} {{#if both-labels}} style="display: inline-block" {{/if}}
+  class="checkbox {{~#if style}} {{style}} {{else}} checkbox-slider--b {{/if}}
+  {{~#if onColor}} checkbox-slider-{{onColor}}{{/if}}">
+  <label>
+    <input type="checkbox" {{#if readOnly}} disabled {{/if}} {{#if disabled}} disabled {{/if}}>
+    {{#if both-labels}}
+      <span {{#if label-right-i18n}} data-i18n="{{label-right-i18n}}"{{/if}} >
+          {{#if label-right}}{{label-right}}{{/if}}
+      </span>
+    {{else}}
+      <span
+        {{#if inline-label}}
+          {{#if label-i18n}}
+            {{#neq label-position "before"}} data-i18n="{{label-i18n}}"{{/neq}}
+          {{/if}}
+        {{/if~}}
+      >
+        {{#if inline-label}}
+          {{#if label}}
+            {{#neq label-position "before"}}{{label}}{{/neq}}
+          {{/if}}
+        {{/if~}}
+      </span>
+    {{/if}}
+  </label>
+</div>
+{{#if both-labels}}
+  </div>
+{{/if}}

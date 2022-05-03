@@ -1,0 +1,27 @@
+{{#unless noBox}}
+<div class="box box-primary" style="border-color: {{boxColor}}"> <!-- Change top border accordingly -->
+  <div class="box-header with-border">
+    <h3 class="box-title">
+      {{#if icon}}<i class="{{icon}}"></i>{{/if}}
+      <span class="chart-title"{{#if title-i18n}} data-i18n="{{title-i18n}}"{{/if}}>{{title}}</span>
+    </h3>
+
+    <div class="box-tools pull-right">
+      <button type="button" class="btn btn-box-tool chart-refresh"><i class="fa fa-retweet"></i></button>
+      <button type="button" class="btn btn-box-tool legend-toggle hidden"><i class="fa fa-list-ul"></i></button>
+      <button type="button" class="btn btn-box-tool body-toggle"><i class="fa fa-fw fa-minus"></i></button>
+      <!-- Not yet. maybe later after there are enough to justify having a draggable inventory of them
+        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      -->
+    </div>
+  </div>
+{{/unless}}
+  <div class="box-body chart-box">
+    <div class="legend hidden">
+    </div>  
+    <div class="chart">
+    </div>
+  </div>
+{{#unless noBox}}
+</div>
+{{/unless}}

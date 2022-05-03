@@ -1,0 +1,23 @@
+.bootbox > .modal-dialog > .modal-content > .modal-header {
+  background-color: #3c8dbc;
+  color: white;
+}
+.bootbox > .modal-dialog > .modal-content > .modal-header > .modal-title > i {
+  margin-right: .5em;;
+} 
+.bootbox.warning > .modal-dialog > .modal-content > .modal-header {
+  background-color: rgb(243, 156, 18);
+}
+.bootbox > .modal-dialog > .modal-content > .modal-header > button {
+  color: white;
+  /* opacity: .6; */
+}
+
+.bootbox > .modal-dialog > .modal-content button {
+  border-radius: 1px; 
+}
+
+/* Added for control server */
+.modal-xl {
+  width: 90vw;
+}

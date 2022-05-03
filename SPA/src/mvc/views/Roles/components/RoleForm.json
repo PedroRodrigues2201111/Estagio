@@ -1,0 +1,72 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "RoleForm",
+		"getUrl": "getRoleForm",
+		"postUrl": "saveRoleForm",
+		"setsTitle": true,
+		"fields": {
+			"roleId": {
+				"id": "roleId",
+				"type": "Hidden"
+			},
+			"name": {
+				"id": "name",
+				"type": "Text",
+				"label-i18n": "Nome",
+				"validation": {
+					"required": true
+				}
+			},
+			"description": {
+				"id": "description",
+				"type": "Text",
+				"label-i18n": "Descrição"
+			},
+			"permissionSelect": {
+				"id": "permissionSelect",
+				"type": "Select",
+				"searchUrl": "getRolePermissionSelect",
+				"label-i18n": "Permissões",
+				"fields": ["ID", "NAME", "DESCRICAO"],
+				"valueField": "ID",
+				"searchFields": ["NAME", "DESCRICAO"],
+				"resultsTemplate": "<div><div><b>{{NAME}}</b></div><div>{{DESCRICAO}}</div></div>",
+				"selectedTemplate": "<div>{{NAME}}</div>",
+				"allowNull": true,
+				"ignoreChange": true
+			},
+			"addPermission": {
+				"id": "addPermission",
+				"type": "Button",
+				"lower": true,
+				"text-i18n": "Adicionar Permissão",
+				"action": "addPermission",
+				"binds": [
+					{
+						"to": "permissionSelect",
+						"value": null,
+						"do": "disable"
+					}
+				]
+			},
+			"permissions": {
+				"id": "permissions",
+				"type": "Sortable",
+				"render": "<div><b>{{NAME}}</b></div><div>{{DESCRICAO}}</div>"
+			}
+		},
+		"tabs": [
+			{
+				"title-i18n": "<%view%>.components.UserForm.details",
+				"layout": [
+					"roleId",
+					["name"],
+					["description"],
+					["permissionSelect", "addPermission"],
+					["permissions", false]
+				]
+			}
+		]
+	}
+}

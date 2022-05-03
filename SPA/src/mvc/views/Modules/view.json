@@ -1,0 +1,177 @@
+{
+  "id": "ModulesView",
+  "menuIcon": "fa fa-fw fa-caret-square-o-right",
+  "url": "modules",
+  "default": "list",
+  "urls": {
+    "getModuleGrid": "/api/modules/getModuleGrid",
+    "getModuleForm": "/api/modules/getModuleForm",
+    "getGiaTfactSelect": "/api/modules/getGiaTfactSelect",
+    "postModuleForm": "/api/modules/postModuleForm",
+    "getDiarioMrecapSelect": "/api/modules/getDiarioMrecapSelect",
+    "getEstadosGeraisSelect": "/api/modules/getEstadosGeraisSelect"
+  },
+  "headers": {
+    "list": {
+      "title-i18n": "<%view%>.headers.modules",
+      "icon": "fa fa-fw fa-caret-square-o-right"
+    },
+    "edit1": {
+      "title-i18n": "<%view%>.headers.modules",
+      "icon": "fa fa-fw fa-caret-square-o-right",
+      "buttons": [
+        {
+          "id": "saveEditModule",
+          "title-i18n": "<%view%>.headers.save",
+          "icon": "fa fa-fw fa-floppy-o",
+          "action": {
+            "type": "component",
+            "action": "ModuleFormReception.post",
+            "after": "close"
+          }
+        }
+      ]
+    },
+    "edit2": {
+      "title-i18n": "<%view%>.headers.modules",
+      "icon": "fa fa-fw fa-caret-square-o-right",
+      "buttons": [
+        {
+          "id": "saveEditModule",
+          "title-i18n": "<%view%>.headers.save",
+          "icon": "fa fa-fw fa-floppy-o",
+          "action": {
+            "type": "component",
+            "action": "ModuleFormExpedition.post",
+            "after": "close"
+          }
+        }
+      ]
+    },
+    "edit3": {
+      "title-i18n": "<%view%>.headers.modules",
+      "icon": "fa fa-fw fa-caret-square-o-right",
+      "buttons": [
+        {
+          "id": "saveEditModule",
+          "title-i18n": "<%view%>.headers.save",
+          "icon": "fa fa-fw fa-floppy-o",
+          "action": {
+            "type": "component",
+            "action": "ModuleFormTransfers.post",
+            "after": "close"
+          }
+        }
+      ]
+    },
+    "edit6": {
+      "title-i18n": "<%view%>.headers.modules",
+      "icon": "fa fa-fw fa-caret-square-o-right",
+      "buttons": [
+        {
+          "id": "saveEditModule",
+          "title-i18n": "<%view%>.headers.save",
+          "icon": "fa fa-fw fa-floppy-o",
+          "action": {
+            "type": "component",
+            "action": "ModuleFormOrcamentacao.post",
+            "after": "close"
+          }
+        }
+      ]
+    }
+  },
+  "tabs": [
+    {
+      "title-i18n": "<%view%>.tabs.labels.module-list",
+      "id": "list",
+      "cantClose": true,
+      "content-fixed": [
+        [
+          [ "ModuleGrid" ]
+        ]
+      ]
+    },
+    {
+      "title-i18n": "<%view%>.tabs.labels.module-edit",
+      "defer": true,
+      "id": "edit1",
+      "content-fixed": [
+        [
+          [ "ModuleFormReception" ]
+        ]
+      ]
+    },
+    {
+      "title-i18n": "<%view%>.tabs.labels.module-edit",
+      "defer": true,
+      "id": "edit2",
+      "content-fixed": [
+        [
+          [ "ModuleFormExpedition" ]
+        ]
+      ]
+    },
+    {
+      "title-i18n": "<%view%>.tabs.labels.module-edit",
+      "defer": true,
+      "id": "edit3",
+      "content-fixed": [
+        [
+          [ "ModuleFormTransfers" ]
+        ]
+      ]
+    },
+    {
+      "title-i18n": "<%view%>.tabs.labels.module-edit",
+      "defer": true,
+      "id": "edit6",
+      "content-fixed": [
+        [
+          [ "ModuleFormOrcamentacao" ]
+        ]
+      ]
+    }
+  ],
+  "i18n": {
+    "title": "Modules",
+    "headers": {
+      "modules": "Modules",
+      "save": "Save"
+    },
+    "tabs": {
+      "labels": {
+        "module-list": "List",
+        "module-edit": "{{name}}"
+      }
+    },
+    "components": {
+      "ModuleGrid": {
+        "delete": "Delete Module(s)",
+        "edit": "Edit Module"
+      },
+      "ModuleForm": {
+        "configurations": "Configurações",
+        "docsListagem": "Tipo Docs a Listar",
+        "docPicagem": "Diário Doc de Entrada",
+        "filterNdocMandatory": "Obriga filtrar 1 documento",
+        "showOrders": "Mostrar Separador Encomendas",
+        "selectLineOrPickOldOne": "Seleccionar Linha ou Picar a Mais Antiga",
+        "verifyExpirationDate": "Validar Data de Validade",
+        "docPicagemSaida": "Diário Doc de Saída",
+        "linkApi": "http://127.0.0.1/alidataerpapi",
+        "docPicagemTransf": "Diário Doc de Transferência",
+        "whereGetDoc": "a.tem_qtd_liq='S'",
+        "whereGetDoc1": "Condição da lista de documentos para transferir",
+        "whereGetLinhas": "lin.linha_facturada<>'S'",
+        "whereGetLinhas1": "Condição da lista de linhas para transferir",
+        "lockTransfers": "Bloquear documentos por utilizador",
+        "diarioOrcamento": "Diário Orçamentos"
+      }
+
+    },
+    "common": {
+      "name": "Name"
+    }
+  }
+}

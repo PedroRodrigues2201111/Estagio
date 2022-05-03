@@ -1,0 +1,19 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "ImportExcelForm",
+		"fields": {
+			"ctrlV": {
+				"id": "ctrlV",
+				"label-i18n": "Dados Excel",
+				"type": "TextArea"
+			}
+		},
+		"tabs": [
+			{
+				"title-i18n": "",
+				"layout": ["ctrlV"]
+			}
+		]
+	}
+}

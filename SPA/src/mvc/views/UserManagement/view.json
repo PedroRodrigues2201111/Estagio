@@ -1,0 +1,7 @@
+{
+  "id": "UserManagementMenu",
+  "menuIcon": "fa fa-fw fa-group",
+  "i18n": {
+    "title": "User Management"
+  }
+}

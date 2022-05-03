@@ -1,0 +1,206 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "OrcamentoForm",
+		"getUrl": "getOrcamentoForm",
+		"postUrl": "saveOrcamentoForm",
+		"setsTitle": true,
+		"fields": {
+			"estado": {
+				"id": "estado",
+				"label-i18n": "Estado",
+				"type": "TextAction",
+				"readOnly": true,
+				"action": "AbrirModalEstados",
+				"btn-icon": "fa-pencil",
+				"placeholder": "Aprovado"
+			},
+			"diario_ano_numdoc": {
+				"id": "diario_ano_numdoc",
+				"type": "Hidden"
+			},
+			"cod_cliente": {
+				"id": "cod_cliente",
+				"type": "Select",
+				"label-i18n": "Cliente",
+				"searchUrl": "getClientesSelect",
+				"resultsTemplate": "<div><i>{{POCA_ENOME}}</i></div>",
+				"selectedTemplate": "<div>{{POCA_ENOME}}</div>",
+				"searchFields": [
+					"POCA_ENTI",
+					"POCA_ENOME",
+					"ENTI_NCONT",
+					"ENTI_TELM1",
+					"ENTI_TEL1",
+					"ENTI_MAIL"
+				],
+				"valueField": "ID",
+				"onChange": "ChangedCliente",
+				"readOnly": true,
+				"validation": {
+					"required": true
+				}
+			},
+			"poca_conta": {
+				"id": "poca_conta",
+				"type": "Hidden"
+			},
+			"poca_enti": {
+				"id": "poca_enti",
+				"type": "Hidden"
+			},
+			"id_oportunidade": {
+				"id": "id_oportunidade",
+				"type": "Select",
+				"searchUrl": "getOportunidadesSelect",
+				"resultsTemplate": "<div><i>{{REFERENCIA}} - {{NOME}}</i></div>",
+				"selectedTemplate": "<div>{{REFERENCIA}} - {{NOME}}</div>",
+				"searchFields": [ "ID", "NOME", "REFERENCIA", "COD_CLIENTE", "ENTIDADE" ],
+				"valueField": "ID",
+				"label-i18n": "Oportunidade",
+				"onChange": "ChangedOportunidade",
+				"extraFields": [ "cod_cliente" ],
+				"readOnly": true,
+				"validation": {
+					"required": true
+				}
+			},
+			"enti_ncont": {
+				"id": "enti_ncont",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Contribuinte"
+			},
+			"enti_tel1": {
+				"id": "enti_tel1",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Telefone"
+			},
+			"enti_telm1": {
+				"id": "enti_telm1",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Telemóvel"
+			},
+			"enti_mail": {
+				"id": "enti_mail",
+				"type": "Text",
+				"readOnly": true,
+				"label-i18n": "Email"
+			},
+			"btnPesquisaArtigo": {
+				"id": "btnPesquisaArtigo",
+				"text-i18n": "Artigos",
+				"type": "Button",
+				"btn-class": "primary",
+				"btn-icon": "fa fa-fw fa-plus",
+				"action": "AbrirModalPesquisaArtigo"
+			},
+			"btnModalImport": {
+				"id": "btnModalImport",
+				"text-i18n": "Importar dados Excel",
+				"type": "Button",
+				"btn-class": "primary",
+				"btn-icon": "fa fa-fw fa-plus",
+				"action": "ImportModal"
+			},
+			"linhas": {
+				"id": "linhas",
+				"type": "EditGrid",
+				"allowNew": true,
+				"allowDelete": true,
+				"rowChangedCallback": "ArtigosRowCallback",
+				"fields": [
+					"Armazém",
+					"Referência",
+					"Designação",
+					"Cod_Familia",
+					"Família",
+					"Quantidade",
+					"Comprimento",
+					"Largura",
+					"Altura",
+					"Preço Unit.",
+					"Peso Unit.",
+					"Total Linha",
+					"Peso Total"
+				],
+				"fieldTypes": [
+					"string",
+					"string",
+					"string",
+					"string",
+					"string",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number",
+					"number"
+				],
+				"hiddenFields": ["Armazém", "Cod_Familia" ],
+				"editableFields": {
+					"Armazém": {
+						"type": "text"
+					},
+					"Referência": {
+						"type": "text"
+					},
+					"Designação": {
+						"type": "text"
+					},
+					"Quantidade": {
+						"type": "number"
+					},
+					"Comprimento": {
+						"type": "number"
+					},
+					"Largura": {
+						"type": "number"
+					},
+					"Altura": {
+						"type": "number"
+					},
+					"Preço Unit.": {
+						"type": "number"
+					},
+					"Peso Unit.": {
+						"type": "number"
+					}
+				}
+			},
+			"totais": {
+				"id": "totais",
+				"type": "Component",
+				"autoInit": true,
+				"label-i18n": "",
+				"content-fixed": ["--hr:Totais", ["OrcamentoTotaisWidget"]]
+			},
+			"estados": {
+				"id": "estados",
+				"type": "Component",
+				"autoInit": true,
+				"label-i18n": "",
+				"content-fixed": ["--hr:Estados", ["OrcamentoEstadosWidget"]]
+			}
+		},
+		"tabs": [
+			{
+				"title-i18n": "",
+				"layout": [
+					["diario_ano_numdoc"],
+					["cod_cliente", "id_oportunidade", "estado"],
+					["poca_conta", "poca_enti"],
+					["enti_ncont", "enti_tel1", "enti_telm1", "enti_mail"],
+					["--hr:Linhas"],
+					["btnPesquisaArtigo", "btnModalImport", false, false],
+					["linhas"],
+					[false, "totais"]
+				]
+			}
+		]
+	}
+}

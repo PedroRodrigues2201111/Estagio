@@ -1,0 +1,45 @@
+<div class="tools pull-right">
+  <span class="hidden unlocked-only tools-toggle">
+    <i data-id="clear" class="fa fa-fw fa-ban"></i>
+  </span> 
+  <span class="vsep hidden unlocked-only"></span> 
+  <span class="fill-toggle">
+    <i data-id="fill" class="fa fa-fw fa-pencil"></i>
+    <i data-id="erase" class="fa fa-fw fa-eraser"></i>
+  </span> 
+  <span class="vsep"></span> 
+  <span class="control-toggle">
+    <i data-id="square" class="fa fa-fw fa-square active"></i>
+    <i data-id="seq" class="fa fa-fw fa-bars"></i>
+    <i data-id="line" class="fa fa-fw fa-minus"></i>
+  </span>
+  <span class="vsep"></span> 
+  <span class="lock-toggle">
+    <i data-id="lock" class="locked-only fa fa-fw fa-lock"></i>
+    <i data-id="unlock" class="hidden unlocked-only fa fa-fw fa-unlock"></i>
+  </span> 
+</div>
+<div class="interval-container">
+  <table class="timeinterval disabled">
+    <thead>
+      <tr>
+        <th colspan="2"></th>
+        {{#for 1 24}}
+          <th class="text-center" colspan="2">
+            {{#cmp @i "<" 10}}0{{/cmp}}{{@i}}h
+          </th>  
+        {{/for}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#for 7}}
+        <tr>
+          <td><span data-weekday="{{@i}}">{{@i}}</span></td>
+          {{#for 48}}
+            <td class="time-block"><div></div></td>
+          {{/for}}
+        </tr>
+      {{/for}}
+    </tbody>
+  </table>
+</div>

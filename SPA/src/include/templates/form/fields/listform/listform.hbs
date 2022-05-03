@@ -1,0 +1,42 @@
+{{#if flex}}
+<div class="row" style="display:flex;margin-left: 10px;">
+  <div>
+{{else}}
+<div class="row">
+  <div class="col-md-4">
+{{/if}}
+    <div style="display:flex;flex-direction:column;height: 100%;">
+      <div style="margin-bottom: 10px;height:34px;">
+        <div class="hidden sort-btns-cancel btn btn-default btn-flat"><i class="fa fa-times"></i> Cancelar</div>
+      </div>
+      <div style="overflow-x:hidden;overflow-y:auto;height: 100%;margin-right:15px;">
+        {{#if search}}<input type="text" class="list-search" placeholder="Pesquisar" />{{/if}}
+        <ul style="height:0" class="list-group listform-list" name="{{id}}">
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{#if flex}}
+  <div style="position:relative" class="inactive listform sortaform-sub {{#if noBox}}nobox{{/if}}" style="flex-grow:1">
+    <div style="height:34px;" class="listform-buttons">
+      <div class="hidden sort-btns-save btn btn-primary btn-flat"><i class="fa fa-save"></i> Guardar</div>
+    </div>
+    <div class="listform-overlay" ></div>
+    {{> form/fields/listform/content}}
+    <div style="height:34px;" class="listform-buttons">
+      <div class="hidden sort-btns-save btn btn-primary btn-flat"><i class="fa fa-save"></i> Guardar</div>
+    </div>
+  </div>
+  {{else}}
+  <div style="position:relative" class="inactive listform col-md-8 sortaform-sub {{#if noBox}}nobox{{/if}}">
+    <div style="height:34px;" class="listform-buttons">
+      <div class="hidden sort-btns-save btn btn-primary btn-flat"><i class="fa fa-save"></i> Guardar</div>
+    </div>
+    <div class="listform-overlay"></div>
+    {{> form/fields/listform/content}}
+    <div style="height:34px;" class="listform-buttons">
+      <div class="hidden sort-btns-save btn btn-primary btn-flat"><i class="fa fa-save"></i> Guardar</div>
+    </div>
+  </div>
+  {{/if}}
+</div>

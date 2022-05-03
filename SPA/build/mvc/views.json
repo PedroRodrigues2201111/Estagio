@@ -1,0 +1,615 @@
+{
+  "ModuleManagementMenu": {
+    "id": "ModuleManagementMenu",
+    "menuIcon": "fa fa-fw fa-window-restore"
+  },
+  "ModulesView": {
+    "id": "ModulesView",
+    "menuIcon": "fa fa-fw fa-caret-square-o-right",
+    "url": "modules",
+    "default": "list",
+    "urls": {
+      "getModuleGrid": "/api/modules/getModuleGrid",
+      "getModuleForm": "/api/modules/getModuleForm",
+      "getGiaTfactSelect": "/api/modules/getGiaTfactSelect",
+      "postModuleForm": "/api/modules/postModuleForm",
+      "getDiarioMrecapSelect": "/api/modules/getDiarioMrecapSelect",
+      "getEstadosGeraisSelect": "/api/modules/getEstadosGeraisSelect"
+    },
+    "headers": {
+      "list": {
+        "title-i18n": "views.ModulesView.headers.modules",
+        "icon": "fa fa-fw fa-caret-square-o-right"
+      },
+      "edit1": {
+        "title-i18n": "views.ModulesView.headers.modules",
+        "icon": "fa fa-fw fa-caret-square-o-right",
+        "buttons": [
+          {
+            "id": "saveEditModule",
+            "title-i18n": "views.ModulesView.headers.save",
+            "icon": "fa fa-fw fa-floppy-o",
+            "action": {
+              "type": "component",
+              "action": "ModuleFormReception.post",
+              "after": "close"
+            }
+          }
+        ]
+      },
+      "edit2": {
+        "title-i18n": "views.ModulesView.headers.modules",
+        "icon": "fa fa-fw fa-caret-square-o-right",
+        "buttons": [
+          {
+            "id": "saveEditModule",
+            "title-i18n": "views.ModulesView.headers.save",
+            "icon": "fa fa-fw fa-floppy-o",
+            "action": {
+              "type": "component",
+              "action": "ModuleFormExpedition.post",
+              "after": "close"
+            }
+          }
+        ]
+      },
+      "edit3": {
+        "title-i18n": "views.ModulesView.headers.modules",
+        "icon": "fa fa-fw fa-caret-square-o-right",
+        "buttons": [
+          {
+            "id": "saveEditModule",
+            "title-i18n": "views.ModulesView.headers.save",
+            "icon": "fa fa-fw fa-floppy-o",
+            "action": {
+              "type": "component",
+              "action": "ModuleFormTransfers.post",
+              "after": "close"
+            }
+          }
+        ]
+      },
+      "edit6": {
+        "title-i18n": "views.ModulesView.headers.modules",
+        "icon": "fa fa-fw fa-caret-square-o-right",
+        "buttons": [
+          {
+            "id": "saveEditModule",
+            "title-i18n": "views.ModulesView.headers.save",
+            "icon": "fa fa-fw fa-floppy-o",
+            "action": {
+              "type": "component",
+              "action": "ModuleFormOrcamentacao.post",
+              "after": "close"
+            }
+          }
+        ]
+      }
+    },
+    "tabs": [
+      {
+        "title-i18n": "views.ModulesView.tabs.labels.module-list",
+        "id": "list",
+        "cantClose": true,
+        "content-fixed": [
+          [
+            [
+              "ModuleGrid"
+            ]
+          ]
+        ]
+      },
+      {
+        "title-i18n": "views.ModulesView.tabs.labels.module-edit",
+        "defer": true,
+        "id": "edit1",
+        "content-fixed": [
+          [
+            [
+              "ModuleFormReception"
+            ]
+          ]
+        ]
+      },
+      {
+        "title-i18n": "views.ModulesView.tabs.labels.module-edit",
+        "defer": true,
+        "id": "edit2",
+        "content-fixed": [
+          [
+            [
+              "ModuleFormExpedition"
+            ]
+          ]
+        ]
+      },
+      {
+        "title-i18n": "views.ModulesView.tabs.labels.module-edit",
+        "defer": true,
+        "id": "edit3",
+        "content-fixed": [
+          [
+            [
+              "ModuleFormTransfers"
+            ]
+          ]
+        ]
+      },
+      {
+        "title-i18n": "views.ModulesView.tabs.labels.module-edit",
+        "defer": true,
+        "id": "edit6",
+        "content-fixed": [
+          [
+            [
+              "ModuleFormOrcamentacao"
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "OrcamentosView": {
+    "id": "OrcamentosView",
+    "menuIcon": "fa fa-fw fa-files-o",
+    "url": "orcamentos",
+    "default": "list",
+    "urls": {
+      "getOrcamentosGrid": "/api/orcamentos/getOrcamentosGrid",
+      "getOrcamentoForm": "/api/orcamentos/getOrcamentoForm",
+      "getClientesSelect": "/api/orcamentos/getClientesSelect",
+      "getOportunidadesSelect": "/api/orcamentos/getOportunidadesSelect",
+      "getRevOrcamentosGrid": "/api/orcamentos/getRevOrcamentosGrid/{{id}}",
+      "getArtigosGrid": "/api/orcamentos/getArtigosGrid",
+      "saveOrcamentoForm": "/api/orcamentos/saveOrcamentoForm"
+    },
+    "headers": {
+      "list": {
+        "title-i18n": "Preparação",
+        "icon": "fa fa-fw fa-files-o",
+        "buttons": [
+          {
+            "id": "CriarOrcamento",
+            "title-i18n": "Preparar",
+            "icon": "fa fa-fw fa-plus",
+            "action": {
+              "type": "tab",
+              "name": "create"
+            }
+          }
+        ]
+      },
+      "create": {
+        "title-i18n": "Nova Preparação",
+        "icon": "fa fa-fw fa-file-text-o",
+        "buttons": [
+          {
+            "id": "saveNewOrcamento",
+            "title-i18n": "Criar Nova Preparação",
+            "icon": "fa fa-check",
+            "action": {
+              "type": "component",
+              "action": "OrcamentoCreateForm.post",
+              "after": "close"
+            }
+          }
+        ]
+      },
+        "edit": {
+          "title-i18n": "Editar Orçamento",
+          "icon": "fa fa-fw fa-file-text-o",
+          "buttons": [
+            {
+              "id": "anulaRevisao",
+              "title-i18n": "Anular Revisão",
+              "icon": "fa fa-fw fa-remove"
+            },
+            {
+              "id": "anulaOrcamento",
+              "title-i18n": "Anular Orçamento",
+              "icon": "fa fa-fw fa-remove"
+            },
+            {
+              "id": "saveEditOrcamento",
+              "title-i18n": "Gravar",
+              "icon": "fa fa-fw fa-floppy-o",
+              "action": {
+                "type": "component",
+                "action": "OrcamentoForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        },
+        "revisions": {
+          "title-i18n": "Revisões",
+          "icon": "fa fa-fw fa-list-ol"
+        },
+        "read": {
+          "title-i18n": "Visualizar Orçamento",
+          "icon": "fa fa-fw fa-file-text-o"
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "Preparação",
+          "id": "list",
+          "cantClose": true,
+          "content-fixed": [
+            [
+              [
+                "OrcamentosGrid"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Preparar",
+          "defer": true,
+          "id": "create",
+          "content-fixed": [
+            [
+              [
+                "OrcamentoCreateForm"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Editar {{DESCRICAO_OPORTUNIDADE}}",
+          "defer": true,
+          "id": "edit",
+          "content-fixed": [
+            [
+              [
+                "OrcamentoForm"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Revisões",
+          "defer": true,
+          "id": "revisions",
+          "content-fixed": [
+            [
+              [
+                "RevisoesOrcamentosGrid"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Visualizar {{DESCRICAO_OPORTUNIDADE}}",
+          "defer": true,
+          "id": "read",
+          "content-fixed": [
+            [
+              [
+                "OrcamentoReadForm"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "PermissionsView": {
+      "id": "PermissionsView",
+      "menuIcon": "fa fa-fw fa-user",
+      "url": "permissions",
+      "default": "list",
+      "urls": {
+        "getPermissionGrid": "/api/permissions/getPermissionsGrid",
+        "getPermissionForm": "/api/permissions/getPermissionForm",
+        "savePermissionForm": "/api/permissions/savePermissionForm",
+        "createPermission": "/api/permissions/createPermission",
+        "deletePermissions": "/api/permissions/deletePermissions"
+      },
+      "headers": {
+        "list": {
+          "title-i18n": "Permissões",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "PermissionDeleteGrid",
+              "title-i18n": "Apagar Permissões Selecionadas",
+              "icon": "fa fa-fw fa-trash-o",
+              "states": [
+                {
+                  "class": "disabled",
+                  "field": "PermissionGrid.selected.length",
+                  "condition": "==",
+                  "value": 0
+                }
+              ],
+              "action": {
+                "type": "api",
+                "url": "deletePermissions",
+                "field": "PermissionGrid.selected.permissionId",
+                "text": "delete",
+                "after": "refresh"
+              }
+            },
+            {
+              "id": "PermissionCreateGrid",
+              "title-i18n": "Nova Permissão",
+              "icon": "fa fa-fw fa-plus",
+              "action": {
+                "type": "tab",
+                "name": "create"
+              }
+            }
+          ]
+        },
+        "edit": {
+          "title-i18n": "Editar Permissão",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "save",
+              "title-i18n": "Guardar",
+              "icon": "fa fa-fw fa-floppy-o",
+              "action": {
+                "type": "component",
+                "action": "PermissionForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        },
+        "create": {
+          "title-i18n": "Nova Permissão",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "save",
+              "title-i18n": "Guardar",
+              "icon": "fa fa-fw fa-floppy-o",
+              "action": {
+                "type": "component",
+                "action": "PermissionCreateForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "Permissões",
+          "id": "list",
+          "cantClose": true,
+          "content-fixed": [
+            [
+              [
+                "PermissionGrid"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Editar {{name}}",
+          "defer": true,
+          "id": "edit",
+          "content-fixed": [
+            [
+              [
+                "PermissionForm"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Nova Permissão",
+          "defer": true,
+          "id": "create",
+          "content-fixed": [
+            [
+              [
+                "PermissionCreateForm"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "RolesView": {
+      "id": "RolesView",
+      "menuIcon": "fa fa-fw fa-user",
+      "url": "roles",
+      "default": "list",
+      "urls": {
+        "getRoleGrid": "/api/roles/getRolesGrid",
+        "getRoleForm": "/api/roles/getRoleForm",
+        "saveRoleForm": "/api/roles/saveRoleForm",
+        "createRole": "/api/roles/createRole",
+        "deleteRoles": "/api/roles/deleteRoles",
+        "getRolePermissionSelect": "/api/roles/getRolePermissionSelect"
+      },
+      "headers": {
+        "list": {
+          "title-i18n": "Contagem",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "RoleCreateGrid",
+              "title-i18n": "Pesquisar",
+              "icon": "fa fa-fw fa-search",
+              "action": {
+                "type": "tab",
+                "name": "create"
+              }
+            },
+            {
+              "id": "LancamentoManual",
+              "title-i18n": "Lançamento Manual",
+              "icon": "fa fa-fw fa-file-text-o",
+              "action": {
+                "type": "tab",
+                "name": "lancamento"
+              }
+            },
+            {
+              "id": "InserirArtigo",
+              "title-i18n": "Inserir Artigo",
+              "icon": "fa fa-fw fa-plus",
+              "action": {
+                "type": "tab",
+                "name": "inserir"
+              }
+            }
+          ]
+        },
+        "edit": {
+          "title-i18n": "Editar Perfil",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "saveEditUser",
+              "title-i18n": "Guardar",
+              "icon": "fa fa-fw fa-floppy-o",
+              "action": {
+                "type": "component",
+                "action": "RoleForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        },
+        "create": {
+          "title-i18n": "Nova Pesquisa",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "save",
+              "title-i18n": "Pesquisar",
+              "icon": "fa fa-fw fa-search",
+              "action": {
+                "type": "component",
+                "action": "RoleCreateForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        },
+        "lancamento": {
+          "title-i18n": "Nova Pesquisa",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "save",
+              "title-i18n": "Pesquisar",
+              "icon": "fa fa-fw fa-search",
+              "action": {
+                "type": "component",
+                "action": "LancamentoForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "Perfis",
+          "id": "list",
+          "cantClose": true,
+          "content-fixed": [
+            [
+              [
+                "RoleGrid"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Editar {{name}}",
+          "defer": true,
+          "id": "edit",
+          "content-fixed": [
+            [
+              [
+                "RoleForm"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "Nova Pesquisa",
+          "defer": true,
+          "id": "create",
+          "content-fixed": [
+            [
+              [
+                "RoleCreateForm"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "UserManagementMenu": {
+      "id": "UserManagementMenu",
+      "menuIcon": "fa fa-fw fa-group"
+    },
+    "UsersView": {
+      "id": "UsersView",
+      "menuIcon": "fa fa-fw fa-user",
+      "url": "users",
+      "default": "list",
+      "urls": {
+        "getUserGrid": "/api/users/getUserGrid",
+        "getUserForm": "/api/users/getUserForm",
+        "getUserRoleSelect": "/api/users/getUserRoleSelect",
+        "postUserForm": "/api/users/postUserForm"
+      },
+      "headers": {
+        "list": {
+          "title-i18n": "views.UsersView.headers.users",
+          "icon": "fa fa-fw fa-user"
+        },
+        "edit": {
+          "title-i18n": "views.UsersView.headers.users",
+          "icon": "fa fa-fw fa-user",
+          "buttons": [
+            {
+              "id": "saveEditUser",
+              "title-i18n": "views.UsersView.headers.save",
+              "icon": "fa fa-fw fa-floppy-o",
+              "action": {
+                "type": "component",
+                "action": "UserForm.post",
+                "after": "close"
+              }
+            }
+          ]
+        }
+      },
+      "tabs": [
+        {
+          "title-i18n": "views.UsersView.tabs.labels.user-list",
+          "id": "list",
+          "cantClose": true,
+          "content-fixed": [
+            [
+              [
+                "UserGrid"
+              ]
+            ]
+          ]
+        },
+        {
+          "title-i18n": "views.UsersView.tabs.labels.user-edit",
+          "defer": true,
+          "id": "edit",
+          "content-fixed": [
+            [
+              [
+                "UserForm"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  }

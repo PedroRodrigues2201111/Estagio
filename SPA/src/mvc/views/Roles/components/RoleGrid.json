@@ -1,0 +1,96 @@
+{
+	"type": "grid",
+	"opts": {
+		"id": "RoleGrid",
+		"getUrl": "getRoleGrid",
+		"buttons": [
+			{
+				"name": "deleteRole",
+				"icon": "fa fa-fw fa-trash-o",
+				"btnClass": "btn-danger",
+				"tooltip": "Apagar Perfil",
+				"action": {
+					"type": "api",
+					"url": "deleteRoles",
+					"field": "ID",
+					"text": "delete",
+					"after": "refresh"
+				}
+			},
+			{
+				"name": "editRole",
+				"icon": "fa fa-fw fa-pencil",
+				"btnClass": "btn-warning",
+				"tooltip": "Editar Perfil",
+				"action": {
+					"type": "tab",
+					"name": "edit",
+					"field": "ID"
+				}
+			}
+		],
+		"order": [ [4, "desc"] ],
+		"fields": [
+			{
+				"field": "CODIGO_ARM",
+				"type": "number",
+				"i18n": "Arm."
+			},
+			{
+				"field": "REFERENCIA",
+				"type": "string",
+				"i18n": "Referência"
+			},
+			{
+				"field": "DESCRICAO",
+				"type": "string",
+				"i18n": "Descrição"
+			},
+			{
+				"field": "COD_LOCALIZACAO",
+				"type": "string",
+				"i18n": "Cód. Localização"
+			},
+			{
+				"field": "COR",
+				"type": "string",
+				"i18n": "Cor"
+			},
+			{
+				"field": "TAMANHO",
+				"type": "string",
+				"i18n": "Cód. Tamanho"
+			},
+			{
+				"field": "STOCK_ATUAL",
+				"type": "number",
+				"i18n": "Stock Atual"
+			},
+			{
+				"field": "STOCK_CONTAGEM",
+				"type": "number",
+				"i18n": "Contagem Stock"
+			},
+			{
+				"field": "ULTIMO_CUSTO",
+				"type": "number",
+				"i18n": "Último Custo"
+			},
+			{
+				"field": "CUSTO_MEDIO",
+				"type": "number",
+				"i18n": "Custo médio"
+			},
+			{
+				"field": "COD_UNIDADE",
+				"type": "string",
+				"i18n": "Cód. Unidade"
+			},
+			{
+				"field": "ALTERADO",
+				"type": "string",
+				"i18n": "Alterado"
+			}
+		]
+	}
+}

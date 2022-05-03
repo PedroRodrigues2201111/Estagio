@@ -1,0 +1,74 @@
+{
+	"type": "form",
+	"opts": {
+		"id": "ModuleFormReception",
+		"getUrl": "getModuleForm",
+		"postUrl": "postModuleForm",
+		"setsTitle": true,
+		"fields": {
+			"moduleId": {
+				"id": "moduleId",
+				"type": "Hidden"
+			},
+			"docsListagem": {
+				"id": "docsListagem",
+				"type": "Select",
+				"searchUrl": "getGiaTfactSelect",
+				"label-i18n": "<%view%>.components.ModuleForm.docsListagem",
+				"fields": [ "CODIGO", "DESCRICAO" ],
+				"valueField": "CODIGO",
+				"searchFields": [ "CODIGO", "DESCRICAO" ],
+				"resultsTemplate": "<div><div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div></div>",
+				"selectedTemplate": "<div>{{CODIGO}}</div>",
+				"allowNull": true,
+				"maxItems": 1,
+				"saveObject": true,
+				"loadObject": true
+			},
+			"docPicagem": {
+				"id": "docPicagem",
+				"type": "Select",
+				"searchUrl": "getDiarioMrecapSelect",
+				"label-i18n": "<%view%>.components.ModuleForm.docPicagem",
+				"fields": [ "CODIGO", "DESCRICAO" ],
+				"valueField": "CODIGO",
+				"searchFields": [ "CODIGO", "DESCRICAO" ],
+				"resultsTemplate": "<div><div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div></div>",
+				"selectedTemplate": "<div><b>{{CODIGO}}</b></div><div>{{DESCRICAO}}</div>",
+				"allowNull": true,
+				"saveObject": true,
+				"loadObject": true
+			},
+			"filterNdocMandatory": {
+				"id": "filterNdocMandatory",
+				"type": "Switch",
+				"label-i18n": "<%view%>.components.ModuleForm.filterNdocMandatory"
+			},
+			"showOrders": {
+				"id": "showOrders",
+				"type": "Switch",
+				"label-i18n": "<%view%>.components.ModuleForm.showOrders"
+			},
+			"selectLineOrPickOldOne": {
+				"id": "selectLineOrPickOldOne",
+				"type": "Switch",
+				"label-i18n": "<%view%>.components.ModuleForm.selectLineOrPickOldOne"
+			},
+			"verifyExpirationDate": {
+				"id": "verifyExpirationDate",
+				"type": "Switch",
+				"label-i18n": "<%view%>.components.ModuleForm.verifyExpirationDate"
+			}
+		},
+		"tabs": [{
+			"title-i18n": "<%view%>.components.ModuleForm.configurations",
+			"layout": [
+				"moduleId",
+				["docsListagem"],
+				["docPicagem"],
+				["filterNdocMandatory", "showOrders"],
+				[ "selectLineOrPickOldOne", "verifyExpirationDate" ]
+			]
+		}]
+	}
+}

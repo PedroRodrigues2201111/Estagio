@@ -1,0 +1,7 @@
+{
+  "id": "ModuleManagementMenu",
+  "menuIcon": "fa fa-fw fa-window-restore",
+  "i18n": {
+    "title": "Module Management"
+  }
+}

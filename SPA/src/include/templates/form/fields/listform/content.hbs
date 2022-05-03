@@ -1,0 +1,36 @@
+{{#if content-tabs}}
+  {{#getUniqueId}}
+    <div class="nav-tabs-custom"> 
+      <ul id="tablist_{{@randomId}}" class="nav nav-tabs">
+        {{#each content-tabs}}
+          <li class="innerTab{{#eq @index 0}} active{{/eq}}">
+            <a aria-expanded="false"
+              {{#if title-i18n}}data-i18n="{{title-i18n}}"{{/if}}
+              href="#{{@randomId}}_{{@index}}"
+              data-toggle="tab">{{title}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      <div class="tab-content">
+        {{#each content-tabs}}
+          <div class="tab-pane{{#eq @index 0}} active{{/eq}}" id="{{@randomId}}_{{@index}}">
+            <div class="box-body">
+              {{> form/fields/listform/content}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/getUniqueId}}
+{{else if content-responsive}}
+  {{> content-responsive}}
+{{else if content-fixed}}
+  {{#content-fixed}}
+    <div class="row">
+      {{#rowFixed}}
+        {{> form/fields/listform/content-inner}}
+      {{/rowFixed}}
+    </div>
+  {{/content-fixed}}
+{{/if}}

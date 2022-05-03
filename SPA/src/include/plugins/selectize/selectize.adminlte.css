@@ -1,0 +1,61 @@
+.adminlte .selectize-input {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: rgb(204, 204, 204);
+  color: rgb(68, 68, 68);
+}
+.adminlte .form-control.selectize-control{
+  line-height: 0;
+}
+.adminlte .selectize-control.single .selectize-input.dropdown-active::after {
+  border-color: transparent transparent rgb(136, 136, 136) transparent;
+}
+.adminlte .selectize-control.single .selectize-input::after {
+  border-color: rgb(136, 136, 136) transparent transparent transparent;
+}
+.adminlte .selectize-input.input-active,
+.adminlte .selectize-input.focus {
+  border-radius: 0;
+  border-color: rgb(60, 141, 188);
+  box-shadow: none;
+}
+.adminlte .selectize-dropdown-content > div {
+/*  height: 32px;*/
+}
+.adminlte .selectize-dropdown {
+  border-radius: 0 !important;
+  margin-top: 0px !important;
+}
+.adminlte .selectize-input.dropdown-active {
+  border-radius: 0;
+  border-color: rgb(60, 141, 188);
+  box-shadow: none;
+}
+.adminlte .selectize-dropdown-content {
+  padding: 0px;
+}
+.adminlte .selectize-dropdown-content > div {
+  padding: 6px 12px;
+  color: rgb(68, 68, 68);
+}
+.adminlte .selectize-dropdown-content > div.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(60, 141, 168);
+}
+.adminlte .selectize-dropdown-content > div.selected {
+  background-color: rgb(221, 221, 221);
+}
+.adminlte .selectize-dropdown-content > div.selected.active {
+  color: rgb(68, 68, 68);
+  background-color: rgb(221, 221, 221);
+}
+.adminlte .form-group.has-error > .input-group > .form-control > .selectize-input {
+  border-color: inherit;
+}
+.adminlte .selectize-input.disabled {
+  opacity: 1;
+  background-color: rgb(238, 238, 238);
+}
+.adminlte .selectize-input.disabled > div {
+  cursor: text !important;
+}

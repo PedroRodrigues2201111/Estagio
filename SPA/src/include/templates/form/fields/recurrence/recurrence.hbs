@@ -1,0 +1,271 @@
+<div class="recurrence-picker">
+  <div class="form-control contain">
+    <label class="recurrence-toggle">
+      <input type="checkbox" checked>
+      <span data-i18n="components.recurrence.recurrence"></span>
+    </label>
+    <div data-id="recurrence-form" class="no-gutters panel" style="display:none;">
+      <div class="row">
+        <div class="btn-group btn-group-justified recurrence-type" style="width:100%" data-toggle="buttons">
+          <label class="btn btn-flat btn-default active">
+            <input type="radio" name="recurrence-type" value="hour" autocomplete="off" checked>
+            <span data-i18n="components.recurrence.hour">
+            </span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="recurrence-type" value="day" autocomplete="off">
+            <span data-i18n="components.recurrence.day">
+            </span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="recurrence-type" value="week" autocomplete="off">
+            <span data-i18n="components.recurrence.week">
+            </span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="recurrence-type" value="month" autocomplete="off">
+            <span data-i18n="components.recurrence.month">
+            </span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="recurrence-type" value="year" autocomplete="off">
+            <span data-i18n="components.recurrence.year">
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="row well well-sm">
+        <div class="recurrence-form" data-id="form-hour">
+          <label class="well" data-i18ninj="components.recurrence.every_x_hours">
+            <input type="radio" class="type-opt" name="hour-radio" value="1" data-i18nkeep="RADIO" checked>
+            Every <input type="number" class="form-control" data-i18nkeep="HOURS" value="1" name="hours" min="1" max="24"> hour(s).
+          </label>
+        </div>
+        <div class="recurrence-form" data-id="form-day" width="100%">
+          <label class="well" data-i18ninj="components.recurrence.every_x_days">
+            <input type="radio" class="type-opt" name="day-radio" value="1" data-i18nkeep="RADIO" checked>
+            <input type="number" class="form-control" value="1" name="days" min="1" max="31" data-i18nkeep="DAYS">
+          </label>
+          <label>
+            <input type="radio" class="type-opt" name="day-radio" value="2"data-i18nkeep="RADIO">
+            <span data-i18n="components.recurrence.every_day"></span>
+          </label>
+        </div>
+        <div class="recurrence-form" data-id="form-week">
+          <label class="well" data-i18ninj="components.recurrence.every_x_weeks">
+            <input type="radio" class="type-opt" name="week-radio" value="1" data-i18nkeep="RADIO" checked>
+            <input type="number" class="form-control" value="1" name="weeks" min="1" max="52" data-i18nkeep="WEEKS">
+
+            <div class="well well-sm" data-i18nkeep="WEEKDAYS">
+              <div class="weekdays btn-group btn-group-sm btn-group-justified" style="width:100%" data-toggle="buttons">
+                <label class="btn btn-flat btn-default active">
+                  <input type="checkbox" value="mon" autocomplete="off" checked>
+                  <span data-i18n="components.recurrence.weekdays_abrv.monday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="checkbox" value="tue" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.tuesday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="checkbox" value="wed" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.wednesday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="checkbox" value="thu" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.thursday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="checkbox" value="fri" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.friday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="checkbox" value="sat" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.saturday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="checkbox" value="sun" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.sunday"></span>
+                </label>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="recurrence-form" data-id="form-month">
+          <label class="op1 well" data-i18ninj="components.recurrence.on_the_x_day_of_month">
+            <input type="radio" class="type-opt" name="month-radio" value="1" data-i18nkeep="RADIO" checked>
+            <input type="number" class="form-control" value="1" name="day" min="1" max="31" data-i18nkeep="DAY">
+            <input type="number" class="form-control" value="1" name="months" min="1" max="12" data-i18nkeep="MONTHS">
+          </label>
+          <label class="op2" data-i18ninj="components.recurrence.on_the_xth_day_of_month">
+            <input type="radio" class="type-opt" name="month-radio" value="2" data-i18nkeep="RADIO" />
+            <select class="form-control ord" data-i18nkeep="ORDINAL">
+              <option value="1" data-i18n="components.recurrence.ordinals.first"></option>
+              <option value="2" data-i18n="components.recurrence.ordinals.second"></option>
+              <option value="3" data-i18n="components.recurrence.ordinals.third"></option>
+              <option value="4" data-i18n="components.recurrence.ordinals.fourth"></option>
+              <option value="5" data-i18n="components.recurrence.ordinals.last"></option>
+            </select>
+            <div class="well well-sm weekdays" data-i18nkeep="WEEKDAY">
+              <div class="btn-group btn-group-sm btn-group-justified month-day-radio1" style="width:100%" data-toggle="buttons">
+                <label class="btn btn-flat btn-default active">
+                  <input type="radio" name="month-day-radio" value="day" autocomplete="off" checked>
+                  <span data-i18n="components.recurrence.day"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="wday" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="weday" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekend_day"></span>
+                </label>
+              </div>
+              <div class="btn-group btn-group-sm btn-group-justified month-day-radio2" style="width:100%" data-toggle="buttons">
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="mon" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.monday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="tue" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.tuesday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="wed" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.wednesday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="thu" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.thursday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="fri" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.friday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="sat" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.saturday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="month-day-radio" value="sun" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.sunday"></span>
+                </label>
+              </div>
+            </div>
+            <input type="number" class="form-control" value="1" name="months" min="1" max="12" data-i18nkeep="MONTHS">
+          </label>
+        </div>
+        <div class="recurrence-form" data-id="form-year">
+          <label class="op1 well" data-i18ninj="components.recurrence.on_the_x_day_of_year">
+            <input type="radio" class="type-opt" value="1" name="year-radio" data-i18nkeep="RADIO" checked>
+            <input type="number" class="form-control" value="1" name="day" min="1" max="31" data-i18nkeep="DAY">
+            <select class="form-control" data-i18nkeep="MONTH">
+              <option data-i18n="components.recurrence.months.january" value="1"></option>
+              <option data-i18n="components.recurrence.months.february" value="2"></option>
+              <option data-i18n="components.recurrence.months.march" value="3"></option>
+              <option data-i18n="components.recurrence.months.april" value="4"></option>
+              <option data-i18n="components.recurrence.months.may" value="5"></option>
+              <option data-i18n="components.recurrence.months.june" value="6"></option>
+              <option data-i18n="components.recurrence.months.july" value="7"></option>
+              <option data-i18n="components.recurrence.months.august" value="8"></option>
+              <option data-i18n="components.recurrence.months.september" value="9"></option>
+              <option data-i18n="components.recurrence.months.october" value="10"></option>
+              <option data-i18n="components.recurrence.months.november" value="11"></option>
+              <option data-i18n="components.recurrence.months.december" value="12"></option>
+            </select>
+          </label>
+          <label class="op2" data-i18ninj="components.recurrence.on_the_xth_day_of_year">
+            <input type="radio" class="type-opt" value="2" name="year-radio" data-i18nkeep="RADIO">
+            <select class="form-control ord" data-i18nkeep="ORDINAL">
+              <option value="1" data-i18n="components.recurrence.ordinals.first"></option>
+              <option value="2" data-i18n="components.recurrence.ordinals.second"></option>
+              <option value="3" data-i18n="components.recurrence.ordinals.third"></option>
+              <option value="4" data-i18n="components.recurrence.ordinals.fourth"></option>
+              <option value="5" data-i18n="components.recurrence.ordinals.last"></option>
+            </select>
+            <div class="well well-sm weekdays" data-i18nkeep="WEEKDAY">
+              <div class="btn-group btn-group-sm btn-group-justified year-day-radio1" style="width:100%" data-toggle="buttons">
+                <label class="btn btn-flat btn-default active">
+                  <input type="radio" name="year-day-radio" value="day" autocomplete="off" checked>
+                    <span data-i18n="components.recurrence.day"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="wday" autocomplete="off">
+                    <span data-i18n="components.recurrence.weekday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="weday" autocomplete="off">
+                    <span data-i18n="components.recurrence.weekend_day"></span>
+                </label>
+              </div>
+              <div class="btn-group btn-group-sm btn-group-justified year-day-radio2" style="width:100%" data-toggle="buttons">
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="mon" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.monday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="tue" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.tuesday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="wed" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.wednesday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="thu" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.thursday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="fri" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.friday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="sat" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.saturday"></span>
+                </label>
+                <label class="btn btn-flat btn-default">
+                  <input type="radio" name="year-day-radio" value="sun" autocomplete="off">
+                  <span data-i18n="components.recurrence.weekdays_abrv.sunday"></span>
+                </label>
+              </div>
+            </div>
+            <select class="form-control month" data-i18nkeep="MONTH">
+              <option data-i18n="components.recurrence.months.january" value="1"></option>
+              <option data-i18n="components.recurrence.months.february" value="2"></option>
+              <option data-i18n="components.recurrence.months.march" value="3"></option>
+              <option data-i18n="components.recurrence.months.april" value="4"></option>
+              <option data-i18n="components.recurrence.months.may" value="5"></option>
+              <option data-i18n="components.recurrence.months.june" value="6"></option>
+              <option data-i18n="components.recurrence.months.july" value="7"></option>
+              <option data-i18n="components.recurrence.months.august" value="8"></option>
+              <option data-i18n="components.recurrence.months.september" value="9"></option>
+              <option data-i18n="components.recurrence.months.october" value="10"></option>
+              <option data-i18n="components.recurrence.months.november" value="11"></option>
+              <option data-i18n="components.recurrence.months.december" value="12"></option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group recurrence-repeat" style="display:none;">
+      <label><span data-i18n="components.recurrence.repeats"></span></label>
+      <div class="well">
+        <label>
+          <input type="radio" value="1" name="until" checked>
+          <span data-i18n="components.recurrence.forever"></span>
+        </label><br>
+        <label>
+          <input type="radio" value="2" name="until">
+          <span data-i18ninj="components.recurrence.x_times">
+            <input class="form-control times" data-i18nkeep="TIMES" type="number" value="1">
+          </span>
+        </label><br>
+        <label>
+          <input type="radio" value="3" name="until">
+          <span data-i18ninj="components.recurrence.until_date">
+            <input class="form-control until" data-i18nkeep="DATE" type="text" data-type="datepicker">
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

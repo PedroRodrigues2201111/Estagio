@@ -1,0 +1,12 @@
+{{#.}}
+  <div class="
+    {{~#xs}}col-xs-{{.}} {{/xs~}}
+    {{~#sm}}col-sm-{{.}} {{/sm~}}
+    {{~#md}}col-md-{{.}} {{/md~}}
+    {{~#lg}}col-lg-{{.}} {{/lg~}}
+    ">
+    {{#components}}
+      <div data-component="{{.}}" class=" component"></div>
+    {{/components}}
+  </div>
+{{/.}}

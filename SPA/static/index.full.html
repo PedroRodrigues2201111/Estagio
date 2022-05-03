@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>ControlServer</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+			name="viewport"
+		/>
+
+		<!-- Bootstrap 3.3.5 -->
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap/css/bootstrap.min.css"
+		/>
+
+		<!-- DataTables -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="include/plugins/datatables/DataTables-1.10.20/css/dataTables.bootstrap.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="include/plugins/datatables/RowGroup-1.1.1/css/rowGroup.bootstrap.css"
+		/>
+
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="include/plugins/font-awesome/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="include/plugins/font-sendys/style.css" />
+
+		<!-- Ionicons -->
+		<link
+			rel="stylesheet"
+			href="include/plugins/ionicons/css/ionicons.min.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/titatoggle/titatoggle-dist.css"
+		/>
+		<link rel="stylesheet" href="include/plugins/trumbowyg/ui/trumbowyg.css" />
+
+		<link rel="stylesheet" href="include/plugins/tabdrop/css/tabdrop.css" />
+
+		<link rel="stylesheet" href="include/plugins/selectize/selectize.css" />
+		<link
+			rel="stylesheet"
+			href="include/plugins/selectize/selectize.bootstrap3.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/selectize/selectize.adminlte.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap-daterangepicker/daterangepicker.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/pickadate/themes/classic.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/pickadate/themes/classic.date.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap-fileinput/css/fileinput.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.adminlte.css"
+		/>
+
+		<!-- Notifications -->
+		<link rel="stylesheet" href="include/plugins/snarl/snarl.css" />
+		<link rel="stylesheet" href="include/plugins/snarl/snarl.adminlte.css" />
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/clockpicker/bootstrap-clockpicker.css"
+		/>
+
+		<link rel="stylesheet" href="include/plugins/bootbox/bootbox.css" />
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox-adminlte.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/jstree/themes/proton/style.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/codemirror/lib/codemirror.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/codemirror/addon/dialog/dialog.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/codemirror/theme/mdn-like.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/ion.rangeSlider/css/ion.rangeSlider.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/fullcalendar/fullcalendar.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap-treeview/bootstrap-treeview.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="include/plugins/bootstrap-treeview/bootstrap-treeview.adminlte.css"
+		/>
+
+		<link rel="stylesheet" href="include/plugins/balloon.css/balloon.css" />
+
+		<link rel="stylesheet" href="include/plugins/Spectrum/spectrum.css" />
+
+		<!-- VueJS components -->
+		<link rel="stylesheet" href="include/vue/areapicker.css" />
+		<link rel="stylesheet" href="include/vue/fileexplorer.css" />
+
+		<!-- Theme style -->
+		<link rel="stylesheet" href="include/dist/css/AdminLTE.css" />
+		<!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+		<link rel="stylesheet" href="include/dist/css/skins/_all-skins.css" />
+
+		<link rel="stylesheet" href="include/css/grid.css" />
+		<link rel="stylesheet" href="include/css/main.css" />
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini adminlte">
+		<div class="login">
+			<div class="login-box">
+				<div class="login-logo">
+					<i class="fs fs-logo-text" style="font-size: 2em"></i>
+				</div>
+				<div class="login-box-body box">
+					<div class="login-placeholder">
+						<div>
+							<i class="fa fa-spin fa-refresh"></i>
+						</div>
+					</div>
+					<div class="login-container" style="display: none">
+						<div class="login-form"></div>
+						<div class="alert alert-danger hidden" role="alert">
+							<span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+							<span class="msg"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<header class="main-header">
+				<a href="#" class="logo">
+					<!-- small logo, 50x50 px, sidebar collapsed -->
+					<span
+						class="logo-mini"
+						style="text-align: center; width: 50px; font-size: 20px"
+						><i class="fs fs-logo-out"></i
+					></span>
+					<!-- regular logo, ~200x50 px, sidebar expanded -->
+					<span class="logo-lg" style="text-align: left">
+						<i class="fs fs-logo-text" style="font-size: 1.35em"></i>
+					</span>
+				</a>
+
+				<nav class="navbar navbar-static-top" role="navigation">
+					<a
+						href="#"
+						class="sidebar-toggle"
+						data-toggle="offcanvas"
+						role="button"
+					>
+						<span class="sr-only">Toggle navigation</span>
+					</a>
+					<!-- Navbar Right Menu -->
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<!-- Messages: style can be found in dropdown.less-->
+							<!-- Control Sidebar Toggle Button -->
+							<li class="dropdown notifications-menu">
+								<a
+									aria-expanded="false"
+									href="#"
+									class="unsaved-toggle hidden"
+									data-toggle="dropdown"
+								>
+									<i class="fa fa-inbox"></i>
+									<span class="label label-warning unsaved-count"></span>
+								</a>
+
+								<ul class="dropdown-menu dropdown-menu-right unsaved">
+									<li class="header"></li>
+									<li>
+										<div
+											style="position: relative; overflow: hidden; width: auto"
+										>
+											<ul
+												style="overflow: hidden; width: 100%"
+												class="items"
+											></ul>
+										</div>
+									</li>
+									<li class="footer hidden"><a href="#">View all</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" data-toggle="control-sidebar"
+									><i class="fa fa-question"></i
+								></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<header class="main-header-placeholder"></header>
+
+			<!-- Left side column. contains the sidebar -->
+			<aside class="main-sidebar">
+				<section id="main-menu" class="sidebar"></section>
+				<!-- defer to main -->
+			</aside>
+
+			<div class="views-wrapper"></div>
+
+			<footer class="main-footer">
+				<div class="pull-right hidden-xs"><b>Version1</b> 0.0.0</div>
+				<strong>Copyright &copy; 2019.</strong> All rights reserved.
+			</footer>
+
+			<!-- Control Sidebar -->
+			<aside class="control-sidebar control-sidebar-dark">
+				<!-- Create the tabs -->
+				<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+					<li>
+						<a href="#control-sidebar-help-tab" data-toggle="tab"
+							><i class="fa fa-question"></i
+						></a>
+					</li>
+					<li>
+						<a href="#control-sidebar-theme-demo-options-tab" data-toggle="tab"
+							><i class="fa fa-edit"></i
+						></a>
+					</li>
+					<li>
+						<a href="#control-sidebar-info-tab" data-toggle="tab"
+							><i class="fa fa-info"></i
+						></a>
+					</li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!-- Settings tab content -->
+					<div class="tab-pane" id="control-sidebar-theme-demo-options-tab">
+						<h3
+							data-i18n="app.core.title.settings"
+							style="text-align: center"
+						></h3>
+						<hr />
+					</div>
+					<!-- /.tab-pane -->
+					<div class="tab-pane" id="control-sidebar-help-tab">
+						<div>
+							<h3
+								data-i18n="app.core.title.help"
+								style="text-align: center"
+							></h3>
+							<hr />
+							<div class="help-section"></div>
+						</div>
+					</div>
+					<!-- /.tab-pane -->
+					<div class="tab-pane" id="control-sidebar-info-tab">
+						<div>
+							<h3
+								data-i18n="app.core.title.aboutUs"
+								style="text-align: center"
+							></h3>
+							<hr />
+							<h4>ControlServer</h4>
+							<br />
+							<p id="AboutContentData">Version : 2.0.Alpha</p>
+							<p><b data-i18n="app.core.msg.versionuptodate"></b></p>
+							<p data-i18n="[html]app.core.msg.moreInformation"></p>
+						</div>
+					</div>
+					<!-- /.tab-pane -->
+				</div>
+			</aside>
+			<!-- /.control-sidebar -->
+			<!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+			<div class="control-sidebar-bg"></div>
+		</div>
+		<!-- ./wrapper -->
+
+		<button class="btn btn-flat btn-primary back-to-top"></button>
+
+		<!-- Polyfills -->
+		<script src="include/js/polyfills.js"></script>
+
+		<!-- jQuery 2.1.4 -->
+		<script src="include/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+		<script src="include/plugins/jquery.easing/jquery.easing.1.3.js"></script>
+
+		<!-- signalR -->
+		<script src="include/plugins/signalR/dist/browser/signalr.min.js"></script>
+
+		<!-- Bluebird Promises -->
+		<script src="include/plugins/bluebird/bluebird.js"></script>
+
+		<!-- Bootstrap 3.3.5 -->
+		<script src="include/plugins/bootstrap/js/bootstrap.js"></script>
+
+		<!-- DateTime processing -->
+		<script src="include/plugins/moment/moment-with-locales.js"></script>
+
+		<script src="include/plugins/i18next/i18next.min.js"></script>
+		<script src="include/plugins/i18next/jquery-i18next.js"></script>
+		<script src="include/plugins/i18next/i18nextXHRBackend.js"></script>
+
+		<!-- FastClick -->
+		<script src="include/plugins/fastclick/fastclick.min.js"></script>
+
+		<!-- Element resize detector -->
+		<script src="include/plugins/element-resize-detector/element-resize-detector.js"></script>
+
+		<!-- Sortable -->
+		<script src="include/plugins/sortable/sortable.min.js"></script>
+
+		<!-- SlimScroll 1.3.0 -->
+		<script src="include/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Screenfull -->
+		<script src="include/plugins/screenfull/screenfull.js"></script>
+
+		<!-- mathjs -->
+		<script src="include/plugins/mathjs/math.min.js"></script>
+
+		<!-- plotly charts -->
+		<script src="include/plugins/plotly/plotly.js"></script>
+
+		<!-- File input/uploader -->
+		<script src="include/plugins/bootstrap-fileinput/js/fileinput.js"></script>
+		<script src="include/plugins/bootstrap-fileinput/js/themes/fa.js"></script>
+
+		<!-- Download file from Ajax blobs -->
+		<script src="include/plugins/download/download.js"></script>
+
+		<!-- DataTables -->
+		<script src="include/plugins/datatables/DataTables-1.10.20/js/jquery.dataTables.js"></script>
+		<script src="include/plugins/datatables/DataTables-1.10.20/js/dataTables.bootstrap.js"></script>
+		<script src="include/plugins/datatables/RowGroup-1.1.1/js/dataTables.rowGroup.js"></script>
+
+		<!-- JSZip -->
+		<script src="include/plugins/jszip/jszip.js"></script>
+
+		<!-- inputmask -->
+		<script src="include/plugins/input-mask/inputmask.js"></script>
+		<script src="include/plugins/input-mask/jquery.inputmask.js"></script>
+		<script src="include/plugins/input-mask/inputmask.extensions.js"></script>
+		<script src="include/plugins/input-mask/inputmask.regex.extensions.js"></script>
+
+		<!-- Trumbowyg -->
+		<script src="include/plugins/trumbowyg/trumbowyg.js"></script>
+
+		<script src="include/plugins/fullcalendar/fullcalendar.js"></script>
+		<script src="include/plugins/fullcalendar/locale-all.js"></script>
+
+		<!-- Notifications -->
+		<script src="include/plugins/snarl/snarl.js"></script>
+
+		<script src="include/plugins/ion.rangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+
+		<!-- Ajax-Enabled Multi Select -->
+		<script src="include/plugins/selectize/selectize.js"></script>
+
+		<!-- Password visibility toggle -->
+		<script src="include/plugins/showpassword/bootstrap-show-password.min.js"></script>
+
+		<!-- Sticky headers -->
+		<script src="include/plugins/jquery-sticky/jquery.sticky.js"></script>
+
+		<!-- Bootstrap Modals -->
+		<script src="include/plugins/bootbox/bootbox.min.js"></script>
+
+		<!-- Date and Time pickers -->
+		<script src="include/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script src="include/plugins/clockpicker/bootstrap-clockpicker.js"></script>
+		<script src="include/plugins/pickadate/picker.js"></script>
+		<script src="include/plugins/pickadate/picker.date.js"></script>
+
+		<!-- Treeviews -->
+		<script src="include/plugins/jstree/jstree.min.js"></script>
+		<script src="include/plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
+		<!-- Floating headers for tables -->
+		<script src="include/plugins/jquery.floatThead/jquery.floatThead.js"></script>
+
+		<!-- Numerical Inputs -->
+		<script src="include/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+
+		<!-- Bootstrap collapsing tabs -->
+		<script src="include/plugins/tabdrop/js/bootstrap-tabdrop.js"></script>
+
+		<!-- Handlebars templating -->
+		<script src="include/plugins/handlebars/handlebars.js"></script>
+
+		<!-- Spectrum color picker -->
+		<script src="include/plugins/Spectrum/spectrum.js"></script>
+
+		<!-- VueJS framework -->
+		<script src="include/plugins/d3/d3.min.js"></script>
+
+		<!-- VueJS framework -->
+		<script src="include/plugins/VueJS/vue.js"></script>
+
+		<!-- IDE Input -->
+		<script src="include/plugins/codemirror/lib/codemirror.js"></script>
+		<script src="include/plugins/codemirror/addon/search/search.js"></script>
+		<script src="include/plugins/codemirror/addon/search/searchcursor.js"></script>
+		<script src="include/plugins/codemirror/addon/search/jump-to-line.js"></script>
+		<script src="include/plugins/codemirror/addon/dialog/dialog.js"></script>
+		<script src="include/plugins/codemirror/keymap/sublime.js"></script>
+		<script src="include/plugins/codemirror/mode/javascript/javascript.js"></script>
+		<script src="include/plugins/codemirror/mode/sql/sql.js"></script>
+		<script src="include/plugins/codemirror/mode/xml/xml.js"></script>
+		<script src="include/plugins/codemirror/addon/mode/simple.js"></script>
+		<script src="include/plugins/codemirror/mode/lua/lua.js"></script>
+		<script src="include/plugins/codemirror/mode/handlebars/handlebars.js"></script>
+		<script src="include/plugins/codemirror/mode/css/css.js"></script>
+		<script src="include/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+		<!-- To Cull -->
+		<!-- AdminLTE App -->
+		<script src="include/dist/js/app.js"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script src="include/dist/js/demo.js"></script>
+
+		<script src="include/js/init.js"></script>
+
+		<!-- VueJS components -->
+		<script src="include/vue/areapicker.js"></script>
+		<script src="include/vue/fileexplorer.js"></script>
+
+		<!-- Controllers -->
+		<script src="include/js/scope.js"></script>
+		<script src="include/js/main-controller.js"></script>
+		<script src="include/js/view-controller.js"></script>
+		<script src="include/js/lang-controller.js"></script>
+		<script src="include/js/auth-controller.js"></script>
+		<script src="include/js/nav-controller.js"></script>
+		<script src="include/js/storage-controller.js"></script>
+		<script src="include/js/alert-controller.js"></script>
+
+		<!-- Templates -->
+		<script src="include/bundles/templates.hbs.js"></script>
+		<script src="include/bundles/templates.js"></script>
+
+		<script src="include/js/main.js"></script>
+	</body>
+</html>

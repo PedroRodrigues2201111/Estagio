@@ -1,0 +1,6 @@
+.adminlte .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down {
+  border-bottom-right-radius: 0px;
+}
+.adminlte .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
+    border-top-right-radius: 0px;
+}

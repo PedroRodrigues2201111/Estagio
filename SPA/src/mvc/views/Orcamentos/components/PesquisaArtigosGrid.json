@@ -1,0 +1,59 @@
+{
+	"type": "grid",
+	"opts": {
+		"id": "PesquisaArtigosGrid",
+		"getUrl": "getArtigosGrid",
+		"buttons": [],
+		"fields": [
+			{
+				"field": "ID",
+				"type": "hidden"
+			},
+			{
+				"field": "CODIGO_ARM",
+				"type": "string",
+				"i18n": "Armazém"
+			},
+			{
+				"field": "REFERENCIA",
+				"type": "string",
+				"i18n": "Referência"
+			},
+			{
+				"field": "DESIGNACAO1",
+				"type": "string",
+				"i18n": "Descrição"
+			},
+			{
+				"field": "COD_FAMILIA",
+				"type": "hidden"
+			},
+			{
+				"field": "FAMILIA",
+				"type": "string",
+				"i18n": "Família"
+			},
+			{
+				"field": "PRECO1",
+				"type": "number",
+				"i18n": "Preço"
+			},
+			{
+				"field": "COMPRIMENTO",
+				"type": "hidden"
+			},
+			{
+				"field": "LARGURA",
+				"type": "hidden"
+			},
+			{
+				"field": "ALTURA",
+				"type": "hidden"
+			},
+			{
+				"field": "PESO_BRUTO",
+				"type": "hidden"
+			}
+		]
+	}
+}

@@ -1,0 +1,10 @@
+<optgroup data-i18n="[label]{{label-i18n}}">
+{{#group}}
+  {{#value}}
+    {{> form/fields/select/option}}
+  {{/value}}
+  {{^value}}
+    {{> form/fields/select/optgroup}}
+  {{/value}}
+{{/group}}
+</optgroup>

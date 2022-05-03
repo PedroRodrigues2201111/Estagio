@@ -1,0 +1,379 @@
+{
+  "app": {
+    "changePassword": {
+      "weak": "Weak",
+      "fair": "Fair",
+      "good": "Good",
+      "strong": "Strong",
+      "none": "None",
+      "change-password": "Change password",
+      "old-password": "Old password",
+      "new-password": "New password",
+      "hints": "Hints",
+      "save": "Save",
+      "repeat-new-password": "Repeat new password",
+      "password-strength": "Password strength:",
+      "hint-numbers": "Try using numbers",
+      "hint-case": "Try using upper and lower case characters",
+      "hint-special": "Try using special characters"
+    },
+    "languages": {
+      "pt": "Portuguese",
+      "pt-PT": "Portuguese",
+      "en": "English",
+      "en-US": "English"
+    },
+    "settings": {
+      "lang-head": "Language Settings",
+      "lang-subhead": "Language",
+      "lang-desc": "Pick the language for the application interface."
+    },
+    "core": {
+      "live-notifications": "Notifications",
+      "processing": "Processing",
+      "sign-another-user": "Sign in as a different user",
+      "saved-operationstart-title": "",
+      "saved-operationstart": "Operation was start",
+      "saved-sucess-title": "",
+      "saved-sucess": "Operation was successful",
+      "saved-CheckAsRead-sucess-title": "",
+      "saved-CheckAsRead-sucess": "Operation was successful",
+      "saved-CheckAsRead-unsucess-title": "",
+      "saved-CheckAsRead-unsucess": "No record to be processed",
+      "unsaved-service-sucess-title": "",
+      "unsaved-service-sucess": "Sucess",
+      "unsaved-warning-startservice": "Start service",
+      "unsaved-cancel-syncAD": "Cancel",
+      "unsaved-cancel-startservice": "Cancel",
+      "unsaved-ok-syncAD": "Ok",
+      "unsaved-ok-startservice": "Ok",
+      "unsaved-warning-stopservice": "Stop service",
+      "unsaved-cancel-stopservice": "Cancel",
+      "unsaved-ok-stopservice": "Ok",
+      "unsaved-warning-rowSelectEmpty": "There are no selected records.",
+      "unsaved-cancel-rowSelectEmpty": "OK",
+      "unsaved-warning-delete": "Delete data.",
+      "unsaved-warning-clone": "Clone data.",
+      "unsaved-warning-Reset": "Reset Web User.",
+      "unsaved-warning-UnLock": "UnLock Web User.",
+      "unsaved-cancel-delete": "No",
+      "unsaved-cancel-clone": "Don't clone",
+      "unsaved-cancel-Reset": "Don't Reset",
+      "unsaved-cancel-UnLock": "Don't UnLock",
+      "unsaved-ok-delete": "Delete",
+      "unsaved-ok-clone": "Clone",
+      "unsaved-ok-Reset": "Reset",
+      "unsaved-ok-UnLock": "UnLock",
+      "unsaved-warning": "Unsaved data.",
+      "unsaved-discard": "Discard data",
+      "unsaved-cancel": "Keep editing",
+      "unsaved": "__count__ unsaved document.",
+      "unsaved_plural": "__count__ unsaved documents.",
+      "unsaved-warning-validation-required-title": "Configuration Error",
+      "unsaved-warning-validation-required": "Required field is remained.",
+      "confirm-execute": "Confirm Action",
+      "confirm-execute-cancel": "No",
+      "confirm-execute-ok": "Yes",
+      "unsaved-warning-SendEmail": "Send Email",
+      "unsaved-cancel-SendEmail": "Cancel",
+      "unsaved-ok-SendEmail": "Ok",
+      "unsaved-error": "Error",
+      "retry": "Retry",
+      "id": "ID",
+      "username": "Username",
+      "password": "Password",
+      "sign-in": "Sign In",
+      "signing-in": "Signing In",
+      "remember-me": "Remember Me",
+      "cancel": "Cancel",
+      "close": "Close",
+      "ok": "OK",
+      "off": "Off",
+      "on": "On",
+      "confirm": "Confirm",
+      "load-more": "Load more...",
+      "multiple_instances_warning": "There are multiple instances currently open on this browser.\nTo avoid data corruption please avoid editing data in more than one instance.",
+      "lock": "Bloquear",
+      "change-password": "Change Password",
+      "logout": "Terminar Sessão",
+      "old-password": "Old password",
+      "new-password": "New password",
+      "repeat-new-password": "Repeat new password",
+      "save": "Save",
+      "clear-user-data": "Limpar dados do utilizador",
+      "clear-user-data-confirm": "Confirm",
+      "clear-user-data-confirm-message": "Clear all saved grid data?",
+      "clear-all-data": "Clear all data",
+      "to-user-portal": "User Portal",
+      "UserAlreadyExists": "User Already Exists"
+    },
+    "grid": {
+      "filters": {
+        "contains": "contém",
+        "excludes": "excluindo",
+        "equals": "igual a",
+        "after": "depois de",
+        "before": "antes de",
+        "during": "during",
+        "between": "entre",
+        "greater": "maior do que",
+        "lower": "menor do que",
+        "different": "diferente"
+      },
+      "selected-page": "All <b>{{selected}}</b> items on this page are selected. <a>Select all <b>{{total}}</b> items</a>",
+      "selected-all": "All <b>{{total}}</b> items are selected. <a>Clear selection</a>",
+      "advanced-search": "Filtros de Pesquisa",
+      "copy-prompt": "Item selecionado",
+      "selection-mode": "Selection Mode:",
+      "select": "Select:",
+      "select-all": "All",
+      "select-none": "None",
+      "select-inverse": "Inverse",
+      "export-mhtml": "Export as MHTML",
+      "export-xls": "Export as XLS",
+      "export-xlsx": "Export as XLSX",
+      "export-json": "Export as JSON",
+      "export-csv": "Export as CSV"
+    },
+    "errors": {
+      "401": "Unauthenticated",
+      "403": "Unauthorized",
+      "404": "Resource not found",
+      "500": "Internal Server Error",
+      "invalid-email": "Invalid Email",
+      "user404": "User not found",
+      "unknown": "Unknown error",
+      "no-data": "No data available.",
+      "info": "Information",
+      "network": "Error. Can't connect to server.",
+      "login-invalid": "Invalid Username / Password.",
+      "unsaved": "There is unsaved information.",
+      "error": "Error",
+      "required-field": "Required field",
+      "load": "Error loading data."
+    },
+    "formats": {
+      "datetime": "MM/DD/YYYY HH:mm",
+      "date": "MM/DD/YYYY"
+    }
+  },
+  "components": {
+    "recurrence": {
+      "ordinals": {
+        "first": "First",
+        "second": "Second",
+        "third": "Third",
+        "fourth": "Fourth",
+        "last": "Last"
+      },
+      "weekdays": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      },
+      "weekdays_abrv": {
+        "monday": "Mo",
+        "tuesday": "Tu",
+        "wednesday": "We",
+        "thursday": "Th",
+        "friday": "Fr",
+        "saturday": "Sa",
+        "sunday": "Su"
+      },
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "recurrence": "Recurrence",
+      "hour": "Hour",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year",
+      "weekday": "Week",
+      "weekend_day": "Weekend",
+      "every_x_hours": "_RADIO_ Every _HOURS_ hour(s).",
+      "every_day": "Every day.",
+      "every_x_days": "_RADIO_ Every _DAYS_ day(s).",
+      "every_x_weeks": "_RADIO_ Every _WEEKS_ week(s) on _WEEKDAYS_",
+      "on_the_x_day_of_month": "_RADIO_ On day _DAY_ of every _MONTHS_ month(s).",
+      "on_the_xth_day_of_month": "_RADIO_ On the _ORDINAL_ _WEEKDAY_ of every _MONTHS_ month(s).",
+      "on_the_x_day_of_year": "_RADIO_ On day _DAY_ of _MONTH_",
+      "on_the_xth_day_of_year": "_RADIO_ On the _ORDINAL_ _WEEKDAY_ of _MONTH_",
+      "repeats": "Repeats:",
+      "forever": "Forever.",
+      "x_times": "_TIMES_ time(s).",
+      "until_date": "Until _DATE_"
+    }
+  },
+  "views": {
+    "ModuleManagementMenu": {
+      "title": "SSCC"
+    },
+    "ModulesView": {
+      "title": "SSCC",
+      "headers": {
+        "modules": "SSCC",
+        "save": "Save"
+      },
+      "tabs": {
+        "labels": {
+          "module-list": "SSCC",
+          "module-edit": "{{name}}"
+        }
+      },
+      "components": {
+        "ModuleGrid": {
+          "delete": "Delete Module(s)",
+          "edit": "Edit Module"
+        },
+        "ModuleForm": {
+          "configurations": "Configurações",
+          "docsListagem": "Tipo Docs a Listar",
+          "docPicagem": "Diário Doc de Entrada",
+          "filterNdocMandatory": "Obriga filtrar 1 documento",
+          "showOrders": "Mostrar Separador Encomendas",
+          "selectLineOrPickOldOne": "Seleccionar Linha ou Picar a Mais Antiga",
+          "verifyExpirationDate": "Validar Data de Validade",
+          "docPicagemSaida": "Diário Doc de Saída",
+          "linkApi": "http://127.0.0.1/alidataerpapi",
+          "docPicagemTransf": "Diário Doc de Transferência",
+          "whereGetDoc": "a.tem_qtd_liq='S'",
+          "whereGetDoc1": "Condição da lista de documentos para transferir",
+          "whereGetLinhas": "lin.linha_facturada<>'S'",
+          "whereGetLinhas1": "Condição da lista de linhas para transferir",
+          "lockTransfers": "Bloquear documentos por utilizador",
+          "diarioOrcamento": "Diário Orçamentos"
+        }
+      },
+      "common": {
+        "name": "Name"
+      }
+    },
+    "OrcamentosView": {
+      "title": "Preparação"
+    },
+    "PermissionsView": {
+      "title": "-"
+    },
+    "RolesView": {
+      "title": "Contagem"
+    },
+    "UserManagementMenu": {
+      "title": "Contagem"
+    },
+    "UsersView": {
+      "title": "-",
+      "headers": {
+        "users": "-",
+        "save": "Save",
+        "remove-user": "Delete User"
+      },
+      "tabs": {
+        "labels": {
+          "user-list": "Contagem",
+          "user-edit": "{{firstName}} {{lastName}}"
+        }
+      },
+      "components": {
+        "UserGrid": {
+          "delete": "Delete User(s)",
+          "edit": "Edit User"
+        },
+        "UserForm": {
+          "firstName": "First Name",
+          "lastName": "Last Name",
+          "findRole": "Find Role",
+          "addRole": "Add Role",
+          "roles": "Roles"
+        }
+      },
+      "common": {
+        "username": "Username",
+        "firstname": "First Name",
+        "lastname": "Last Name",
+        "e-mail": "E-Mail",
+        "creation-date": "Creation Date"
+      }
+    }
+  },
+  "plugins": {
+    "chart": {
+      "stacked": "Stacked",
+      "grouped": "Grouped"
+    },
+    "datatables": {
+      "sEmptyTable": "No data available in table",
+      "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+      "sInfoEmpty": "Showing 0 to 0 of 0 entries",
+      "sInfoFiltered": "(filtered from _MAX_ total entries)",
+      "sInfoPostFix": "",
+      "sInfoThousands": ",",
+      "sLengthMenu": "Show _MENU_ entries",
+      "sLoadingRecords": "Loading...",
+      "sProcessing": "Processing...",
+      "sSearch": "Search:",
+      "sZeroRecords": "No matching records found",
+      "oPaginate": {
+        "sFirst": "First",
+        "sLast": "Last",
+        "sNext": "Next",
+        "sPrevious": "Previous"
+      },
+      "oAria": {
+        "sSortAscending": ": activate to sort column ascending",
+        "sSortDescending": ": activate to sort column descending"
+      }
+    },
+    "daterangepicker": {
+      "locale": {
+        "separator": " - ",
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "daysOfWeek": [
+          "Su",
+          "Mo",
+          "Tu",
+          "We",
+          "Th",
+          "Fr",
+          "Sa"
+        ],
+        "monthNames": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ],
+        "weekLabel": "W",
+        "firstDay": 0
+      }
+    }
+  },
+  "help-html": {}
+}

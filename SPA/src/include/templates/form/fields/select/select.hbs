@@ -1,0 +1,20 @@
+<select class="form-select form-control" data-id="{{id}}"
+  {{#if readOnly}} readonly {{/if}}
+  name="{{id}}" data-i18n="[placeholder]{{placeholder-i18n}}">
+{{#each optionhs}}
+  {{#if ( has "value" )}}
+    {{> form/fields/select/option}}
+  {{else}}
+    {{> form/fields/select/optgroup}}
+  {{/if}}
+{{/each}}
+</select>
+{{#if preload}}
+  {{#unless cantReload}}
+    <span class="input-group-btn">
+      <button type="button" class="reload-btn btn btn-flat btn-primary">
+        <i class="fa fa-fw fa-refresh"></i>
+      </button>
+    </span>
+  {{/unless}}
+{{/if}}

@@ -1,0 +1,30 @@
+{{#unless opts.isSub}}
+  <div class="datetimepicker" style="display:flex;flex-direction:row;">
+    <div style="flex-grow:1">
+      <input
+        readonly
+        style="border-right-width: 0;"
+        type="text"
+        class="form-control form-time-picker"
+        name="{{id}}"
+        value="00:00"
+      />
+    </div>
+    <button
+      data-id="close-button"
+      class="btn btn-default btn-flat"
+      type="button"
+      style="border-left-width: 0 !important;background:white"
+    >
+      <i class="fa fa-fw fa-times"></i>
+    </button>
+  </div>
+{{else}}
+  <input
+    readonly
+    type="text"
+    class="form-control form-time-picker"
+    name="{{id}}"
+    value="00:00"
+  />
+{{/unless}}

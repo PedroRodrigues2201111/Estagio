@@ -1,0 +1,26 @@
+{{#unless icon}}
+  <div class="input-group">
+{{/unless}}
+
+  <input type="{{#if isPassword}}password{{else}}text{{/if}}" class="form-text form-control"
+    data-id="{{id}}" name="{{id}}" data-inputmask="{{mask}}"
+    placeholder="{{placeholder}}"
+    {{#if readOnly}} readonly {{/if}}
+  />
+  <span class="input-group-btn">
+    <button 
+      class="btn {{#if btn-class}}{{btn-class}}{{else}}btn-info{{/if}} btn-flat" 
+      type="button"
+      {{#if disabled}} disabled {{/if}}
+      >
+      {{#if btn-icon}}
+        <i class="fa fa-fw {{btn-icon}}">
+        </i>
+      {{/if}}
+      {{#if action-i18n}}<span data-i18n="{{action-i18n}}"></span>{{/if}}
+    </button>
+  </span>
+
+{{#unless icon}}
+  </div>
+{{/unless}}

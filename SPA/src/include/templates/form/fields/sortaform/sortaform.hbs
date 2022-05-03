@@ -1,0 +1,27 @@
+{{#if flex}}
+<div class="row" style="display:flex;margin-left: 10px;">
+  <div>
+{{else}}
+<div class="row">
+  <div class="col-md-4">
+{{/if}}
+    <div style="margin-bottom: 10px;">
+      {{#unless noAdd}}
+        <div class="sort-btns-add btn btn-default btn-flat"><i class="fa fa-plus"></i> Add</div>
+      {{/unless}}
+      <div class="hidden sort-btns-save btn btn-default btn-flat"><i class="fa fa-save"></i> Save</div>
+      <div class="hidden sort-btns-cancel btn btn-default btn-flat"><i class="fa fa-times"></i> Cancel</div>
+    </div>
+    <ul class="list-group sortable" name="{{id}}">
+    </ul>
+  </div>
+  {{#if flex}}
+  <div class="sortaform-sub {{#if noBox}}nobox{{/if}}" style="flex-grow:1">
+    {{> form/fields/sortaform/content}}
+  </div>
+  {{else}}
+  <div class="col-md-8 sortaform-sub {{#if noBox}}nobox{{/if}}">
+    {{> form/fields/sortaform/content}}
+  </div>
+  {{/if}}
+</div>

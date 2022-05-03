@@ -1,0 +1,50 @@
+{
+	"type": "grid",
+	"opts": {
+		"id": "PermissionGrid",
+		"getUrl": "getPermissionGrid",
+		"buttons": [{
+				"name": "deletePermission",
+				"icon": "fa fa-fw fa-trash-o",
+				"btnClass": "btn-danger",
+				"tooltip": "Apagar Perfil",
+				"action": {
+					"type": "api",
+					"url": "deletePermissions",
+					"field": "ID",
+					"text": "delete",
+					"after": "refresh"
+				}
+			},
+			{
+				"name": "editPermission",
+				"icon": "fa fa-fw fa-pencil",
+				"btnClass": "btn-warning",
+				"tooltip": "Editar Perfil",
+				"action": {
+					"type": "tab",
+					"name": "edit",
+					"field": "ID"
+				}
+			}
+		],
+		"order": [
+			[0, "asc"]
+		],
+		"fields": [{
+				"field": "ID",
+				"type": "hidden"
+			},
+			{
+				"field": "NAME",
+				"type": "string",
+				"i18n": "Nome"
+			},
+			{
+				"field": "DESCRICAO",
+				"type": "string",
+				"i18n": "Descrição"
+			}
+		]
+	}
+}

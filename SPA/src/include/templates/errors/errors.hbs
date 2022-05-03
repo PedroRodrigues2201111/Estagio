@@ -1,0 +1,70 @@
+
+{{#*inline "mini"}}
+  <div class="mini-err overlay">
+    <div class="modal-{{#if severity}}{{severity}}{{else}}danger{{/if}}">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" data-i18n="{{#if title-i18n}}{{title-i18n}}{{else}}errors.error{{/if}}">
+            </h4>
+          </div>
+          <div class="modal-body">
+            {{#if msg-i18n}}
+              <p data-i18n="{{msg-i18n}}" ></p>
+            {{/if}}
+          </div>
+          <div class="modal-footer">
+            {{#unless cantRetry}}
+            <button type="button" data-i18n="app.core.retry"
+              class="btn btn-outline retrybtn">
+            </button>
+            {{/unless}}
+            <button type="button" data-i18n="app.core.close"
+              class="btn btn-outline closebtn">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "normal"}}
+  <div class="overlay">
+    <div class="modal-{{#if severity}}{{severity}}{{else}}danger{{/if}}">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" data-i18n="{{#if title-i18n}}{{title-i18n}}{{else}}errors.error{{/if}}">
+            </h4>
+          </div>
+          <div class="modal-body">
+            {{#if msg-i18n}}
+              <p data-i18n="{{msg-i18n}}" ></p>
+            {{/if}}
+          </div>
+          <div class="modal-footer">
+            {{#unless cantRetry}}
+            <button type="button" data-i18n="app.core.retry"
+              class="btn btn-outline retrybtn">
+            </button>
+            {{/unless}}
+            <button type="button" data-i18n="app.core.close"
+              class="btn btn-outline closebtn">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/inline}}
+
+{{#eq type "Form"}}
+  {{> normal}}
+{{else eq type "Grid"}}
+  {{> normal}}
+{{else eq type "Widget"}}
+  {{> mini}}
+{{else eq type "Template"}}
+  {{> normal}}
+{{/eq}}

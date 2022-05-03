@@ -1,0 +1,11 @@
+<li class="list-group-item">
+  {{#unless @cantRemove}}
+    <i class="fa fa-fw fa-times sort-remove"></i>
+  {{/unless}}
+  <div class="sort-content" style="display:inline-block">
+  </div>
+  <i class="fa fa-fw fa-align-justify sort-tool sort-handle"></i>
+  {{#each @tools}}
+    <i class="fa fa-fw {{icon}} sort-tool sort-custom-tool" data-action="{{action}}"></i>
+  {{/each}}
+</li>

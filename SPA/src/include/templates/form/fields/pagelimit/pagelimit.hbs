@@ -1,0 +1,219 @@
+<div data-id="{{id}}" class="cont page-limit-picker">
+  <div class="form-control contain">
+    <label>
+      <input type="checkbox" class="page-limit-toggle">
+      <span data-i18n="components.page-limit.limit-printing"></span>
+    </label>
+    <div class="row no-gutters panel">
+      <div class="col-md-3">
+        <div class="btn-group-vertical btn-group-lg limit-type"
+          style="width:100%" data-toggle="buttons">
+          <label class="btn btn-flat btn-default active">
+            <input type="radio" name="limit-type" value="basic"
+              data-id="basic" autocomplete="off" checked>
+            <span data-i18n="components.page-limit.basic"></span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="limit-type" value="bycolor"
+              data-id="bycolor" autocomplete="off">
+            <span data-i18n="components.page-limit.by-color"></span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="limit-type" value="bytype"
+              data-id="bytype" autocomplete="off">
+            <span data-i18n="components.page-limit.by-type"></span>
+          </label>
+          <label class="btn btn-flat btn-default">
+            <input type="radio" name="limit-type" value="adv"
+              data-id="adv" autocomplete="off">
+            <span data-i18n="components.page-limit.advanced"></span>
+          </label>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="page-limit-form well" style="display:none;"
+          data-type="basic">
+          <span data-i18n="components.page-limit.limit"></span>:
+          <input data-id="limit" type="number" class="form-control">
+          &nbsp;&nbsp;
+          <span data-i18n="components.page-limit.remaining"></span>:
+          <input data-id="remaining" type="number" class="form-control">
+          &nbsp;&nbsp;
+          <span data-i18n="components.page-limit.lock"></span>:
+          <div style="display: inline-block"
+            class="checkbox checkbox-slider--b checkbox-slider-warning">
+            <label>
+              <input type="checkbox" data-id="lock">
+              <span></span>
+            </label>
+          </div>
+        </div>
+        <div class="page-limit-form well" style="display:none;"
+          data-type="bycolor">
+          <div class="form-group" data-subtype="mono">
+            <label>
+              <span data-i18n="components.page-limit.mono"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group" data-subtype="color">
+            <label>
+              <span data-i18n="components.page-limit.color"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="page-limit-form well" style="display:none;"
+          data-type="bytype">
+          <div class="form-group" data-subtype="print">
+            <label>
+              <span data-i18n="components.page-limit.print"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group" data-subtype="copy">
+            <label>
+              <span data-i18n="components.page-limit.copy"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="page-limit-form well" style="display:none;"
+          data-type="adv">
+          <div class="form-group" data-subtype="monoprint">
+            <label>
+              <span data-i18n="components.page-limit.mono"></span>
+              <span data-i18n="components.page-limit.print"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group" data-subtype="monocopy">
+            <label>
+              <span data-i18n="components.page-limit.mono"></span>
+              <span data-i18n="components.page-limit.copy"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group" data-subtype="colorprint">
+            <label>
+              <span data-i18n="components.page-limit.color"></span>
+              <span data-i18n="components.page-limit.print"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group" data-subtype="colorcopy">
+            <label>
+              <span data-i18n="components.page-limit.color"></span>
+              <span data-i18n="components.page-limit.copy"></span>
+            </label>
+            <span data-i18n="components.page-limit.limit"></span>:
+            <input data-id="limit" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.remaining"></span>:
+            <input data-id="remaining" type="number" class="form-control">
+            &nbsp;&nbsp;
+            <span data-i18n="components.page-limit.lock"></span>:
+            <div style="display: inline-block"
+              class="checkbox checkbox-slider--b checkbox-slider-warning">
+              <label>
+                <input type="checkbox" data-id="lock">
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+{{#if content-tabs}}
+  {{#getUniqueId}}
+    <div class="nav-tabs-custom"> 
+      <ul id="tablist_{{@randomId}}" class="nav nav-tabs">
+        {{#each content-tabs}}
+          <li class="innerTab{{#eq @index 0}} active{{/eq}}">
+            <a aria-expanded="false"
+              {{#if title-i18n}}data-i18n="{{title-i18n}}"{{/if}}
+              href="#{{@randomId}}_{{@index}}"
+              data-toggle="tab">{{title}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      <div class="tab-content">
+        {{#each content-tabs}}
+          <div class="tab-pane{{#eq @index 0}} active{{/eq}}" id="{{@randomId}}_{{@index}}">
+            <div class="box-body">
+              {{> form/fields/component/content}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/getUniqueId}}
+{{else if content-responsive}}
+  {{> content-responsive}}
+{{else if content-fixed}}
+  {{#content-fixed}}
+  
+    {{#eq this "--hr"}}
+      <hr />
+      {{else match this "\-\-hr\:(.+)"}}
+        <div style="width:100%;overflow:hidden;white-space: nowrap;padding:0 0 10px 0">
+          <span style="display: inline-block;color:#888;font-size:1.3em;font-style: italic;padding-right: 5px;"
+            data-i18n="{{@captures.[0]}}">{{i18n_t @captures.[0]}}</span>
+          <span style="width:100%;background-color:#eee;display: inline-block;line-height: .1em;">&nbsp;</span>
+        </div>
+        {{else isarray .}}
+    <div class="row">
+      {{#rowFixed}}
+        {{> form/fields/component/content-inner}}
+      {{/rowFixed}}
+    </div>
+    {{/eq}}
+  {{/content-fixed}}
+{{/if}}

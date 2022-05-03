@@ -1,0 +1,21 @@
+.adminlte #snarl-wrapper {
+  z-index: 2060;
+}
+.adminlte .snarl-notification .snarl-title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.adminlte .snarl-notification {
+  border-radius: 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.adminlte .snarl-notification .snarl-close {
+  background-color: rgba(0,0,0,0.15);
+}
+.adminlte .snarl-notification .snarl-close svg {
+  fill: white;
+}
+.adminlte .snarl-notification .snarl-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

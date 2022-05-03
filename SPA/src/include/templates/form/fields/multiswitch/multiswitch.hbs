@@ -1,0 +1,17 @@
+{{#each @data}}
+<div class="multiswitch">
+  {{#eq label-position "before"}}
+    <span{{#if label-i18n}} data-i18n="{{label-i18n}}"{{/if}}>{{label}}</span>
+  {{/eq}}
+  <div style="display: inline-block" data-id={{id}}
+    class="checkbox checkbox-slider--b
+    {{~#if onColor}} checkbox-slider-{{onColor}}{{/if}}">
+    <label>
+      <input type="checkbox" {{#if value}}checked{{/if}}>
+      {{#neq label-position "before"}}
+        <span{{#if label-i18n}} data-i18n="{{label-i18n}}"{{/if}}>{{label}}</span>
+      {{/neq}}
+    </label>
+  </div>
+</div>
+{{/each}}
